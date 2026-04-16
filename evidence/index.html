@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidence Room — Abalone Cove</title>
+  <meta name="description" content="Primary source documents from the documentary record, 1882–2026. Olmsted plans, founding declarations, landslide documentation, rezoning record, and litigation.">
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    /* Desktop nav */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a[aria-current="page"] { opacity: 1; border-bottom: 1px solid var(--shell-teal); }
+
+    /* Hamburger (checkbox hack) */
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Main Content ── */
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .article-header h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+    }
+
+    .article-header .subtitle {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* Sections */
+    .article section {
+      margin-bottom: 3rem;
+    }
+
+    .article section h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 1.25rem;
+      color: var(--shell-dark);
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.4rem;
+    }
+
+    /* ── Document Entry Cards ── */
+    .doc-list {
+      list-style: none;
+    }
+
+    .doc-entry {
+      border-bottom: 1px solid rgba(196, 168, 122, 0.35);
+    }
+
+    .doc-entry:last-child {
+      border-bottom: none;
+    }
+
+    .doc-entry a {
+      display: block;
+      padding: 0.9rem 0.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.15s;
+      border-radius: 3px;
+    }
+
+    .doc-entry a:hover {
+      background: var(--shell-mist);
+    }
+
+    .doc-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--shell-dark);
+      margin-bottom: 0.2rem;
+      line-height: 1.4;
+    }
+
+    .doc-meta {
+      font-size: 0.82rem;
+      color: var(--shell-warm);
+      letter-spacing: 0.02em;
+      margin-bottom: 0.3rem;
+    }
+
+    .doc-desc {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Mobile (< 768px) ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+
+      .article-header h1 { font-size: 1.75rem; }
+
+      .article section h2 { font-size: 1.3rem; }
+
+      /* Hamburger nav */
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      .site-header { display: none; }
+
+      body {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+      }
+
+      .article {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .article section { page-break-inside: avoid; }
+
+      .doc-entry a:hover { background: none; }
+
+      .site-footer {
+        border-top: 1pt solid #ccc;
+        background: #fff;
+        font-size: 9pt;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/" aria-current="page">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="article">
+  <div class="article-header">
+    <h1>Evidence Room</h1>
+    <p class="subtitle">Primary source documents from the documentary record, 1882–2026</p>
+  </div>
+
+  <section id="olmsted-plans">
+    <h2>Olmsted Plans (1913–1926)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Olmsted Brothers Master Plan, File No. 8023</div>
+          <div class="doc-meta">1923 &middot; National Park Service Archives</div>
+          <div class="doc-desc">Topographic survey and landscape architecture plans for the entire peninsula</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="founding-declarations">
+    <h2>Founding Declarations (1929–1952)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Declaration No. 100 — Basic Protective Restrictions</div>
+          <div class="doc-meta">Oct 1, 1929 &middot; Book 9436, Page 155</div>
+          <div class="doc-desc">Art Jury and architectural standards for Portuguese Bend area</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Declaration No. 101 — Local Protective Restrictions</div>
+          <div class="doc-meta">Oct 15, 1929 &middot; Book 9482, Page 37</div>
+          <div class="doc-desc">Applies Declaration 100 to seven specific parcels (~1,131 acres)</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">PV Corp &rarr; Filiorum Grant Deed</div>
+          <div class="doc-meta">Aug 15, 1930 &middot; Book 10226, Pages 170–174</div>
+          <div class="doc-desc">Conveys 3 coastal parcels to Filiorum Corporation</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Declaration No. One</div>
+          <div class="doc-meta">Apr 29, 1949 &middot; Book 29980, Page 159</div>
+          <div class="doc-desc">Creates WPBCA, single-family residential, Architectural Committee</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Declaration of Easements</div>
+          <div class="doc-meta">May 5, 1949 &middot; Book 30051, Pages 385–393</div>
+          <div class="doc-desc">Bridle trail (ocean access), drainage, utility easements</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Lot H Declaration</div>
+          <div class="doc-meta">Jan 25, 1950 &middot; Book 32160, Page 26</div>
+          <div class="doc-desc">Declaration on the negative space — all undeveloped PV Corp land except named tracts</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Declaration One-A</div>
+          <div class="doc-meta">Oct 30, 1950 &middot; Book 34817, Page 254</div>
+          <div class="doc-desc">Oceanfront protections: 40-ft bluff setback, 4-ft height limit</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Grant Deeds</div>
+          <div class="doc-meta">Nov 24, 1952 &middot; Book 40601, Page 303</div>
+          <div class="doc-desc">PV Corp distributes individual lots, incorporating all declarations by reference</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="shore-club-records">
+    <h2>Shore Club Records (1929–1974)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Abalone Shore Club Articles of Incorporation</div>
+          <div class="doc-meta">1929/1963 &middot; CA Secretary of State</div>
+          <div class="doc-desc">Shore Club corporate formation</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">1971 Lease Agreement</div>
+          <div class="doc-meta">1971 &middot; Community archive</div>
+          <div class="doc-desc">Lease terms for beach property</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">1972 Community Ballot</div>
+          <div class="doc-meta">1972 &middot; Community archive</div>
+          <div class="doc-desc">Vote: shoreline park over 138–170 condominiums</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="landslide-documentation">
+    <h2>Landslide Documentation (1956–present)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">LGC Valley Geotechnical Study</div>
+          <div class="doc-meta">2011 &middot; Environmental Impact Report</div>
+          <div class="doc-desc">900-acre Ancient Portuguese Bend Landslide complex analysis</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">City Moratorium Ordinances</div>
+          <div class="doc-meta">Various &middot; RPV Municipal Code Chapter 15.20</div>
+          <div class="doc-desc">Zone 2 Landslide Moratorium Area restrictions</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Governor's Emergency Declaration</div>
+          <div class="doc-meta">Sep 3, 2024 &middot; State of California</div>
+          <div class="doc-desc">Emergency declaration for Portuguese Bend area</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="coastal-regulation">
+    <h2>Coastal Regulation (1973–1978)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">RPV General Plan</div>
+          <div class="doc-meta">1975 &middot; City of Rancho Palos Verdes</div>
+          <div class="doc-desc">First general plan after incorporation</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">California Coastal Act</div>
+          <div class="doc-meta">1976 &middot; Public Resources Code &sect;30000 et seq.</div>
+          <div class="doc-desc">Creates permanent Coastal Commission</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Coastal Specific Plan</div>
+          <div class="doc-meta">Dec 19, 1978 &middot; Resolution No. 78-61</div>
+          <div class="doc-desc">Subregion 4 policies S4-1 through S4-14</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="clipper-road">
+    <h2>0 Clipper Road — APN 7573-006-024</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Tract 32977 Map</div>
+          <div class="doc-meta">1980 &middot; LA County Recorder</div>
+          <div class="doc-desc">Wong subdivision — proper density established</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Tract 43725 Map</div>
+          <div class="doc-meta">1986 &middot; M.B. 1063, Pages 91–92</div>
+          <div class="doc-desc">Reversion to acreage</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">CTC Title Report</div>
+          <div class="doc-meta">2022 &middot; Commonwealth Title</div>
+          <div class="doc-desc">Chain of title through Clipper Development LLC</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">1985 Assessor Parcel Map</div>
+          <div class="doc-meta">1985 &middot; LA County Assessor</div>
+          <div class="doc-desc">Handwritten notation: "250 ft no plumb add on other restriction a variance"</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="rezoning-record">
+    <h2>Rezoning Record (2024)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Community Opposition Letter</div>
+          <div class="doc-meta">Jun 4, 2024 &middot; Carney Mehr Law</div>
+          <div class="doc-desc">39 pages, 80 homeowners opposing rezoning</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Ordinance 678U</div>
+          <div class="doc-meta">Apr 16, 2024 &middot; City of RPV</div>
+          <div class="doc-desc">Urgency ordinance, RS-4 &rarr; RM-22</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Ordinance 680U</div>
+          <div class="doc-meta">Jun 4, 2024 &middot; City of RPV</div>
+          <div class="doc-desc">Second urgency ordinance</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Ordinance 681</div>
+          <div class="doc-meta">Jun 18, 2024 &middot; City of RPV</div>
+          <div class="doc-desc">Regular ordinance</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">HCD Correspondence</div>
+          <div class="doc-meta">Jan 2025 &middot; California HCD</div>
+          <div class="doc-desc">Confirms Site 16 can be removed, city remains RHNA-compliant</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="litigation">
+    <h2>Litigation (2024–present)</h2>
+    <ul class="doc-list">
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">FPPC Complaint</div>
+          <div class="doc-meta">Aug 7, 2024 &middot; Complaint No. COM-08062024-02501</div>
+          <div class="doc-desc">Against Mayor Cruikshank</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Verified Petition for Writ of Mandate</div>
+          <div class="doc-meta">Sep 11, 2024 &middot; Case No. 24TRCP00352</div>
+          <div class="doc-desc">Filed against City of RPV</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">City Demurrer</div>
+          <div class="doc-meta">Nov 27, 2024 &middot; Superior Court</div>
+          <div class="doc-desc">City's motion to dismiss</div>
+        </a>
+      </li>
+      <li class="doc-entry">
+        <a href="#">
+          <div class="doc-title">Opposition to Demurrer</div>
+          <div class="doc-meta">Dec 18, 2024 &middot; Superior Court</div>
+          <div class="doc-desc">Community's response</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents, photos, or stories about Abalone Cove, we'd love to hear from you.</p>
+  </div>
+</footer>
+
+</body>
+</html>

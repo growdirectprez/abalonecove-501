@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Map — Abalone Cove</title>
+  <meta name="description" content="Explore overlapping jurisdictions at Abalone Cove: tract boundaries, declaration coverage zones, geological hazard areas, and the contested parcel at 0 Clipper Road.">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    /* Desktop nav */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; color: var(--shell-teal); }
+
+    /* Hamburger (checkbox hack) */
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Page Content ── */
+    .page-content {
+      flex: 1;
+    }
+
+    /* ── Map Intro ── */
+    .map-intro {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 1.5rem;
+    }
+
+    .map-intro h1 {
+      font-size: 2rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+    }
+
+    .map-intro p {
+      font-size: 1rem;
+      color: var(--shell-dark);
+      opacity: 0.85;
+    }
+
+    /* ── Map Container ── */
+    .map-wrap {
+      width: 100%;
+      position: relative;
+    }
+
+    #map {
+      width: 100%;
+      height: 75vh;
+    }
+
+    /* ── Legend ── */
+    .map-legend {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.75rem 1.5rem 2.5rem;
+    }
+
+    .map-legend h2 {
+      font-size: 1rem;
+      font-weight: normal;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.4rem;
+    }
+
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 0.6rem 2rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+    }
+
+    .legend-swatch {
+      flex-shrink: 0;
+      width: 28px;
+      height: 14px;
+      border-radius: 2px;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Mobile (< 768px) ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+
+      .map-intro h1 { font-size: 1.6rem; }
+
+      #map { height: 65vh; }
+
+      /* Hamburger nav */
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+
+      .legend-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Print ── */
+    @media print {
+      .site-header { display: none; }
+      #map { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .site-footer { border-top: 1pt solid #ccc; background: #fff; font-size: 9pt; }
+    }
+
+    /* ── Leaflet layer control styling override ── */
+    .leaflet-control-layers {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.85rem;
+      background: var(--shell-cream);
+      border: 1px solid var(--shell-warm);
+      border-radius: 3px;
+    }
+
+    .leaflet-control-layers-toggle {
+      background-color: var(--shell-cream);
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/" class="active">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="page-content">
+
+  <div class="map-intro">
+    <h1>Interactive Map</h1>
+    <p>Explore the overlapping jurisdictions that govern this coastline. Toggle layers to see tract boundaries, declaration coverage zones, geological hazard areas, and the contested parcel at 0 Clipper Road.</p>
+  </div>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+  </div>
+
+  <div class="map-legend">
+    <h2>Layer Legend</h2>
+    <div class="legend-grid">
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: transparent; border: 2px solid #2a7a7a;"></div>
+        <span>Tract 14649 (WPBCA)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: rgba(42,122,122,0.1); border: 1.5px dashed #2a7a7a;"></div>
+        <span>Declaration No. One</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: transparent; border: 1.5px dashed #6b8f7a;"></div>
+        <span>Declaration One-A (Oceanfront)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: rgba(204,51,51,0.15); border: 2px solid #cc3333;"></div>
+        <span>Landslide Complex</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: transparent; border: 2px solid #e67e22;"></div>
+        <span>Landslide Moratorium Zone</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: transparent; border: 1px dashed #3366cc;"></div>
+        <span>Coastal Zone</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: rgba(196,168,122,0.25); border: 3px solid #c4a87a;"></div>
+        <span>0 Clipper Road (APN 7573-006-024)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-swatch" style="background: transparent; border: 1.5px dashed #c4a87a;"></div>
+        <span>Tract 32977 (Wong Subdivision)</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents or stories, get in touch.</p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // Initialize map
+  var map = L.map('map', {
+    center: [33.7395, -118.3765],
+    zoom: 15
+  });
+
+  // Tile layer
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Layer definitions
+  var layerDefs = [
+    {
+      file: 'data/tract-14649-boundary.geojson',
+      name: 'Tract 14649 (WPBCA)',
+      style: { color: '#2a7a7a', weight: 2, fillOpacity: 0, dashArray: null }
+    },
+    {
+      file: 'data/declaration-one.geojson',
+      name: 'Declaration No. One',
+      style: { color: '#2a7a7a', weight: 1.5, fillColor: '#2a7a7a', fillOpacity: 0.1, dashArray: '5, 5' }
+    },
+    {
+      file: 'data/declaration-one-a.geojson',
+      name: 'Declaration One-A (Oceanfront)',
+      style: { color: '#6b8f7a', weight: 1.5, fillOpacity: 0, dashArray: '5, 5' }
+    },
+    {
+      file: 'data/landslide-complex.geojson',
+      name: 'Landslide Complex',
+      style: { color: '#cc3333', weight: 2, fillColor: '#cc3333', fillOpacity: 0.15, dashArray: null }
+    },
+    {
+      file: 'data/landslide-moratorium.geojson',
+      name: 'Landslide Moratorium Zone',
+      style: { color: '#e67e22', weight: 2, fillOpacity: 0, dashArray: null }
+    },
+    {
+      file: 'data/coastal-zone.geojson',
+      name: 'Coastal Zone',
+      style: { color: '#3366cc', weight: 1, fillOpacity: 0, dashArray: '4, 4' }
+    },
+    {
+      file: 'data/clipper-0-contested.geojson',
+      name: '0 Clipper Road (APN 7573-006-024)',
+      style: { color: '#c4a87a', weight: 3, fillColor: '#c4a87a', fillOpacity: 0.25, dashArray: null }
+    },
+    {
+      file: 'data/lot106-tract-32977-wong.geojson',
+      name: 'Tract 32977 (Wong Subdivision)',
+      style: { color: '#c4a87a', weight: 1.5, fillOpacity: 0, dashArray: '5, 5' }
+    }
+  ];
+
+  // Build overlays object for layer control
+  var overlays = {};
+  var loadPromises = [];
+
+  layerDefs.forEach(function (def) {
+    var promise = fetch(def.file)
+      .then(function (resp) {
+        if (!resp.ok) {
+          throw new Error('Failed to load ' + def.file + ': ' + resp.status);
+        }
+        return resp.json();
+      })
+      .then(function (geojson) {
+        var layer = L.geoJSON(geojson, {
+          style: def.style,
+          onEachFeature: function (feature, layer) {
+            if (feature.properties) {
+              var props = feature.properties;
+              var label = props.name || props.label || props.Name || def.name;
+              if (label) {
+                layer.bindPopup('<strong>' + label + '</strong>');
+              }
+            }
+          }
+        });
+        layer.addTo(map);
+        overlays[def.name] = layer;
+      })
+      .catch(function (err) {
+        console.warn('Layer load error:', err.message);
+      });
+    loadPromises.push(promise);
+  });
+
+  // Add layer control once all layers are loaded
+  Promise.all(loadPromises).then(function () {
+    L.control.layers(null, overlays, { collapsed: false, position: 'topright' }).addTo(map);
+  });
+
+})();
+</script>
+
+</body>
+</html>
