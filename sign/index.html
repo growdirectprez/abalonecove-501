@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign — Abalone Cove</title>
+  <meta name="description" content="Add your name to the Abalone Cove petition and stay informed about coastal preservation efforts.">
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a[aria-current="page"] { opacity: 1; color: var(--shell-teal); }
+
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Page ── */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* Letterhead wordmark */
+    .page-letterhead {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 2px solid var(--shell-warm);
+    }
+
+    .page-letterhead .lettermark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      font-weight: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .page-letterhead .tagline {
+      font-size: 0.9rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      margin-bottom: 0.75rem;
+      color: var(--shell-dark);
+    }
+
+    .page-subtitle {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* Sections */
+    .page section {
+      margin-bottom: 3rem;
+    }
+
+    .page section h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.4rem;
+    }
+
+    .page p {
+      margin-bottom: 1.25rem;
+    }
+
+    .note {
+      font-size: 0.82rem;
+      color: var(--shell-dark);
+      opacity: 0.55;
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Petition placeholder ── */
+    .petition-placeholder {
+      border: 1px solid var(--shell-warm);
+      background: var(--shell-mist);
+      border-radius: 3px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      color: var(--shell-dark);
+      opacity: 0.75;
+      font-size: 0.95rem;
+    }
+
+    #petition-form {
+      display: block;
+      width: 100%;
+      min-height: 120px;
+      border: none;
+      background: transparent;
+    }
+
+    /* ── Newsletter form ── */
+    .newsletter-form {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input[type="email"] {
+      flex: 1 1 260px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      padding: 0.65rem 0.9rem;
+      border: 1px solid var(--shell-warm);
+      background: var(--shell-cream);
+      color: var(--shell-dark);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--shell-teal);
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+      color: var(--shell-dark);
+      opacity: 0.4;
+    }
+
+    .newsletter-form button {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.5rem;
+      background: var(--shell-teal);
+      color: var(--shell-cream);
+      border: none;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .newsletter-form button:hover {
+      background: #236868;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-visitor {
+      font-size: 0.8rem;
+      color: var(--shell-dark);
+      opacity: 0.45;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+      .page-header h1 { font-size: 1.75rem; }
+      .page section h2 { font-size: 1.3rem; }
+      .page-letterhead .lettermark { font-size: 1.6rem; }
+
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input[type="email"],
+      .newsletter-form button {
+        width: 100%;
+        flex: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/" aria-current="page">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="page">
+
+  <div class="page-letterhead">
+    <span class="lettermark">Abalone Cove</span>
+    <span class="tagline">Palos Verdes Peninsula &middot; California</span>
+  </div>
+
+  <div class="page-header">
+    <h1>Add Your Name</h1>
+    <p class="page-subtitle">If you care about this coastline, add your name.</p>
+  </div>
+
+  <section>
+    <h2>Sign the Petition</h2>
+    <p>We are asking the City of Rancho Palos Verdes to respect its own adopted policies and the documentary record presented on this site.</p>
+    <div class="petition-placeholder">
+      Petition form loading&hellip;
+      <iframe id="petition-form" title="Petition form" aria-label="Petition form placeholder"></iframe>
+    </div>
+    <p class="note">(Google Form embed &mdash; to be configured)</p>
+  </section>
+
+  <section>
+    <h2>Stay Informed</h2>
+    <p>Receive updates on new documents, city council actions, and Coastal Commission developments.</p>
+    <form class="newsletter-form" action="#" method="post">
+      <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p class="note">(Newsletter service &mdash; to be configured)</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents or stories, get in touch.</p>
+    <p class="footer-visitor">You are visitor #<span id="visitor-count">___</span></p>
+  </div>
+</footer>
+
+</body>
+</html>

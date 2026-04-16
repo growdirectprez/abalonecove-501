@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timeline — Abalone Cove</title>
+  <meta name="description" content="113 years of land use history at Abalone Cove and the Palos Verdes Peninsula, 1913–2026.">
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a[aria-current="page"] { opacity: 1; color: var(--shell-teal); }
+
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Page ── */
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      margin-bottom: 0.75rem;
+      color: var(--shell-dark);
+    }
+
+    .page-subtitle {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Timeline ── */
+    .timeline {
+      position: relative;
+      margin-top: 2.5rem;
+    }
+
+    /* Vertical line */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 5.5rem;
+      top: 0.5rem;
+      bottom: 0.5rem;
+      width: 2px;
+      background: var(--shell-warm);
+    }
+
+    .timeline-entry {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      position: relative;
+      align-items: flex-start;
+    }
+
+    .timeline-year {
+      flex: 0 0 5.5rem;
+      text-align: right;
+      padding-right: 1.25rem;
+      padding-top: 0.1rem;
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--shell-teal);
+      position: relative;
+      line-height: 1.4;
+    }
+
+    /* Dot on the line */
+    .timeline-year::after {
+      content: "";
+      position: absolute;
+      right: -0.35rem;
+      top: 0.35rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--shell-teal);
+    }
+
+    .timeline-body {
+      flex: 1;
+      padding-left: 1.25rem;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--shell-dark);
+      line-height: 1.4;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: var(--shell-dark);
+      opacity: 0.72;
+      margin-top: 0.1rem;
+      line-height: 1.5;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+      .page-header h1 { font-size: 1.75rem; }
+
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+
+      .timeline::before { left: 4.25rem; }
+
+      .timeline-year {
+        flex: 0 0 4.25rem;
+        font-size: 0.8rem;
+      }
+
+      .timeline-year::after {
+        right: -0.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/" aria-current="page">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="page">
+  <div class="page-header">
+    <h1>Timeline</h1>
+    <p class="page-subtitle">113 years of land use history, 1913&ndash;2026</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1882</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Bixby Partition</div>
+        <div class="timeline-desc">Superior Court awards Rancho de los Palos Verdes to Jotham Bixby</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1913</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Vanderlip Purchase</div>
+        <div class="timeline-desc">Frank Vanderlip Sr. acquires the entire peninsula from Bixby syndicate</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1923</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Olmsted Master Plan</div>
+        <div class="timeline-desc">Olmsted Brothers hired to plan the peninsula &mdash; the dream</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1925</div>
+      <div class="timeline-body">
+        <div class="timeline-title">PV Corporation</div>
+        <div class="timeline-desc">Vanderlip syndicate reorganizes as Palos Verdes Corporation (Delaware)</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1929</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Declaration 100</div>
+        <div class="timeline-desc">Art Jury and red tile district established for Portuguese Bend &mdash; same system as PVE</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1929</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Declaration 101</div>
+        <div class="timeline-desc">Seven parcels (~1,131 acres) placed under architectural controls</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1929</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Shore Club</div>
+        <div class="timeline-desc">Abalone Shore Club incorporated</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1930</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Filiorum Grant</div>
+        <div class="timeline-desc">PV Corp conveys coastal parcels to Filiorum Corporation</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1937</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Vanderlip Sr. Dies</div>
+        <div class="timeline-desc">Frank Vanderlip Sr. passes; sons not yet of age</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1949</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Declaration No. One</div>
+        <div class="timeline-desc">Tract 14649 established &mdash; WPBCA created, 81 lots, single-family only</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1949</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Ocean Access Easement</div>
+        <div class="timeline-desc">Bridle trail and walkway from Lot 1 to Pacific Ocean preserved</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1950</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Lot H Declaration</div>
+        <div class="timeline-desc">The negative space &mdash; all undeveloped PV Corp land except named tracts</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1952</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Grant Deeds</div>
+        <div class="timeline-desc">PV Corp sells individual lots, all declarations incorporated by reference</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1953</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Great Lakes Carbon</div>
+        <div class="timeline-desc">PV Corp stock sold for ~$9M; Vanderlip family retains 500 acres</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1954</div>
+      <div class="timeline-body">
+        <div class="timeline-title">PV Corp Dissolved</div>
+        <div class="timeline-desc">Delaware dissolution &mdash; permanent, cannot be revived</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1956</div>
+      <div class="timeline-body">
+        <div class="timeline-title">The Landslide</div>
+        <div class="timeline-desc">Ancient Portuguese Bend Landslide reactivates &mdash; 900 acres</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1972</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Condos vs. Park</div>
+        <div class="timeline-desc">Shore Club votes for shoreline park over 138&ndash;170 condominiums</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1973</div>
+      <div class="timeline-body">
+        <div class="timeline-title">RPV Incorporates</div>
+        <div class="timeline-desc">City of Rancho Palos Verdes forms &mdash; to stop condo developers</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1974</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Abalone Cove Slide</div>
+        <div class="timeline-desc">Second major landslide begins in Abalone Cove area</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1976</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Coastal Act</div>
+        <div class="timeline-desc">California Coastal Act creates permanent Coastal Commission</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1978</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Coastal Specific Plan</div>
+        <div class="timeline-desc">Resolution 78-61 adopted &mdash; Subregion 4 policies for Abalone Cove</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1980</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Wong Subdivision</div>
+        <div class="timeline-desc">Tract 32977 &mdash; proper density established for 0 Clipper parcel</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">1986</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Reversion</div>
+        <div class="timeline-desc">Tract 43725 &mdash; parcel reverts to acreage</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2009</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Restated Declaration</div>
+        <div class="timeline-desc">WPBCA consolidates founding documents, removes voided racial covenant</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2021</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Clipper Development</div>
+        <div class="timeline-desc">Ali Vahdani (Vernon, CA) acquires parcel for $2.2M</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Rezoning</div>
+        <div class="timeline-desc">City rezones RS-4 &rarr; RM-22 &mdash; three ordinances in 63 days</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body">
+        <div class="timeline-title">FPPC Complaint</div>
+        <div class="timeline-desc">Filed against Mayor Cruikshank</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Petition Filed</div>
+        <div class="timeline-desc">Writ of Mandate, Case No. 24TRCP00352</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Emergency Declaration</div>
+        <div class="timeline-desc">Governor declares emergency for Portuguese Bend area</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-body">
+        <div class="timeline-title">HCD Confirms</div>
+        <div class="timeline-desc">Site 16 can be removed &mdash; city remains RHNA-compliant</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-body">
+        <div class="timeline-title">City Keeps Site 16</div>
+        <div class="timeline-desc">City Council votes to retain the site anyway</div>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-body">
+        <div class="timeline-title">Ground Movement</div>
+        <div class="timeline-desc">2.14 inches per week &mdash; active landslide continues</div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents or stories, get in touch.</p>
+  </div>
+</footer>
+
+</body>
+</html>
