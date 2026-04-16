@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://abalonecove.org/sitemap.xml

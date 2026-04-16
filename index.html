@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abalone Cove — Here's Something You Didn't Know About LA</title>
+  <meta name="description" content="A long-form investigation into the history of the Palos Verdes Peninsula and a proposed development on an active landslide.">
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Progress Bar ── */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--shell-teal);
+      z-index: 1000;
+      transition: width 0.15s ease-out;
+    }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    /* Desktop nav */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* Hamburger (checkbox hack) */
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Article ── */
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .article-header h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+    }
+
+    .byline {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+
+    .dateline {
+      font-size: 0.85rem;
+      color: var(--shell-warm);
+      letter-spacing: 0.06em;
+    }
+
+    /* Sections */
+    .article section {
+      margin-bottom: 3rem;
+    }
+
+    .article section h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.4rem;
+    }
+
+    .article p {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Links */
+    .article a {
+      color: var(--shell-teal);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    .article a:hover {
+      color: var(--shell-sage);
+    }
+
+    /* Blockquotes */
+    .article blockquote {
+      border-left: 3px solid var(--shell-teal);
+      background: var(--shell-cream);
+      margin: 1.5rem 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--shell-dark);
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Mobile (< 768px) ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+
+      .article-header h1 { font-size: 1.75rem; }
+
+      .article section h2 { font-size: 1.3rem; }
+
+      /* Hamburger nav */
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      .site-header,
+      .progress-bar { display: none; }
+
+      body {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+      }
+
+      .article {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .article section { page-break-inside: avoid; }
+
+      .site-footer {
+        border-top: 1pt solid #ccc;
+        background: #fff;
+        font-size: 9pt;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<article class="article">
+  <div class="article-header">
+    <h1>Here's Something You Didn't Know About LA</h1>
+    <p class="byline">By an HOA Board Member on the Palos Verdes Peninsula</p>
+    <p class="dateline">2026 &middot; 25 min read</p>
+  </div>
+
+  <section id="section-1">
+    <h2>Here's Something You Didn't Know About LA</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-2">
+    <h2>The Olmsted Thread</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-3">
+    <h2>Vanderlip</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-4">
+    <h2>The Lawyer Brothers and the Depression</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-5">
+    <h2>The Parceling of the Hill</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-6">
+    <h2>The Slide</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-7">
+    <h2>Condos vs. the Beach</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-8">
+    <h2>The Coastal Wall</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-9">
+    <h2>The Wong Subdivision</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-10">
+    <h2>The Rezoning</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-11">
+    <h2>The Tools</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-12">
+    <h2>The Absurdity</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+
+  <section id="section-13">
+    <h2>Why?</h2>
+    <p>Content to be written in spine baseline session.</p>
+  </section>
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents or stories, get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  // Reading progress bar using IntersectionObserver
+  (function () {
+    var bar = document.getElementById('progress-bar');
+    var article = document.querySelector('.article');
+    if (!bar || !article) return;
+
+    function updateProgress() {
+      var rect = article.getBoundingClientRect();
+      var articleTop = rect.top + window.scrollY;
+      var articleHeight = rect.height;
+      var viewportHeight = window.innerHeight;
+      var scrollY = window.scrollY;
+
+      var start = articleTop;
+      var end = articleTop + articleHeight - viewportHeight;
+      var progress = 0;
+
+      if (scrollY >= end) {
+        progress = 100;
+      } else if (scrollY > start) {
+        progress = ((scrollY - start) / (end - start)) * 100;
+      }
+
+      bar.style.width = progress + '%';
+    }
+
+    // Use IntersectionObserver to activate scroll tracking only when article is visible
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', updateProgress, { passive: true });
+          updateProgress();
+        } else {
+          window.removeEventListener('scroll', updateProgress);
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(article);
+    updateProgress();
+  })();
+</script>
+
+</body>
+</html>
