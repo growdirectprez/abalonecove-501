@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Declaration No. 101 — Local Protective Restrictions — Abalone Cove</title>
+  <meta name="description" content="Verbatim transcription of Declaration No. 101 (Book 9482, Page 37), recorded October 15, 1929. Seven parcels restricted under PV Corp's protective scheme.">
+  <style>
+    /* ── Design Tokens (match site) ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+      --paper: #faf8f3;
+      --ink: #2c2c2c;
+      --margin-line: #d4a0a0;
+      --rule-line: #c8d8e4;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav (match evidence room) ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block; background: var(--shell-dark); height: 2px; width: 24px;
+      border-radius: 2px; position: relative; transition: transform 0.3s, opacity 0.2s;
+    }
+    .nav-toggle-label span::before, .nav-toggle-label span::after { content: ""; position: absolute; }
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      max-width: 740px;
+      margin: 1.5rem auto 0;
+      padding: 0 1.5rem;
+      font-size: 0.82rem;
+      color: var(--shell-warm);
+    }
+    .breadcrumb a { color: var(--shell-sage); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+
+    /* ── Document Header ── */
+    .doc-header {
+      max-width: 740px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+    .doc-header h1 {
+      font-size: 1.85rem;
+      line-height: 1.3;
+      font-weight: normal;
+      margin-bottom: 0.75rem;
+    }
+    .doc-header .recording {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .doc-header .source-note {
+      font-size: 0.82rem;
+      color: var(--shell-warm);
+      line-height: 1.5;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Metadata Table ── */
+    .meta-table {
+      max-width: 740px;
+      margin: 0 auto 2.5rem;
+      padding: 0 1.5rem;
+    }
+    .meta-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    .meta-table td {
+      padding: 0.4rem 0.6rem;
+      border-bottom: 1px solid rgba(196,168,122,0.25);
+      vertical-align: top;
+    }
+    .meta-table td:first-child {
+      font-weight: bold;
+      width: 140px;
+      color: var(--shell-sage);
+      white-space: nowrap;
+    }
+
+    /* ── Notebook Paper Container ── */
+    .notebook {
+      max-width: 740px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+
+    .page {
+      background: var(--paper);
+      border: 1px solid #d5c9b5;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      padding: 2rem 2.5rem 2rem 3.5rem;
+      position: relative;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+      /* Notebook lines */
+      background-image:
+        linear-gradient(var(--margin-line) 0, var(--margin-line) 1px, transparent 1px),
+        repeating-linear-gradient(transparent, transparent 27px, var(--rule-line) 27px, var(--rule-line) 28px);
+      background-size: 1px 100%, 100% 28px;
+      background-position: 3rem 0, 0 1.5rem;
+      background-repeat: repeat-y, repeat;
+    }
+
+    .page-number {
+      position: absolute;
+      top: 0.6rem;
+      right: 1rem;
+      font-size: 0.75rem;
+      color: var(--shell-warm);
+      font-style: italic;
+    }
+
+    .page-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--shell-warm);
+      margin-bottom: 1rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 1px dashed rgba(196,168,122,0.4);
+    }
+
+    /* ── Transcription text ── */
+    .page p {
+      margin-bottom: 1em;
+      text-indent: 0;
+      color: var(--ink);
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .page .section-head {
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      text-indent: 0;
+      color: var(--shell-dark);
+    }
+
+    .page .part-head {
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-align: center;
+      margin: 1.5em 0 1em;
+      color: var(--shell-dark);
+      letter-spacing: 0.06em;
+    }
+
+    .page .parcel-head {
+      font-weight: bold;
+      font-size: 0.95rem;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+      color: var(--shell-teal);
+    }
+
+    /* Illegible marks */
+    .gap { color: var(--margin-line); font-style: italic; }
+
+    /* YAML corrections */
+    .correction {
+      background: rgba(42,122,122,0.08);
+      border-radius: 2px;
+      padding: 0 0.2em;
+      font-size: 0.82em;
+      color: var(--shell-teal);
+      font-style: italic;
+    }
+
+    /* ── Summary Tables ── */
+    .summary {
+      max-width: 740px;
+      margin: 0 auto 3rem;
+      padding: 0 1.5rem;
+    }
+    .summary h2 {
+      font-size: 1.3rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.3rem;
+    }
+    .summary table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin-bottom: 2rem;
+    }
+    .summary th {
+      text-align: left;
+      padding: 0.5rem 0.6rem;
+      border-bottom: 2px solid var(--shell-warm);
+      color: var(--shell-sage);
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+    .summary td {
+      padding: 0.45rem 0.6rem;
+      border-bottom: 1px solid rgba(196,168,122,0.2);
+      vertical-align: top;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+    .footer-inner { max-width: 680px; margin: 0 auto; }
+    .footer-org { font-size: 0.9rem; color: var(--shell-dark); margin-bottom: 0.5rem; }
+    .footer-cta { font-size: 0.85rem; color: var(--shell-sage); font-style: italic; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      body { font-size: 15px; }
+      .doc-header h1 { font-size: 1.45rem; }
+      .page { padding: 1.5rem 1.25rem 1.5rem 2.5rem; background-position: 2rem 0, 0 1.5rem; }
+      .nav-toggle-label { display: flex; align-items: center; }
+      .nav-links {
+        display: none; position: absolute; top: 56px; left: 0; right: 0;
+        background: var(--shell-cream); border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column; padding: 1rem 1.5rem; gap: 0.75rem;
+      }
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      .site-header, .breadcrumb { display: none; }
+      body { font-size: 10pt; background: #fff; color: #000; }
+      .page { box-shadow: none; border: 1px solid #ccc; background-image: none; page-break-inside: avoid; }
+      .site-footer { background: #fff; border-top: 1pt solid #ccc; font-size: 8pt; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 0.4rem;">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<nav class="breadcrumb">
+  <a href="/evidence/">Evidence Room</a> &rsaquo; Founding Declarations &rsaquo; Declaration No. 101
+</nav>
+
+<div class="doc-header">
+  <h1>Declaration No. 101<br>Local Protective Restrictions</h1>
+  <p class="recording">Book 9482, Page 37 &middot; Official Records, Los Angeles County</p>
+  <p class="source-note">Verbatim transcription from microfilm reader photographs taken at the LA County Recorder, Norwalk, CA. Approximately 75% legible. Illegible portions marked <span class="gap">[?]</span>.</p>
+</div>
+
+<div class="meta-table">
+  <table>
+    <tr><td>Declarant</td><td>Palos Verdes Corporation (Delaware)</td></tr>
+    <tr><td>Executed</td><td>October 15, 1929</td></tr>
+    <tr><td>Companion</td><td>Declaration No. 100 (Book 9436, Page 155) &mdash; Basic Protective Restrictions</td></tr>
+    <tr><td>Parcels</td><td>7 parcels within Lot H of Rancho Los Palos Verdes</td></tr>
+    <tr><td>Governance</td><td>Community Association of Palos Verdes + Art Jury</td></tr>
+    <tr><td>Source</td><td>15 microfilm screen photographs (IMG_1302&ndash;IMG_1316)</td></tr>
+  </table>
+</div>
+
+<div class="notebook">
+
+  <!-- PAGE 37 -->
+  <div class="page">
+    <span class="page-number">Page 37</span>
+    <div class="page-label">IMG_1302 &middot; Recording stamp &amp; preamble</div>
+    <p><span class="gap">[Recording stamp &mdash; partially legible]</span></p>
+    <p>Local Protective Restrictions, Conditions, Covenants, Reservations, Liens and Charges Affecting Real Property Known as PALOS VERDES RANCHO &mdash; PORTUGUESE BEND DISTRICT as hereinafter described, which is situated in County of Los Angeles, the State of California, made and dated this 15th day of October, 1929 by PALOS VERDES Corporation, a corporation organized and existing under and by virtue of the laws of the State of Delaware.</p>
+    <p>That said Palos Verdes Corporation did on the 10th day of October, 1929, file in the office of the County Recorder of said Los Angeles County, California, in Book 9436, Page 155, of Official Records of said County, a certain Declaration No. 100 of Establishment of Basic Protective Restrictions, et cetera, which said Declaration No. 100 covering and applicable to certain portions of said property therein described&hellip;</p>
+  </div>
+
+  <!-- PAGE 38 -->
+  <div class="page">
+    <span class="page-number">Page 38</span>
+    <div class="page-label">IMG_1303 &middot; Recitals &amp; Parcel 1 begins</div>
+    <p>WHEREAS, the power to enforce certain of the conditions, restrictions and charges set forth in this Declaration is to reside in Community Association of Palos Verdes, a non-profit co-operative association, organized and existing under and by virtue of the laws of the State of California, (hereinafter referred to as the &ldquo;Association&rdquo;), and an Community Art Jury of Palos Verdes (hereinafter referred to as the &ldquo;Art Jury&rdquo;), established as provided in said Declaration No. 100; and</p>
+    <p>WHEREAS, for purposes of identification, certain portions of said property have been more particularly defined and described as follows:</p>
+    <p>Those certain portions of Lot H of the Rancho Los Palos Verdes, in the County of Los Angeles, State of California, allotted to Jotham Bixby by Decree of Partition in the action &ldquo;Bixby et al vs. Bent et al&rdquo;, Case No. 2373, in the District Court of the 17th Judicial District of said State of California, in and for said County of Los Angeles, and entered in Book 4, Page 57 of Judgments, in the Superior Court of said County, described as follows:</p>
+    <p class="parcel-head">&ldquo;PARCEL 1&rdquo;</p>
+    <p>Commencing at the Easterly extremity of a certain curve in the center line of the 50.00 foot right of way for Palos Verdes Coast Road, deeded to the County of Los Angeles, by Palos Verdes Corporation as per deed recorded in Book 6059, Page 178 of Official Records of said County, said curve being concave to the South, having a radius of 738.36 feet <span class="correction">[verified: 758.56]</span> and a length of 862.60 feet; thence South 24&deg; 06&prime; 30&Prime; <span class="correction">[verified: 24&deg;08&prime;30&Prime;]</span> West, along the radial line to said curve at said Easterly extremity, 758.36 <span class="correction">[verified: 758.56]</span> feet to the center thereof; thence North 18&deg; 11&prime; 06&Prime; <span class="correction">[verified: N 15&deg;11&prime;06&Prime; W]</span> East, 725.06 feet; thence South 4&deg; 49&prime; 30&Prime; East, 465.02 <span class="correction">[verified: 468.02]</span> feet to the true point of beginning&hellip;</p>
+  </div>
+
+  <!-- PAGE 39-40: Parcel 1 completion & Parcel 2 -->
+  <div class="page">
+    <span class="page-number">Pages 39&ndash;40</span>
+    <div class="page-label">IMG_1304&ndash;1305 &middot; Parcel 1 closes, Parcel 2 begins</div>
+    <p>&hellip;thence North 4&deg; 49&prime; 30&Prime; West, 462.02 <span class="correction">[verified: 468.02]</span> feet; thence Easterly along a curve concentric with said above mentioned curve and having a radius of 735.06 <span class="correction">[verified: 725.06]</span> feet, 491.67 <span class="correction">[verified: 497.67]</span> feet to the end thereof; thence South 65&deg; 51&prime; 30&Prime; East, 547.27 <span class="correction">[verified: 947.27 &mdash; leading digit error]</span> feet to the beginning of a curve concave to the Northeast and having a radius of 795.00 feet; thence Southeasterly along said last mentioned curve, 374.77 feet to the end thereof&hellip;</p>
+    <p>&hellip;thence South 46&deg; 37&prime; 00&Prime; West, 274.38 feet, more or less, to a point in the Mean High Tide Line of the Pacific Ocean; thence Northwesterly along said Mean High Tide Line&hellip; enclosing an area of <strong>36.50 acres</strong>, more or less.</p>
+    <p class="parcel-head">&ldquo;PARCEL 2&rdquo;</p>
+    <p>Commencing at the Westerly extremity of a curve in the center line of the 50.00 foot right of way&hellip; thence North 72&deg; 59&prime; 50&Prime; West, along said center line, 281.56 feet; thence North 17&deg; 00&prime; 10&Prime; East, 140.00 feet to the true point of beginning&hellip; enclosing an area of <strong>160.24 acres</strong>, more or less.</p>
+  </div>
+
+  <!-- PAGE 42: Parcel 3 -->
+  <div class="page">
+    <span class="page-number">Pages 42&ndash;43</span>
+    <div class="page-label">IMG_1307&ndash;1308 &middot; Parcels 3 &amp; 4</div>
+    <p class="parcel-head">&ldquo;PARCEL 3&rdquo;</p>
+    <p>Beginning at a point which bears North 13&deg; 20&prime; 06&Prime; East, a distance of 2060.00 feet from the center of &ldquo;Curve A&rdquo;&hellip; enclosing an area of <strong>16.25 acres</strong>, more or less.</p>
+    <p class="parcel-head">&ldquo;PARCEL 4&rdquo;</p>
+    <p>Beginning at the Southwesterly corner of &ldquo;Parcel 2&rdquo; hereinabove described&hellip; <em>[Dense bearing/distance calls referencing Triangulation Station &ldquo;Delaware&rdquo; as shown on County Surveyor&rsquo;s Map Number 5060]</em>&hellip; enclosing an area of <strong>335.50 acres</strong>, more or less.</p>
+  </div>
+
+  <!-- Parcel 5, 6, 7 -->
+  <div class="page">
+    <span class="page-number">Pages 45&ndash;47</span>
+    <div class="page-label">IMG_1310&ndash;1313 &middot; Parcels 5, 6, &amp; 7</div>
+    <p class="parcel-head">&ldquo;PARCEL 5&rdquo;</p>
+    <p>Beginning at the Southerly corner of &ldquo;Parcel 1&rdquo;, hereinabove described, said corner being a point in the Mean High Tide Line of the Pacific Ocean&hellip; enclosing an area of <strong>43.10 acres</strong>, more or less.</p>
+    <p class="parcel-head">&ldquo;PARCEL 6&rdquo;</p>
+    <p>Commencing at the Southeasterly extremity of that certain curve in the Southwesterly boundary of &ldquo;Parcel 4&rdquo;&hellip; enclosing an area of <strong>9.32 acres</strong>, more or less.</p>
+    <p class="parcel-head">&ldquo;PARCEL 7&rdquo;</p>
+    <p>Beginning at the Southeasterly extremity of that certain line in the Easterly boundary of &ldquo;Parcel 2&rdquo;&hellip; enclosing an area of <strong>33.05 acres</strong>, more or less.</p>
+  </div>
+
+  <!-- Declaration Clause -->
+  <div class="page">
+    <span class="page-number">Pages 48&ndash;49</span>
+    <div class="page-label">IMG_1314&ndash;1315 &middot; Declaration &amp; servitude language</div>
+    <p>All curves hereinabove described are tangent to the adjoining straight lines or curves except at those points where radial line bearings are given.</p>
+    <p>NOW THEREFORE, KNOW ALL MEN BY THESE PRESENTS: That Palos Verdes Corporation hereby certifies and declares that in addition and supplemental to the basic plan set forth in said Declaration No. 100, it has established and does hereby establish the local plan for the protection, maintenance, improvement and development of said above described parcels numbered 1 to 7, inclusive, and has fixed and does hereby fix the local protective restrictions, conditions, covenants, reservations, liens and charges upon and subject to which all of said parcels numbers 1 to 7, inclusive, shall be held, improved, used, sold and/or conveyed by it as such owner, each and all of which is and shall inure to the benefit of all of said property and of each owner of land therein and shall pass with said property and each and every parcel of land therein and shall constitute and bind and thus the respective successors in interest of the present owner thereof, and are and each thereof is imposed upon said realty as a <strong>servitude</strong> in favor of said property and each and every parcel of land therein as the <strong>dominant tenement or tenements</strong>, as follows, to-wit:</p>
+  </div>
+
+  <!-- PART I: Restrictions -->
+  <div class="page">
+    <span class="page-number">Pages 49&ndash;50</span>
+    <div class="page-label">IMG_1315&ndash;1316 &middot; Part I &mdash; Local Protective Restrictions</div>
+    <p class="part-head">PART I<br>Local Protective Restrictions</p>
+
+    <p class="section-head">Section 1. Uses of Property.</p>
+    <p>(a) Class &amp; Districts &mdash; The following portions of said property are hereby established as Residence Districts of Class A, as defined and limited in said Declaration No. 100.</p>
+    <p>All of said parcels 1 to 7 inclusive provided that each of said parcels may be subdivided into not to exceed the number of building sites set above it on the following list:</p>
+    <p><em>[Building sites table present in original but numbers illegible from microfilm. This table sets the maximum subdivision density for each parcel &mdash; the single most important unresolved data point.]</em></p>
+
+    <p class="section-head">Section 2. Building Height Limits.</p>
+    <p>(a) All of said Parcels 1 to 7 inclusive, of said property are hereby established as <strong>Two and One-Half Story Height Districts</strong>, as defined and limited in said Declaration No. 100.</p>
+
+    <p class="section-head">Section 3. Type of Architecture.</p>
+    <p>(a) Type I Architecture Districts &mdash; All of said Parcels 1 to 7, inclusive, are hereby established as Type I Architecture Districts, as defined and limited in said Declaration No. 100; only provided that <strong>the main roofs of all structures erected, constructed, altered or maintained in said Type I Architecture Districts shall be of burned clay tile, sample of which shall first be approved by the Art Jury.</strong></p>
+
+    <p class="section-head">Section 4. Minimum Cost of Building.</p>
+    <p>(a) No building or structure, exclusive of necessary outbuildings, shall be erected, placed or maintained upon any building site&hellip; which, including a reasonable fee of architect, and a reasonable profit of builder, shall cost or be of the value of less than the sum set opposite said parcel in the following list, to-wit:</p>
+    <p><strong>Parcels 1 to 7 inclusive &mdash; not less than Twenty Thousand Dollars ($20,000.00)</strong></p>
+
+    <p class="section-head">Section 5. Building Set-Back Lines.</p>
+    <p>(a) No building or part thereof, including porches, except steps, ledges and except steps, balconies or other architectural features approved by the Art Jury, shall be erected, placed, permitted or maintained nearer the street or lot line than the distance specified below:</p>
+    <p><strong>Parcels 1 to 7, inclusive, not less than twenty-five (25) feet</strong> from any exterior road, walk or property line of any building site, provided this setback shall not apply to outer ledges.</p>
+
+    <p class="section-head">Section 6. Set-Back Lines (Modification).</p>
+    <p>(a) Anything to the contrary herein notwithstanding, the right and power is expressly reserved to Palos Verdes Corporation and its successors in interest, on account of the irregular topography&hellip; to alter or modify the setback and building lines&hellip; to make by written agreement with the owner or owners of any lot or such other reasonable conditions&hellip; <span class="gap">[remainder cut off at bottom of frame]</span></p>
+  </div>
+
+</div><!-- end .notebook -->
+
+<div class="summary">
+  <h2>Parcel Summary</h2>
+  <table>
+    <thead>
+      <tr><th>Parcel</th><th>Acres</th><th>Character</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>36.50</td><td>Coastal strip &mdash; PV Coast Road to Pacific (Mean High Tide)</td></tr>
+      <tr><td>2</td><td>160.24</td><td>Large interior &mdash; above coast road, bounded by Curve A</td></tr>
+      <tr><td>3</td><td>16.25</td><td>Interior &mdash; north of Parcel 2</td></tr>
+      <tr><td>4</td><td>335.50</td><td>Massive interior &mdash; references Tri Station &ldquo;Delaware&rdquo;</td></tr>
+      <tr><td>5</td><td>43.10</td><td>Coastal &mdash; south of Parcel 1, ocean frontage</td></tr>
+      <tr><td>6</td><td>9.32</td><td>Interior link &mdash; between Parcels 3 and 4</td></tr>
+      <tr><td>7</td><td>33.05</td><td>East of Parcel 2</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Restrictions (Part I)</h2>
+  <table>
+    <thead>
+      <tr><th>Restriction</th><th>Requirement</th><th>Section</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Use</td><td>Class A Residence Districts</td><td>1(a)</td></tr>
+      <tr><td>Height</td><td>Two and One-Half Story</td><td>2(a)</td></tr>
+      <tr><td>Architecture</td><td>Type I &mdash; burned clay tile roofs, Art Jury approval</td><td>3(a)</td></tr>
+      <tr><td>Minimum cost</td><td>$20,000 (1929 dollars)</td><td>4(a)</td></tr>
+      <tr><td>Setback</td><td>25 feet from any exterior road/property line</td><td>5(a)</td></tr>
+      <tr><td>Modification</td><td>PV Corp reserves right for irregular topography</td><td>6(a)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">Transcribed from LA County Recorder microfilm, Norwalk, CA &middot; April 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
