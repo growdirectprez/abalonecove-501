@@ -454,6 +454,17 @@
   // Add layer control once all layers are loaded
   Promise.all(loadPromises).then(function () {
     L.control.layers(null, overlays, { collapsed: false, position: 'topright' }).addTo(map);
+
+    // URL parameter: ?layer=indigenous shows only Indigenous Habitation Sites
+    var params = new URLSearchParams(window.location.search);
+    var soloLayer = params.get('layer');
+    if (soloLayer === 'indigenous') {
+      Object.keys(overlays).forEach(function (name) {
+        if (name !== 'Indigenous Habitation Sites') {
+          map.removeLayer(overlays[name]);
+        }
+      });
+    }
   });
 
 })();

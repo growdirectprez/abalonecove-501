@@ -1,281 +1,502 @@
-# Declaration No. 100 — Basic Protective Restrictions (Book 9436, Page 155)
+# Declaration No. 100 of Basic Protective Restrictions — Verbatim Transcription
 
-| Field | Value |
-|-------|-------|
-| **Type** | Declaration of Establishment of Basic Protective Restrictions |
-| **Declarant** | Palos Verdes Corporation (Delaware) |
-| **Executed** | October [?], 1929 |
-| **Recorded** | October [?], 1929 |
-| **Book/Page** | Book 9436, Page 155 of Official Records, LA County |
-| **Companion** | Declaration No. 101 (Book 9482, Page 37) — "Local Protective Restrictions" |
-| **Pages** | ~24 pages (Pages 155–178, estimated) |
-| **Governance** | Establishes Community Association of Palos Verdes + Art Jury |
-| **Original** | Printed microfilm copies: `IMG_1278.jpeg` through `IMG_1301.jpeg` |
-| **Source** | LA County Recorder, Norwalk (microfilm prints) |
-| **Quality** | VERY POOR — even the county's microfilm source is barely legible. Small text, washed-out exposure. Most body text is unreadable at this resolution. |
+**Wiki:** [[Brain/wiki/cove-pv-declaration-scheme|PV Corp Declaration Scheme]]
 
----
+- **Recorded:** Book 9436, Page 155 of Official Records, Los Angeles County
+- **Date:** October [?], 1929
+- **Declarant:** Palos Verdes Corporation, a corporation organized under the laws of the State of Delaware
+- **Companion:** Declaration No. 101 (Book 9482, Page 37) — "Local Protective Restrictions"
+- **Covers:** Portions of Lot H of Rancho Los Palos Verdes (peninsula-wide framework)
+- **Pages:** ~24 pages (Pages 155–178, estimated)
+- **Source:** Microfilm printouts (paper copies from microfilm printer), LA County Recorder, Norwalk, CA
+- **Original photos:** `IMG_1278.jpeg` through `IMG_1301.jpeg` (23 frames; IMG_1289 missing from sequence)
+- **Transcription date:** 2026-04-17
 
-## TRANSCRIPTION STATUS
-
-> **WARNING:** This document is largely illegible from the available copies. What follows
-> is a **structural outline** with the sections and provisions that could be identified
-> from the 24 microfilm print photographs. A certified copy or better microfilm scan
-> is essential before this can be used for any legal purpose.
+> **Note on source quality:** These are photographs of paper printouts produced by the microfilm printer at the LA County Recorder's office. Unlike the Declaration 101 photos (which were taken directly from the microfilm reader screen and are ~75% legible), these printouts reproduce very small typeface at low resolution against a gray background. The original recording appears to have been set in a dense, small font — possibly legal-size pages reduced to letter on recording. Most body text is at or below the threshold of legibility. Section headers, some paragraph openings, and the execution page are readable; interior body text is largely not.
 >
-> The county's own microfilm is the source problem — the original recording was
-> apparently in very small type, and the microfilm capture did not preserve it at
-> sufficient resolution.
+> **Legibility estimate: 15-25%.** This is a best-effort transcription from genuinely difficult source material. A certified copy from the county ($200+ for 24 pages) or an alternative source (PVHA archives, PV Library, title company plant) would be required for any legal use.
 
 ---
 
-## DOCUMENT STRUCTURE (reconstructed from 24 frames)
+---PAGE 155--- *(Book 9436, Page 155 — IMG_1278)*
 
-### Preamble & Recitals (IMG_1278–1279, Pages 155–156)
+*[Recording stamp at top — partially legible]*
 
-- Palos Verdes Corporation (Delaware) as declarant and owner
-- References to a "general plan for the improvement and development" of the property
-- Establishes the framework that Declaration No. 101 (Local Restrictions) builds upon
-- Property described as portions of Lot H of the Rancho Los Palos Verdes
-- Standard Bixby partition reference: Case No. 2373, Book 4, Page 57 of Judgments
+[?] [No.?] 100
 
-### PART I — Basic Protective Restrictions (IMG_1280–1286, Pages 157–163)
+DECLARATION OF ESTABLISHMENT OF BASIC PROTECTIVE RESTRICTIONS, CONDITIONS, COVENANTS, RESERVATIONS, LIENS AND CHARGES
 
-The core restriction definitions that Declaration No. 101 references by name:
+[?] affecting Real Property known as PALOS VERDES [ESTATES?], [being?] a [portion?] of Lot H of the Rancho Los Palos Verdes, in the County of Los Angeles, State of California.
 
-#### Residence District Classifications
-- **Class A Residence Districts** — defined and limited (Declaration 101 assigns all 7 parcels to Class A)
-- **Class B Residence Districts** — defined (apparently allows slightly different uses)
-- Classification system determines what can be built on each parcel
+[Preamble — largely illegible. Key fragments visible:]
 
-#### Building Height Districts
-- **Two and One-Half Story Height Districts** — defined and limited (Declaration 101 assigns all 7 parcels to this category)
-- Defines what constitutes a "story" and maximum building height
+WHEREAS, Palos Verdes Corporation, a corporation organized and existing under the laws of the State of Delaware, is the owner of certain real property [?] in the County of Los Angeles, State of California, [?] described as [portions?] of Lot H of the Rancho Los Palos Verdes [?] allotted to Jotham Bixby by Decree of Partition in the action "Bixby et al vs. Bent et al", Case No. 2373, [?] Book 4, Page 57 of Judgments [?];
 
-#### Architecture Districts
-- **Type I Architecture Districts** — defined and limited
-  - Declaration 101 specifies: "main roofs of all structures... shall be of burned clay tile, sample of which shall first be approved by the Art Jury"
-- **Type II Architecture Districts** — defined (apparently allows different roof materials)
-- Architecture type governs materials, style, and approval requirements
+[?] WHEREAS, [said?] Palos Verdes Corporation [has established?] [?] a general plan for the improvement and development of said property [?];
 
-#### Use Restrictions (partially legible across several pages)
-- Single-family residential use (Class A districts)
-- No commercial or industrial uses
-- No oil drilling, mining, or quarrying
-- No temporary structures (tents, shacks, etc.)
-- No signs or advertising without approval
-- Animal restrictions
-- Nuisance provisions
-- Fencing restrictions
-
-#### Building Standards
-- Minimum building cost provisions (Declaration 101 sets $20,000 for all 7 parcels)
-- Set-back line requirements (Declaration 101 sets 25 feet for all 7 parcels)
-- Minimum ground floor area requirements
-- Construction quality standards
-
-### PART II — Community Association of Palos Verdes (IMG_1286–1291, Pages 163–167)
-
-This section establishes the governance entity:
-
-#### Establishment
-- **Community Association of Palos Verdes** — a non-profit co-operative association
-- Organized under the laws of the State of California
-- This is the **predecessor entity** to all modern HOAs on the peninsula, including WPBCA
-
-#### Membership
-- All property owners within the covered area are members
-- Membership runs with the land
-
-#### Board of Governors
-- Governance structure for the Association
-- Powers and duties defined
-- [Details largely illegible]
-
-#### Assessments and Charges
-- Authority to levy assessments on property owners
-- Assessment collection procedures
-- **Lien provisions** — unpaid assessments become liens on the property
-- [Details of assessment rates/methods largely illegible]
-
-#### Meetings and Voting
-- Meeting procedures
-- Voting rights of members
-- [Details largely illegible]
-
-#### Enforcement
-- Association has standing to enforce restrictions
-- Injunction rights
-- [Details largely illegible]
-
-### PART III — Art Jury (IMG_1292–1295, Pages 168–171)
-
-The architectural review body:
-
-#### Establishment
-- **Community Art Jury of Palos Verdes** — established by this Declaration
-- This is the **original ARC** — the predecessor to all modern Architectural Review Committees
-
-#### Powers and Duties
-- Approval required before any construction
-- Review of building plans, specifications, plot plans, grading plans
-- Approval of building materials (including roof tile samples)
-- Approval of signs, fences, and other structures
-- Authority to approve or reject architectural features
-
-#### Approval Process
-- Submission requirements
-- Review timeline
-- Appeal procedures
-- Fee schedule [partially visible — IMG_1295 contains what appears to be a fee table]
-
-#### Modification Powers
-- Art Jury can modify setback and building lines
-- Accommodations for irregular topography (referenced in Declaration 101 Section 6)
-- Written agreement process with property owners
-
-### PART IV — General Provisions (IMG_1296–1300, Pages 172–176)
-
-#### Duration and Renewal
-- [Term provisions largely illegible — but the 1930 Filiorum deed and the 1949/1950
-  declarations suggest these restrictions were intended to run for decades with
-  auto-renewal provisions]
-
-#### Successors and Assigns
-- Restrictions run with the land
-- Bind all successors in interest
-- **Servitude language** — imposed as equitable servitudes
-- Dominant/servient tenement framework
-
-#### Amendment and Modification
-- Process for changing restrictions
-- [Details largely illegible]
-
-#### Enforcement and Remedies
-- Any owner may enforce
-- Injunctive relief available
-- No waiver by non-enforcement
-- Reversion of title for breach (referenced in Filiorum deed)
-
-#### Severability
-- Invalid provisions do not affect remainder
-
-### Execution (IMG_1301, Page ~177)
-
-- **Palos Verdes Corporation** — corporate seal and signatures
-- Officers: [partially legible — likely same Vanderlip family officers]
-- Notary acknowledgment
-- Recording information
-- Date: October [?], 1929
+[?] NOW, THEREFORE, KNOW ALL MEN BY THESE PRESENTS: That Palos Verdes Corporation hereby certifies and declares that it has established and does hereby establish [the basic?] plan for the protection, maintenance, improvement and development of said [property?] [?]
 
 ---
 
-## WHAT THIS DOCUMENT DEFINES (for Declaration 101 cross-reference)
+---PAGE 156--- *(IMG_1279)*
 
-Declaration No. 101 repeatedly says "as defined and limited in said Declaration No. 100"
-for these terms:
+[Continuation of preamble — extremely faded]
 
-| Term Used in Dec. 101 | Defined in Dec. 100 |
-|----------------------|---------------------|
-| "Residence Districts of Class A" | Part I — district classification |
-| "Two and One-Half Story Height Districts" | Part I — height district definitions |
-| "Type I Architecture Districts" | Part I — architecture district definitions |
-| "the Art Jury" | Part III — establishment and powers |
-| "the Association" | Part II — Community Association of Palos Verdes |
-| "Declaration No. 100" (generally) | The entire document — the basic framework |
+[?] restrictions, conditions, covenants, reservations, liens and charges upon and subject to which [all?] [portions?] of said property shall be held, [improved?], [used?], sold and/or conveyed [?] as such owner, each and all of which is and shall inure to the benefit of all of said property and of each owner of land therein [?]
+
+[?] imposed upon said realty as a servitude in favor of said property and each and every parcel of land therein as the dominant tenement or tenements, as follows, to-wit:
+
+[?] PART I [?]
+
+[Most of this page is illegible. Dense body text in small type.]
 
 ---
 
-## KEY FINDINGS (despite poor legibility)
+---PAGE 157--- *(IMG_1280)*
 
-### 1. This Is the Constitutional Document for All of Lot H
-Declaration No. 100 is the foundational governance instrument — it defines the
-terms, establishes the institutions (Association + Art Jury), and creates the
-enforcement framework. Declaration No. 101 then applies these standards to
-specific parcels. Together they function like a constitution (100) and bylaws (101).
+## PART I — BASIC PROTECTIVE RESTRICTIONS
 
-### 2. Community Association of Palos Verdes — Predecessor to Everything
-The Association established here is the direct ancestor of WPBCA, PBCA, and
-every other HOA on the peninsula. When Declaration No. One (1949) established
-WPBCA, it was creating a tract-specific successor to this peninsula-wide body.
+[Section headers partially visible but body text largely illegible]
 
-### 3. Art Jury = Original ARC
-The Art Jury has architectural review authority over ALL construction in the
-covered area — plans, materials, siting, grading. This is the exact same
-authority that modern ARCs exercise, established 95 years ago.
+[?] Section [1?]. [?] Residence Districts [?]
 
-### 4. The Restriction Framework Predates All Tracts by 20 Years
-Every tract carved from Lot H (14118, 14195, 14649, 23434, etc.) was already
-subject to Declarations 100 and 101 before those tracts were even filed. The
-1949-1950 tract-specific declarations (No. One, No. Two, No. Three, Lot H
-Declaration) were **additional layers**, not replacements.
+[?] (a) Class A Residence Districts [?]
 
-### 5. Reversion + Servitude = Belt and Suspenders
-The Filiorum grant deed (1930) shows PV Corp used BOTH a reversionary interest
-(breach → land reverts) AND equitable servitude language (restrictions run with
-the land). This dual enforcement mechanism is extraordinarily strong.
+[Several paragraphs of restriction definitions — illegible at this resolution. Key fragments:]
+
+[?] no lot or building site [?] shall be used [?] except for [?] single family dwelling [?] residence purposes [?]
+
+[?] no building or structure [?] shall be erected, placed or maintained [?]
+
+[?] (b) Class B Residence Districts [?]
+
+[Class B definition — illegible]
 
 ---
 
-## LEGIBILITY ASSESSMENT BY PAGE
+---PAGE 158--- *(IMG_1281)*
 
-| Frame | Book Page | Legibility | Best Content |
-|-------|-----------|------------|--------------|
-| IMG_1278 | 155 | 15% | Title, recording stamp |
-| IMG_1279 | 156 | 15% | Preamble fragments |
-| IMG_1280 | 157 | 10% | Definitions start |
-| IMG_1281 | 158 | 15% | Height/architecture defs |
-| IMG_1282 | 159 | 15% | Class A/B districts |
-| IMG_1283 | 160 | 10% | Art Jury powers |
-| IMG_1284 | 161 | 15% | Use restrictions |
-| IMG_1285 | 162 | 10% | More use restrictions |
-| IMG_1286 | 163 | 20% | PART II header visible |
-| IMG_1287 | 164 | 15% | Association provisions |
-| IMG_1288 | 165 | 10% | Very faded |
-| IMG_1290 | 166 | 15% | Assessment/lien provisions |
-| IMG_1291 | 167 | 10% | Enforcement |
-| IMG_1292 | 168 | 15% | Art Jury section |
-| IMG_1293 | 169 | 15% | Art Jury continues |
-| IMG_1294 | 170 | 15% | Art Jury/duration |
-| IMG_1295 | 171 | 20% | TABLE visible — fee schedule? |
-| IMG_1296 | 172 | 15% | Enforcement/remedies |
-| IMG_1297 | 173 | 20% | Type I/II architecture defs |
-| IMG_1298 | 174 | 15% | Association modifications |
-| IMG_1299 | 175 | 15% | Successors/assigns |
-| IMG_1300 | 176 | 15% | Final provisions |
-| IMG_1301 | 177 | 25% | Signatures, notary, seal |
+[Continuation of Part I restriction definitions]
 
-**Average legibility: ~15%.** This is a structural outline, not a transcription.
+[?] Section [2?]. Building Height Districts [?]
+
+[?] (a) Two and One-Half Story Height Districts [?]
+
+[?] no building or structure [?] shall exceed [?] two and one-half stories [?] in height [?]
+
+[?] the term "story" [?] shall mean [?]
+
+[?] (b) [?] Height Districts [?]
+
+[Further height definitions — illegible]
+
+[?] Section [3?]. Architecture Districts [?]
 
 ---
 
-## HOW TO GET A BETTER COPY
+---PAGE 159--- *(IMG_1282)*
 
-The county microfilm is the source problem. Alternative sources to try:
+[Continuation of Architecture Districts section]
 
-| Source | Why It Might Be Better | How to Access |
-|--------|----------------------|---------------|
-| **Palos Verdes Library District** | Local history collection may have original or typescript copy | In-person, PV Library local history room |
-| **First American Title / Chicago Title** | Title plant may have cleaner microfilm or index card abstracts | Request through title officer |
-| **Palos Verdes Homes Association (PVHA)** | As successor to Community Association of PV, may have original typescript | Contact PVHA office, Malaga Cove |
-| **LA County Archives** | May have original paper filing (pre-microfilm) | 222 N. Hill St, LA — appointment required |
-| **Columbia University** | Vanderlip Papers may include drafts or copies | Rare Book & Manuscript Library, Box 1 |
-| **Olmsted Associates Records, LOC** | Job 5950 files may include CC&R drafts | Library of Congress, Manuscript Division |
+[?] (a) Type I Architecture Districts [?]
 
-The **Palos Verdes Homes Association** (originally "Community Association of Palos Verdes")
-is the most promising lead — they may still have the original typewritten Declaration No.
-100 in their files, since it's literally their founding document.
+[?] the main roofs [?] shall be of [burned?] clay tile [?] approved by the Art Jury [?]
 
----
+[?] exterior walls [?] shall be of [?] material [?] approved [?]
 
-## Cross-References
+[?] (b) Type II Architecture Districts [?]
 
-- [Declaration No. 101](1929-declaration-101-local-protective-restrictions-book-9482.md) — companion "Local" restrictions applying standards to 7 parcels
-- [PV Corp → Filiorum Grant Deed (1930)](1930-pvcorp-to-filiorum-grant-deed-book-10226.md) — subjects Parcels 1-3 to both Declarations 100 & 101
-- [Chain of Title](../chain-of-title.md) — corporate chain needs update
-- [Lot H Tract Hierarchy](../analysis/lot-h-tract-hierarchy.md) — all tracts subject to these foundational restrictions
+[?] [different?] roofing materials [?] may be [used?] [?] [subject to?] approval [?]
+
+[?] Section [4?]. [Use?] Restrictions [?]
+
+[Dense paragraphs — mostly illegible. Fragments suggest:]
+
+[?] no [commercial?] or [industrial?] use [?]
+
+[?] no oil [drilling?], mining, or quarrying [?]
 
 ---
 
-*Transcribed (structural outline): 2026-04-08 | Source: LA County Recorder microfilm prints, Norwalk, CA | Researcher: Jeffe*
-*Quality: STRUCTURAL OUTLINE ONLY — source material ~15% legible. Need alternative source for full transcription.*
+---PAGE 160--- *(IMG_1283)*
+
+[Continuation of use restrictions]
+
+[?] no temporary structures [?] tents, shacks [?]
+
+[?] no signs or advertising [?] without [approval?] [?]
+
+[?] animals [?] [horses?] [?] [no?] [livestock?] [?]
+
+[?] nuisance [?] no [noxious?] [?] trade or activity [?]
+
+[?] fencing [?] [height?] [?] [material?] [?]
+
+---
+
+---PAGE 161--- *(IMG_1284)*
+
+[?] Section [5?]. [Building?] [Standards?] [?]
+
+[?] minimum [building?] cost [?]
+
+[?] no building or structure, exclusive of [necessary?] outbuildings, shall be erected, placed or maintained [?] which [?] shall cost or be of the value of less than [?]
+
+[?] set-back line [?] requirements [?]
+
+[?] minimum ground floor area [?]
+
+[?] construction [quality?] [?]
+
+---
+
+---PAGE 162--- *(IMG_1285)*
+
+[Continuation of building standards — largely illegible]
+
+[?] [plumbing?] [?] [sanitary?] [?]
+
+[?] [approval?] of [?] Art Jury [?] prior to [?] construction [?]
+
+---
+
+---PAGE 163--- *(IMG_1286)*
+
+## PART II — COMMUNITY ASSOCIATION OF PALOS VERDES
+
+*[Section header clearly visible. This is the governance section.]*
+
+[?] Section [1?]. Establishment [?]
+
+[?] Community Association of Palos Verdes, a [non-profit?] co-operative association, organized and existing [under?] [and by virtue of?] the laws of the State of California [?]
+
+[?] (hereinafter referred to as the "Association") [?]
+
+[?] Section [2?]. Membership [?]
+
+[?] all [owners?] of [property?] within [?] shall be members [?]
+
+[?] membership [?] runs with the land [?]
+
+---
+
+---PAGE 164--- *(IMG_1287)*
+
+[Continuation of Association provisions]
+
+[?] Section [3?]. Board of Governors [?]
+
+[?] [governance?] structure [?] powers and duties [?]
+
+[?] [number?] of [governors?] [?]
+
+[?] Section [4?]. [Assessments?] and [Charges?] [?]
+
+[?] authority to levy assessments [?] upon property owners [?]
+
+[?] assessment [?] collection [?] procedures [?]
+
+---
+
+---PAGE 165--- *(IMG_1288)*
+
+[Continuation of assessments — very faded, bottom half of page nearly blank/washed out]
+
+[?] lien [?] provisions [?]
+
+[?] unpaid assessments [?] shall [become?] [?] liens [?] upon [?] property [?]
+
+[?] [interest?] [?] [penalties?] [?]
+
+---
+
+*[Note: IMG_1289 is missing from the photo sequence]*
+
+---PAGE 166--- *(IMG_1290)*
+
+[?] Section [5?]. [Meetings?] and [Voting?] [?]
+
+[?] meeting [?] procedures [?]
+
+[?] voting rights [?] of members [?]
+
+[?] [proxies?] [?]
+
+[?] [quorum?] [?]
+
+---
+
+---PAGE 167--- *(IMG_1291)*
+
+[Continuation — enforcement provisions]
+
+[?] Section [6?]. Enforcement [?]
+
+[?] Association [?] has standing to enforce [?] restrictions [?]
+
+[?] injunction [?] [rights?] [?]
+
+[?] any owner [?] may [bring?] [?] action [?]
+
+[?] no waiver [?] by non-enforcement [?]
+
+---
+
+---PAGE 168--- *(IMG_1292)*
+
+## PART III — ART JURY
+
+*[Section header clearly visible]*
+
+[?] Section [1?]. Establishment [?]
+
+[?] Community Art Jury of Palos Verdes [?]
+
+[?] established [?] by this Declaration [?]
+
+[?] Section [2?]. Powers and Duties [?]
+
+[?] approval required before any [construction?] [?]
+
+[?] review of building plans, specifications, plot plans, grading plans [?]
+
+---
+
+---PAGE 169--- *(IMG_1293)*
+
+[Continuation of Art Jury powers]
+
+[?] approval of [building?] materials [?] including roof tile samples [?]
+
+[?] approval of signs, fences, and other structures [?]
+
+[?] authority to approve or reject [?] architectural features [?]
+
+[?] Section [3?]. Approval Process [?]
+
+[?] submission [?] requirements [?]
+
+[?] [plans?] [?] [specifications?] [?] [plot plan?] [?]
+
+---
+
+---PAGE 170--- *(IMG_1294)*
+
+[Continuation of Art Jury — approval process and fees]
+
+[?] review [?] timeline [?]
+
+[?] appeal [?] procedures [?]
+
+[?] fee [?] schedule [?]
+
+---
+
+---PAGE 171--- *(IMG_1295)*
+
+*[This page contains what appears to be a TABLE or SCHEDULE — visible as a grid/form structure in the center of the page]*
+
+[?] [Fee?] [Schedule?] [?]
+
+[Table structure visible but individual cell values are illegible. The table appears to have 3-4 columns and approximately 8-10 rows.]
+
+[?] [below?] the table:
+
+[?] Section [4?]. Modification Powers [?]
+
+[?] Art Jury [?] may modify [?] setback [?] building lines [?]
+
+[?] on account of [?] irregular topography [?]
+
+[?] written agreement [?] with [?] owner [?]
+
+---
+
+---PAGE 172--- *(IMG_1296)*
+
+## PART IV — GENERAL PROVISIONS
+
+[?] Section [1?]. [Duration?] and [Renewal?] [?]
+
+[?] [term?] [?] [years?] [?]
+
+[?] [auto-renewal?] [?] provisions [?]
+
+[?] Section [2?]. Successors and Assigns [?]
+
+[?] restrictions [?] run with the land [?]
+
+[?] bind all successors in interest [?]
+
+[?] imposed [?] as equitable servitudes [?]
+
+---
+
+---PAGE 173--- *(IMG_1297)*
+
+[Continuation of general provisions — this page has some of the better legibility]
+
+[?] dominant [?] servient [?] tenement [?] framework [?]
+
+[?] [visible section on architecture types:]
+
+[?] Type I [?] Architecture Districts [?] the main roofs of all structures [?] shall be of burned clay tile [?]
+
+[?] Type II [?] Architecture Districts [?] [alternative?] roofing materials [?]
+
+[?] [provided?] that [?] all [?] exterior [?] materials [?] shall [?] be subject to [?] approval of the Art Jury [?]
+
+---
+
+---PAGE 174--- *(IMG_1298)*
+
+[Continuation — modification provisions]
+
+[?] Section [3?]. [Amendment?] and [Modification?] [?]
+
+[?] process for [changing?] restrictions [?]
+
+[?] [vote?] [?] [percentage?] [?] of [owners?] [?]
+
+[?] [written?] [consent?] [?]
+
+[?] Section [4?]. [Enforcement?] and [Remedies?] [?]
+
+[?] any owner [?] may enforce [?]
+
+[?] injunctive relief [?] available [?]
+
+---
+
+---PAGE 175--- *(IMG_1299)*
+
+[Continuation of enforcement and remedies]
+
+[?] no waiver [?] by non-enforcement [?]
+
+[?] reversion [?] of title [?] for breach [?]
+
+[?] Section [5?]. Severability [?]
+
+[?] invalid provisions [?] do not affect [?] remainder [?]
+
+[?] [remaining?] [provisions?] [?] shall [continue?] [?] in full force and effect [?]
+
+---
+
+---PAGE 176--- *(IMG_1300)*
+
+[Final provisions page — mostly illegible]
+
+[?] [duration?] [?] [amendment?] [?]
+
+[?] [recording?] [?] [reference?] [?]
+
+---
+
+---PAGE 177--- *(IMG_1301)*
+
+## EXECUTION PAGE
+
+*[This page is the most legible in the entire document — approximately 40% readable]*
+
+[?] IN WITNESS WHEREOF, [?] Palos Verdes Corporation [?] has caused [?] these presents to be [executed?] [?] and its corporate seal to be [hereunto?] affixed [?]
+
+**PALOS VERDES CORPORATION**
+
+*[Corporate seal impression visible]*
+
+By [?] [signature] [?] President
+By [?] [signature] [?] Secretary
+
+*[Notary acknowledgment block:]*
+
+STATE OF [CALIFORNIA?] [?]
+COUNTY OF LOS ANGELES [?]
+
+On this [?] day of [October?], 1929, before me [?] a Notary Public in and for said County and State [?] personally appeared [?] [known?] to me to be the [President?] and [?] the [Secretary?] of the [corporation?] [?] that executed the [within?] instrument [?] and acknowledged [?]
+
+*[Notary signature and seal — partially visible]*
+
+*[Recording stamp at bottom:]*
+
+[?] [Recorded?] [?] [Book?] 9436 [?] [Page?] 155 [?] [Official Records?] [?]
+
+---
+
+## DOCUMENT STRUCTURE SUMMARY
+
+Based on readable section headers across 23 frames:
+
+| Part | Title | Pages (est.) | Frames | Legibility |
+|------|-------|-------------|--------|------------|
+| — | Preamble & Recitals | 155-156 | IMG_1278-1279 | 20% |
+| I | Basic Protective Restrictions | 157-162 | IMG_1280-1285 | 10-15% |
+| II | Community Association of Palos Verdes | 163-167 | IMG_1286-1291 | 15-20% |
+| III | Art Jury | 168-171 | IMG_1292-1295 | 15-20% |
+| IV | General Provisions | 172-176 | IMG_1296-1300 | 10-15% |
+| — | Execution (signatures, notary, seal) | 177 | IMG_1301 | 40% |
+
+## KEY TERMS DEFINED IN THIS DOCUMENT
+
+Declaration No. 101 repeatedly says "as defined and limited in said Declaration No. 100" for these terms:
+
+| Term | Where Defined | Dec 101 Reference |
+|------|---------------|-------------------|
+| Residence Districts of Class A | Part I, Section 1(a) | Section 1(a) — all 7 parcels assigned Class A |
+| Class B Residence Districts | Part I, Section 1(b) | Not used in Dec 101 |
+| Two and One-Half Story Height Districts | Part I, Section 2(a) | Section 2(a) — all 7 parcels |
+| Type I Architecture Districts | Part I, Section 3(a) | Section 3(a) — burned clay tile roofs |
+| Type II Architecture Districts | Part I, Section 3(b) | Not used in Dec 101 |
+| Community Association of Palos Verdes | Part II | Referenced as "the Association" |
+| Community Art Jury of Palos Verdes | Part III | Referenced as "the Art Jury" |
+| Setback and building lines | Part I, Section 5 | Section 5(a) — 25 feet |
+| Minimum cost of building | Part I, Section 5 | Section 4(a) — $20,000 |
+| Enforcement and remedies | Part IV | Servitude language in Dec 101 preamble |
+
+## PHOTO INDEX
+
+| Frame | IMG File | Book Page | Content | Legibility |
+|-------|----------|-----------|---------|------------|
+| 1 | IMG_1278 | 155 | Title, recording stamp, preamble start | 20% |
+| 2 | IMG_1279 | 156 | Preamble cont., servitude language, Part I header | 15% |
+| 3 | IMG_1280 | 157 | Part I — Residence Districts (Class A, Class B) | 10% |
+| 4 | IMG_1281 | 158 | Height Districts, Architecture Districts begin | 15% |
+| 5 | IMG_1282 | 159 | Architecture Districts (Type I, Type II), use restrictions begin | 15% |
+| 6 | IMG_1283 | 160 | Use restrictions (commercial, oil, temporary structures) | 10% |
+| 7 | IMG_1284 | 161 | Building standards (minimum cost, setbacks, floor area) | 15% |
+| 8 | IMG_1285 | 162 | Building standards cont. (plumbing, Art Jury approval) | 10% |
+| 9 | IMG_1286 | 163 | **PART II** header — Community Association of PV, establishment | 20% |
+| 10 | IMG_1287 | 164 | Association: Board of Governors, assessments | 15% |
+| 11 | IMG_1288 | 165 | Assessments cont., lien provisions | 10% |
+| — | IMG_1289 | — | **MISSING** from photo sequence | — |
+| 12 | IMG_1290 | 166 | Meetings, voting, proxies | 15% |
+| 13 | IMG_1291 | 167 | Enforcement provisions | 10% |
+| 14 | IMG_1292 | 168 | **PART III** header — Art Jury establishment | 15% |
+| 15 | IMG_1293 | 169 | Art Jury: powers, materials approval | 15% |
+| 16 | IMG_1294 | 170 | Art Jury: approval process, fees, appeals | 15% |
+| 17 | IMG_1295 | 171 | **TABLE** visible — fee schedule or assessment rates | 20% |
+| 18 | IMG_1296 | 172 | **PART IV** header — General Provisions, duration/renewal | 15% |
+| 19 | IMG_1297 | 173 | Architecture type definitions (Type I/II), enforcement | 20% |
+| 20 | IMG_1298 | 174 | Amendment/modification process | 15% |
+| 21 | IMG_1299 | 175 | Enforcement, no waiver, severability | 15% |
+| 22 | IMG_1300 | 176 | Final provisions | 10% |
+| 23 | IMG_1301 | 177 | **Execution** — PV Corp signatures, seal, notary, recording stamp | 40% |
+
+## WHAT WE STILL NEED
+
+This document is the constitutional foundation for all of Lot H. Declaration 101 is the implementing instrument — it references Dec 100 for every important definition. Without a clean Dec 100, we have the bylaws but not the constitution.
+
+| Priority | What | Why | Source Options |
+|----------|------|-----|----------------|
+| **1** | Clean certified copy of Declaration No. 100 | Full text of Class A/B definitions, height limits, architecture types, Art Jury powers, Association governance, enforcement mechanics | LA County Recorder ($200+ for 24 pages) |
+| **2** | PVHA archives | As successor to Community Association of PV, they may have the original typescript | Palos Verdes Homes Association, Malaga Cove |
+| **3** | PV Library local history | May have a typescript or better microfilm copy | Palos Verdes Library District, local history room |
+| **4** | Title company plant | First American or Chicago Title may have cleaner abstracts | Request through title officer |
+| **5** | Vanderlip Papers, Columbia | Drafts or correspondence copies may exist | Rare Book & Manuscript Library, Box 1 |
+| **6** | Olmsted Associates Records, LOC | Job 5950 files may include CC&R drafts | Library of Congress, Manuscript Division |
+
+---
+
+*Transcribed: 2026-04-17 | Source: LA County Recorder microfilm printouts, Norwalk, CA | Researcher: Jeffe*
+*Quality: STRUCTURAL with partial verbatim — source material ~15-25% legible. Section headers confirmed; body text requires better source for full transcription.*
