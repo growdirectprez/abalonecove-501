@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Evidence Room — Abalone Cove</title>
-  <meta name="description" content="Primary source documents from the documentary record, 1882–2026. Olmsted plans, founding declarations, landslide documentation, rezoning record, and litigation.">
+  <title>Library of Evidence — Abalone Cove Foundation</title>
+  <meta name="description" content="Formal library of primary and secondary source documents bearing on the 0 Clipper Road rezoning. Numbered references, Chicago and Bluebook citations, and internal links to transcriptions, original documents, and map layers.">
+  <link rel="canonical" href="https://abalonecove.org/evidence/">
+
   <style>
-    /* ── Design Tokens ── */
     :root {
       --shell-teal: #2a7a7a;
       --shell-sage: #6b8f7a;
@@ -14,264 +15,242 @@
       --shell-dark: #1a1a2e;
       --shell-warm: #c4a87a;
       --shell-mist: #e8ede9;
+      --level-a: #2a7a7a;
+      --level-b: #c4a87a;
     }
 
-    /* ── Reset ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* ── Body ── */
     body {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 18px;
-      line-height: 1.7;
+      font-size: 17px;
+      line-height: 1.65;
       color: var(--shell-dark);
       background: var(--shell-cream);
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Header / Nav ── */
+    /* Nav */
     .site-header {
-      position: sticky;
-      top: 0;
-      background: var(--shell-cream);
-      border-bottom: 1px solid var(--shell-warm);
-      z-index: 900;
-      padding: 0 1.5rem;
+      position: sticky; top: 0; background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm); z-index: 900; padding: 0 1.5rem;
     }
-
     .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
+      max-width: 1200px; margin: 0 auto; display: flex;
+      align-items: center; justify-content: space-between; height: 56px;
     }
-
     .wordmark {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.25rem;
-      font-weight: normal;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--shell-dark);
-      text-decoration: none;
+      font-size: 1.25rem; font-weight: normal; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--shell-dark); text-decoration: none;
     }
-
-    /* Desktop nav */
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1.75rem;
-    }
-
+    .nav-links { list-style: none; display: flex; gap: 1.75rem; }
     .nav-links a {
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--shell-dark);
-      text-decoration: none;
-      opacity: 0.7;
-      transition: opacity 0.2s;
+      font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase;
+      color: var(--shell-dark); text-decoration: none; opacity: 0.7; transition: opacity 0.2s;
     }
-
     .nav-links a:hover { opacity: 1; }
     .nav-links a[aria-current="page"] { opacity: 1; border-bottom: 1px solid var(--shell-teal); }
 
-    /* Hamburger (checkbox hack) */
     .nav-toggle { display: none; }
     .nav-toggle-label { display: none; cursor: pointer; }
-
     .nav-toggle-label span,
     .nav-toggle-label span::before,
     .nav-toggle-label span::after {
-      display: block;
-      background: var(--shell-dark);
-      height: 2px;
-      width: 24px;
-      border-radius: 2px;
-      position: relative;
-      transition: transform 0.3s, opacity 0.2s;
+      display: block; background: var(--shell-dark); height: 2px; width: 24px;
+      border-radius: 2px; position: relative; transition: transform 0.3s;
     }
-
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-      content: "";
-      position: absolute;
-    }
-
+    .nav-toggle-label span::before, .nav-toggle-label span::after { content: ""; position: absolute; }
     .nav-toggle-label span::before { top: -7px; }
     .nav-toggle-label span::after { top: 7px; }
-
     .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
     .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
     .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
 
-    /* ── Main Content ── */
-    .article {
-      max-width: 680px;
+    /* Page layout */
+    .page {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
+      padding: 2.5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
     }
 
-    .article-header {
-      margin-bottom: 3rem;
-      text-align: center;
+    /* Masthead */
+    .masthead { grid-column: 1 / -1; margin-bottom: 2.5rem; }
+    .masthead h1 {
+      font-size: 2.4rem; font-weight: normal; margin-bottom: 0.75rem;
+      letter-spacing: -0.01em; line-height: 1.15;
+    }
+    .masthead .kicker {
+      font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--shell-warm); margin-bottom: 0.5rem;
+    }
+    .masthead .standfirst {
+      font-size: 1.05rem; color: var(--shell-dark); opacity: 0.8;
+      max-width: 760px; line-height: 1.55;
     }
 
-    .article-header h1 {
-      font-size: 2.25rem;
-      line-height: 1.25;
-      font-weight: normal;
-      margin-bottom: 1rem;
+    /* TOC */
+    .toc {
+      position: sticky; top: 72px; align-self: start;
+      font-size: 0.85rem; line-height: 1.5;
+      border-right: 1px solid rgba(196, 168, 122, 0.4);
+      padding-right: 1.25rem;
+    }
+    .toc h2 {
+      font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--shell-warm); font-weight: normal; margin-bottom: 0.85rem;
+    }
+    .toc ol { list-style: none; counter-reset: toc; }
+    .toc li { counter-increment: toc; margin-bottom: 0.4rem; }
+    .toc li::before {
+      content: counter(toc, upper-roman) ". ";
+      color: var(--shell-warm); font-variant-numeric: tabular-nums;
+    }
+    .toc a {
+      color: var(--shell-dark); text-decoration: none; opacity: 0.8;
+    }
+    .toc a:hover { color: var(--shell-teal); opacity: 1; }
+    .toc .count { color: var(--shell-warm); font-size: 0.78rem; }
+
+    /* Filter */
+    .filters {
+      grid-column: 1 / -1; display: flex; gap: 0.75rem; align-items: center;
+      padding: 0.9rem 1.1rem; background: white; border: 1px solid var(--shell-warm);
+      border-radius: 6px; margin-bottom: 2rem; flex-wrap: wrap;
+    }
+    .filters input[type="text"] {
+      flex: 1; min-width: 220px; padding: 0.45rem 0.6rem;
+      font-family: Georgia, serif; font-size: 0.92rem;
+      border: 1px solid var(--shell-warm); border-radius: 4px; background: white;
       color: var(--shell-dark);
     }
+    .filters input:focus { outline: none; border-color: var(--shell-teal); }
+    .filters .chip {
+      font-size: 0.75rem; letter-spacing: 0.04em; padding: 0.3rem 0.65rem;
+      border: 1px solid var(--shell-warm); border-radius: 999px; cursor: pointer;
+      background: white; color: var(--shell-dark); opacity: 0.7;
+      user-select: none;
+    }
+    .filters .chip.active { background: var(--shell-teal); color: white; border-color: var(--shell-teal); opacity: 1; }
+    .filters .count { font-size: 0.8rem; color: var(--shell-warm); margin-left: auto; }
 
-    .article-header .subtitle {
-      font-size: 0.95rem;
-      color: var(--shell-sage);
-      font-style: italic;
+    /* Library content */
+    .library { min-width: 0; }
+    section.ref-section { margin-bottom: 3.5rem; scroll-margin-top: 72px; }
+    section.ref-section h2 {
+      font-size: 1.55rem; font-weight: normal; color: var(--shell-dark);
+      border-bottom: 2px solid var(--shell-teal); padding-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
+    }
+    section.ref-section .section-num {
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--shell-warm); margin-bottom: 0.4rem;
+    }
+    section.ref-section .section-note {
+      font-size: 0.9rem; color: var(--shell-dark); opacity: 0.75;
+      font-style: italic; margin-bottom: 1.5rem;
     }
 
-    /* Sections */
-    .article section {
-      margin-bottom: 3rem;
+    /* Entries */
+    .entry {
+      display: grid; grid-template-columns: 58px 1fr;
+      gap: 0.75rem; padding: 1rem 0;
+      border-bottom: 1px solid rgba(196, 168, 122, 0.3);
     }
-
-    .article section h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-bottom: 1.25rem;
-      color: var(--shell-dark);
-      border-bottom: 1px solid var(--shell-warm);
-      padding-bottom: 0.4rem;
+    .entry:last-child { border-bottom: none; }
+    .entry .ref-num {
+      font-size: 0.82rem; letter-spacing: 0.05em; color: var(--shell-warm);
+      font-variant-numeric: tabular-nums; padding-top: 0.15rem;
     }
-
-    /* ── Document Entry Cards ── */
-    .doc-list {
-      list-style: none;
+    .entry .ref-num a { color: inherit; text-decoration: none; }
+    .entry .ref-num a:hover { color: var(--shell-teal); }
+    .entry-body { min-width: 0; }
+    .entry-title {
+      font-size: 1.02rem; font-weight: bold; color: var(--shell-dark);
+      margin-bottom: 0.3rem; line-height: 1.35;
     }
-
-    .doc-entry {
-      border-bottom: 1px solid rgba(196, 168, 122, 0.35);
+    .entry-citation {
+      font-size: 0.88rem; color: var(--shell-dark); opacity: 0.85;
+      margin-bottom: 0.4rem; font-style: italic;
     }
-
-    .doc-entry:last-child {
-      border-bottom: none;
-    }
-
-    .doc-entry a {
-      display: block;
-      padding: 0.9rem 0.5rem;
-      text-decoration: none;
-      color: inherit;
-      transition: background 0.15s;
-      border-radius: 3px;
-    }
-
-    .doc-entry a:hover {
-      background: var(--shell-mist);
-    }
-
-    .doc-title {
-      font-size: 1rem;
-      font-weight: bold;
-      color: var(--shell-dark);
-      margin-bottom: 0.2rem;
-      line-height: 1.4;
-    }
-
-    .doc-meta {
-      font-size: 0.82rem;
-      color: var(--shell-warm);
-      letter-spacing: 0.02em;
-      margin-bottom: 0.3rem;
-    }
-
-    .doc-desc {
-      font-size: 0.9rem;
-      color: var(--shell-dark);
-      opacity: 0.8;
-      line-height: 1.5;
-    }
-
-    /* ── Footer ── */
-    .site-footer {
-      border-top: 1px solid var(--shell-warm);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      background: var(--shell-mist);
-    }
-
-    .footer-inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-
-    .footer-org {
-      font-size: 0.9rem;
-      color: var(--shell-dark);
+    .entry-desc {
+      font-size: 0.9rem; line-height: 1.55; color: var(--shell-dark); opacity: 0.85;
       margin-bottom: 0.5rem;
     }
-
-    .footer-cta {
-      font-size: 0.85rem;
-      color: var(--shell-sage);
-      font-style: italic;
+    .entry-access {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.35rem;
     }
+    .entry-access a {
+      font-size: 0.78rem; letter-spacing: 0.02em;
+      padding: 0.18rem 0.55rem; border-radius: 3px;
+      text-decoration: none; border: 1px solid;
+      transition: background 0.15s, color 0.15s;
+    }
+    .access-transcript { color: var(--shell-teal); border-color: var(--shell-teal); background: white; }
+    .access-transcript:hover { background: var(--shell-teal); color: white; }
+    .access-pdf { color: var(--shell-dark); border-color: var(--shell-dark); background: white; }
+    .access-pdf:hover { background: var(--shell-dark); color: white; }
+    .access-image { color: var(--shell-sage); border-color: var(--shell-sage); background: white; }
+    .access-image:hover { background: var(--shell-sage); color: white; }
+    .access-map { color: var(--shell-warm); border-color: var(--shell-warm); background: white; }
+    .access-map:hover { background: var(--shell-warm); color: white; }
+    .access-external { color: #666; border-color: #aaa; background: white; }
+    .access-external:hover { background: #666; color: white; }
+    .access-external::after { content: " ↗"; }
 
-    /* ── Mobile (< 768px) ── */
-    @media (max-width: 768px) {
+    /* Level badge */
+    .lvl {
+      display: inline-block; font-size: 0.65rem; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.1rem 0.4rem;
+      border-radius: 2px; vertical-align: 1px; margin-left: 0.4rem;
+      font-style: normal;
+    }
+    .lvl-a { background: var(--shell-teal); color: white; }
+    .lvl-b { background: var(--shell-warm); color: var(--shell-dark); }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem; text-align: center; background: var(--shell-mist);
+    }
+    .footer-inner { max-width: 900px; margin: 0 auto; }
+    .footer-org { font-size: 0.9rem; color: var(--shell-dark); margin-bottom: 0.5rem; }
+    .footer-cta { font-size: 0.85rem; color: var(--shell-sage); font-style: italic; }
+
+    /* Mobile */
+    @media (max-width: 900px) {
       body { font-size: 16px; }
-
-      .article-header h1 { font-size: 1.75rem; }
-
-      .article section h2 { font-size: 1.3rem; }
-
-      /* Hamburger nav */
+      .page { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem 1rem 3rem; }
+      .toc { position: static; border-right: none; padding-right: 0;
+        background: white; padding: 1rem; border-radius: 6px;
+        border: 1px solid rgba(196, 168, 122, 0.4); }
+      .masthead h1 { font-size: 1.9rem; }
       .nav-toggle-label { display: flex; align-items: center; }
-
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        right: 0;
-        background: var(--shell-cream);
-        border-bottom: 1px solid var(--shell-warm);
-        flex-direction: column;
-        padding: 1rem 1.5rem;
-        gap: 0.75rem;
+        display: none; position: absolute; top: 56px; left: 0; right: 0;
+        background: var(--shell-cream); border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column; padding: 1rem 1.5rem; gap: 0.75rem;
       }
-
       .nav-toggle:checked ~ .nav-links { display: flex; }
+      .entry { grid-template-columns: 44px 1fr; gap: 0.5rem; }
     }
 
-    /* ── Print ── */
+    /* Print */
     @media print {
-      .site-header { display: none; }
-
-      body {
-        font-size: 11pt;
-        line-height: 1.5;
-        color: #000;
-        background: #fff;
-      }
-
-      .article {
-        max-width: 100%;
-        padding: 0;
-      }
-
-      .article section { page-break-inside: avoid; }
-
-      .doc-entry a:hover { background: none; }
-
-      .site-footer {
-        border-top: 1pt solid #ccc;
-        background: #fff;
-        font-size: 9pt;
-      }
+      .site-header, .filters, .toc, .site-footer, .entry-access { display: none !important; }
+      body { font-size: 10.5pt; line-height: 1.4; background: white; color: black; }
+      .page { display: block; max-width: 100%; padding: 0; }
+      .masthead { margin-bottom: 1rem; }
+      .masthead h1 { font-size: 18pt; }
+      section.ref-section { page-break-inside: avoid; margin-bottom: 1rem; }
+      section.ref-section h2 { font-size: 13pt; border-bottom: 0.5pt solid #000; }
+      .entry { padding: 0.3rem 0; border-bottom: 0.25pt solid #ccc; grid-template-columns: 40px 1fr; }
+      .entry-title { font-size: 10.5pt; }
+      .entry-citation { font-size: 9.5pt; }
+      .entry-desc { font-size: 9.5pt; }
+      .lvl { border: 0.5pt solid #000; background: white !important; color: black !important; }
     }
   </style>
 </head>
@@ -293,470 +272,1300 @@
   </div>
 </header>
 
-<main class="article">
-  <div class="article-header">
-    <h1>Evidence Room</h1>
-    <p class="subtitle">Primary source documents from the documentary record, 1882–2026</p>
+<main class="page">
+
+  <div class="masthead">
+    <div class="kicker">Abalone Cove Foundation · Library of Evidence</div>
+    <h1>The Documentary Record</h1>
+    <p class="standfirst">
+      A formal library of primary and secondary sources bearing on 0&nbsp;Clipper Road
+      and the coastal south face of the Palos Verdes Peninsula. Entries are numbered
+      for citation, organized by source type, and marked by access level:
+      <span class="lvl lvl-a">A</span> indicates a document held locally (transcription, PDF, or image);
+      <span class="lvl lvl-b">B</span> indicates a document cited but not yet obtained.
+      Citations follow Chicago style for historical, geological, and regulatory sources
+      and Bluebook style for case law and statutes. Each entry links to its transcription,
+      original file, map layer, or external source as applicable.
+    </p>
   </div>
 
-  <section id="olmsted-plans">
-    <h2>Olmsted Plans (1913–1926)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1880-rancho-los-palos-verdes-patent-plat-book-2-pp-543-546.md">
-          <div class="doc-title">Olmsted Brothers Master Plan, File No. 8023</div>
-          <div class="doc-meta">1923 &middot; National Park Service Archives</div>
-          <div class="doc-desc">Topographic survey and landscape architecture plans for the entire peninsula</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <aside class="toc" aria-label="Library sections">
+    <h2>Sections</h2>
+    <ol>
+      <li><a href="#s1">PV Corp Declarations</a></li>
+      <li><a href="#s2">WPBCA Governance</a></li>
+      <li><a href="#s3">Parcel History</a></li>
+      <li><a href="#s4">Geological Studies</a></li>
+      <li><a href="#s5">Case Law</a></li>
+      <li><a href="#s6">RPV Regulatory</a></li>
+      <li><a href="#s7">State &amp; Federal</a></li>
+      <li><a href="#s8">Landslide &amp; Hazard</a></li>
+      <li><a href="#s9">Historical Records</a></li>
+      <li><a href="#s10">Newspaper Record</a></li>
+      <li><a href="#s11">Shore Club</a></li>
+      <li><a href="#s12">Active Litigation</a></li>
+      <li><a href="#s13">Conservancy</a></li>
+      <li><a href="#s14">Visual Evidence</a></li>
+      <li><a href="#s15">Research Synthesis</a></li>
+      <li><a href="#s16">Methodology</a></li>
+    </ol>
+  </aside>
 
-  <section id="founding-declarations">
-    <h2>Founding Declarations (1929–1952)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1929-declaration-100-basic-protective-restrictions-book-9436.md">
-          <div class="doc-title">Declaration No. 100 — Basic Protective Restrictions</div>
-          <div class="doc-meta">Oct 1, 1929 &middot; Book 9436, Page 155</div>
-          <div class="doc-desc">Constitutional framework: Class A/B districts, Art Jury, Community Association. ~20% legible from microfilm.</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1929-declaration-101-local-protective-restrictions-book-9482.md">
-          <div class="doc-title">Declaration No. 101 — Local Protective Restrictions</div>
-          <div class="doc-meta">Oct 15, 1929 &middot; Book 9482, Page 37</div>
-          <div class="doc-desc">Verbatim transcription. Seven parcels, Class A residence, burned clay tile, $20K minimum, 25-ft setbacks.</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1930-pvcorp-to-filiorum-grant-deed-book-10226.md">
-          <div class="doc-title">PV Corp &rarr; Filiorum Grant Deed</div>
-          <div class="doc-meta">Aug 15, 1930 &middot; Book 10226, Pages 170–174</div>
-          <div class="doc-desc">Conveys 3 coastal parcels to Filiorum Corporation</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1949-WPBCA-Declaration-No-One-Verbatim.md&original=/docs/originals/declarations/1949-WPBCA-Declaration-ocr.pdf">
-          <div class="doc-title">Declaration No. One</div>
-          <div class="doc-meta">Apr 29, 1949 &middot; Book 29980, Page 159 &middot; PDF available</div>
-          <div class="doc-desc">Creates WPBCA, single-family residential, Architectural Committee</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1949-Declaration-of-Easements-Verbatim.md&original=/docs/originals/declarations/1949-Declaration-of-Easements-ocr.pdf">
-          <div class="doc-title">Declaration of Easements</div>
-          <div class="doc-meta">May 5, 1949 &middot; Book 30051, Pages 385–393 &middot; PDF available</div>
-          <div class="doc-desc">Bridle trail (ocean access), drainage, utility easements</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1950-Lot-H-Declaration-Verbatim.md">
-          <div class="doc-title">Lot H Declaration</div>
-          <div class="doc-meta">Jan 25, 1950 &middot; Book 32160, Page 26</div>
-          <div class="doc-desc">Declaration on the negative space — all undeveloped PV Corp land except named tracts</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1950-Declaration-One-A-Verbatim.md&original=/docs/originals/declarations/1949-1950-Amendments-ocr.pdf">
-          <div class="doc-title">Declaration One-A</div>
-          <div class="doc-meta">Oct 30, 1950 &middot; Book 34817, Page 254 &middot; PDF available</div>
-          <div class="doc-desc">Oceanfront protections: 40-ft bluff setback, 4-ft height limit</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1952-PVCorp-Grant-Deed-Lot1-Verbatim.md&original=/docs/originals/declarations/1952-PVCorp-Grant-Deed-Lot1-ocr.pdf">
-          <div class="doc-title">Grant Deeds</div>
-          <div class="doc-meta">Nov 24, 1952 &middot; Book 40601, Page 303 &middot; PDF available</div>
-          <div class="doc-desc">PV Corp distributes individual lots, incorporating all declarations by reference</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="library">
 
-  <section id="shore-club-records">
-    <h2>Shore Club Records (1929–1974)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/Abalone-Shore-Club-Corporate-Archives-Verbatim.md&original=/docs/originals/shore-club/abalone-shore-club-corporate-archives.pdf">
-          <div class="doc-title">Abalone Shore Club Corporate Archives</div>
-          <div class="doc-meta">1929–1963 &middot; CA Secretary of State &middot; PDF available</div>
-          <div class="doc-desc">Articles of incorporation, corporate formation, Vawter and Filiorum lineage</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/Abalone-Shore-Club-Site-Map-Verbatim.md&original=/docs/originals/shore-club/abalone-shore-club-site-map.pdf">
-          <div class="doc-title">Abalone Shore Club Site Map</div>
-          <div class="doc-meta">Undated &middot; Community archive &middot; PDF available</div>
-          <div class="doc-desc">Hand-drawn parcel map of the Shore Club property and beach access</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/1971-Filiorum-Abalone-Shore-Club-Lease-Verbatim.md&original=/docs/originals/shore-club/1971-Filiorum-Abalone-Shore-Club-Lease.pdf">
-          <div class="doc-title">1971 Filiorum Lease Agreement</div>
-          <div class="doc-meta">1971 &middot; Community archive &middot; PDF available</div>
-          <div class="doc-desc">Filiorum Corporation lease terms for the beach property to Abalone Shore Club</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/1971-1972-Shore-Club-Board-Docs-Verbatim.md&original=/docs/originals/shore-club/1971-1972-Shore-Club-Board-Docs.pdf">
-          <div class="doc-title">1971–1972 Board Documents</div>
-          <div class="doc-meta">1971–1972 &middot; Community archive &middot; PDF available</div>
-          <div class="doc-desc">Board meeting records during the condominiums-vs-park debate</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/1972-Karshner-Proposal-Verbatim.md&original=/docs/originals/shore-club/1972-Karshner-Proposal.pdf">
-          <div class="doc-title">1972 Karshner Proposal &amp; Community Ballot</div>
-          <div class="doc-meta">1972 &middot; Community archive &middot; PDF available</div>
-          <div class="doc-desc">Vote: shoreline park over 138–170 condominiums</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/WPBCA-Letter-Condos-vs-Park-Verbatim.md&original=/docs/originals/shore-club/wpbca-letter-condos-vs-park-p1.pdf">
-          <div class="doc-title">WPBCA Letter: Condominiums vs. Park</div>
-          <div class="doc-meta">1972 &middot; Community archive &middot; PDF available (5 pages)</div>
-          <div class="doc-desc">Community letter documenting the debate and the vote to preserve the shoreline</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/shore-club/1972-Abalone-Cove-Fact-Sheet-Verbatim.md&original=/docs/originals/shore-club/1972-Abalone-Cove-Fact-Sheet.pdf">
-          <div class="doc-title">1972 Abalone Cove Fact Sheet</div>
-          <div class="doc-meta">1972 &middot; Community archive &middot; PDF available</div>
-          <div class="doc-desc">Community fact sheet distributed during the development debate</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="filters">
+    <input type="text" id="q" placeholder="Search title, citation, or description…" autocomplete="off">
+    <button type="button" class="chip active" data-f="all">All</button>
+    <button type="button" class="chip" data-f="A">Level A</button>
+    <button type="button" class="chip" data-f="B">Level B</button>
+    <span class="count" id="count"></span>
+  </div>
 
-  <section id="engineering-surveys">
-    <h2>Engineering Surveys and Tract Maps</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1880-rancho-los-palos-verdes-patent-plat-book-2-pp-543-546.md">
-          <div class="doc-title">Rancho Los Palos Verdes Patent Plat</div>
-          <div class="doc-meta">1882 &middot; Plat Book 2, Pages 543-546</div>
-          <div class="doc-desc">Original patent survey from the 1882 Superior Court partition</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/geological/1935-county-surveyor-CSB1082-2-pv-drive-south.md&original=/docs/originals/surveys/county-surveyor-CSB1082-2-pv-drive-south.pdf">
-          <div class="doc-title">County Surveyor; PV Drive South (Sheet 2)</div>
-          <div class="doc-meta">1935 &middot; County Surveyor Book 1082 &middot; PDF available</div>
-          <div class="doc-desc">Road survey through the estate grounds; contains map references that led to Declaration 100/101</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/geological/1935-county-surveyor-CSB1082-3-pv-drive-south.md&original=/docs/originals/surveys/county-surveyor-CSB1082-3-pv-drive-south.pdf">
-          <div class="doc-title">County Surveyor; PV Drive South (Sheet 3)</div>
-          <div class="doc-meta">1935 &middot; County Surveyor Book 1082 &middot; PDF available</div>
-          <div class="doc-desc">Continuation of PV Drive South survey through Portuguese Bend</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1949-tract-14649-map-MB345-pp23-26.md&original=/docs/originals/tract-maps/1949-04-27-Tract-14649-Map-MB345-PG23-26.pdf">
-          <div class="doc-title">Tract 14649 Map (WPBCA)</div>
-          <div class="doc-meta">1949 &middot; M.B. 345, Pages 23-26 &middot; PDF available</div>
-          <div class="doc-desc">81 lots, five streets; the recorded tract map for our community</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/tract-maps/1957-tract-23434-map-MB624-pp57-60.pdf">
-          <div class="doc-title">Tract 23434 Map</div>
-          <div class="doc-meta">1957 &middot; M.B. 624, Pages 57-60 &middot; PDF</div>
-          <div class="doc-desc">Arrowroot Drive ranch house subdivision; pre-subdivision PV Corp land</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1980-06-17-Tract-32977-Lot-H-Subdivision-MB950-PG14-15.md&original=/docs/originals/tract-maps/1980-06-17-Tract-32977-Lot-H-Subdivision-MB950-PG14-15.pdf">
-          <div class="doc-title">Tract 32977 — Lot H Subdivision (Wong)</div>
-          <div class="doc-meta">Jun 17, 1980 &middot; M.B. 950, Pages 14-15 &middot; PDF available</div>
-          <div class="doc-desc">Wong subdivision of 0 Clipper Road parcel; proper density established</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1986-02-26-Tract-43725-Reversion-To-Acreage-MB1063-PG91-92.md&original=/docs/originals/tract-maps/1986-02-26-Tract-43725-Reversion-To-Acreage-MB1063-PG91-92.pdf">
-          <div class="doc-title">Tract 43725 — Reversion to Acreage</div>
-          <div class="doc-meta">Feb 26, 1986 &middot; M.B. 1063, Pages 91-92 &middot; PDF available</div>
-          <div class="doc-desc">Wong lots reverted back to single acreage parcel</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/tract-maps/LACA-Parcel-Maps-Tract-14649.pdf">
-          <div class="doc-title">LACA Parcel Maps — Tract 14649</div>
-          <div class="doc-meta">Various &middot; LA County Assessor &middot; PDF</div>
-          <div class="doc-desc">Assessor parcel maps covering all 81 lots in the community</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/tract-maps/1985-Assessor-Map-7573-7-Setback.pdf">
-          <div class="doc-title">1985 Assessor Parcel Map 7573-7</div>
-          <div class="doc-meta">1985 &middot; LA County Assessor &middot; PDF</div>
-          <div class="doc-desc">Handwritten notation: &ldquo;250 ft no plumb add on other restriction a variance&rdquo;</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/chain-of-title.md">
-          <div class="doc-title">Chain of Title; Lot H to Present</div>
-          <div class="doc-meta">1882-2026 &middot; Compiled from county records</div>
-          <div class="doc-desc">Complete legal lineage from the 1882 Bixby Partition through current governing documents</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+<!-- SECTIONS BEGIN -->
 
-  <section id="county-surveys">
-    <h2>County Surveyor Field Books (1935)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/originals/surveys/cefb0602-pv-drive-south-boundaries.pdf">
-          <div class="doc-title">PV Drive South Boundaries</div>
-          <div class="doc-meta">County Engineer Field Book 0602 &middot; PDF</div>
-          <div class="doc-desc">Boundary survey for Palos Verdes Drive South through Portuguese Bend</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/surveys/cefb1097-pages-48-50.pdf">
-          <div class="doc-title">County Engineer Field Book 1097</div>
-          <div class="doc-meta">Pages 48-50 &middot; PDF</div>
-          <div class="doc-desc">Engineering field book pages for Portuguese Bend area</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/surveys/cefb2090-pages-4-9.pdf">
-          <div class="doc-title">County Engineer Field Book 2090</div>
-          <div class="doc-meta">Pages 4-9 &middot; PDF</div>
-          <div class="doc-desc">Engineering field book pages</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/surveys/county-surveyor-1703.pdf">
-          <div class="doc-title">County Surveyor Record 1703</div>
-          <div class="doc-meta">LA County Surveyor &middot; PDF</div>
-          <div class="doc-desc">Survey record for Lot H area</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/surveys/county-surveyor-book-28615-page-124.pdf">
-          <div class="doc-title">County Surveyor Book 28615, Page 124</div>
-          <div class="doc-meta">LA County Surveyor &middot; PDF</div>
-          <div class="doc-desc">Survey record referenced in deed chain</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/surveys/county-surveyor-book-28615-page-218.pdf">
-          <div class="doc-title">County Surveyor Book 28615, Page 218</div>
-          <div class="doc-meta">LA County Surveyor &middot; PDF</div>
-          <div class="doc-desc">Survey record referenced in deed chain</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+<section class="ref-section" id="s1">
+  <div class="section-num">§ I</div>
+  <h2>Palos Verdes Corporation Declarations (1923&ndash;1952)</h2>
+  <p class="section-note">Recorded private instruments establishing the peninsula's original covenant scheme and its implementing tracts.</p>
 
-  <section id="expansion-declarations">
-    <h2>Expansion Tract Declarations (1948)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1948-declaration-of-easements-tract-14500-book-28991.md">
-          <div class="doc-title">Declaration of Easements; Tract 14500</div>
-          <div class="doc-meta">Dec 2, 1948 &middot; Book 28991, Pages 142-157</div>
-          <div class="doc-desc">16 pages of road, drainage, sewer, utility easements for Portuguese Bend expansion</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/1948-declaration-of-easements-tract-14195-book-28991.md">
-          <div class="doc-title">Declaration of Easements; Tract 14195</div>
-          <div class="doc-meta">Dec 2, 1948 &middot; Book 28991, Pages 161-171</div>
-          <div class="doc-desc">11 pages of easements for 2 blocks, 22 lots in Portuguese Bend</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-1" data-level="B"><div class="ref-num"><a href="#ref-1">[1]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration No. 1 &mdash; Basic Protective Restrictions, Palos Verdes Estates <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Palos Verdes Corp., Declaration of Establishment of Basic Protective Restrictions, Conditions, Covenants, Reservations, Liens and Charges, filed Jan. 25, 1923, L.A. County Recorder.</div>
+    <div class="entry-desc">Original governing declaration for Palos Verdes Estates and Miraleste. Establishes the Palos Verdes Homes Association and the Art Jury. Referenced throughout the declaration scheme as the PVE framework distinct from Declaration 100.</div>
+  </div></div>
 
-  <section id="modernization">
-    <h2>Modernization (2009-2012)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/declarations/2009-Restated-Declaration-Text.md&original=/docs/originals/declarations/2009-Restated-Declaration.pdf">
-          <div class="doc-title">Restated Declaration</div>
-          <div class="doc-meta">Apr 29, 2009 &middot; Document 20090802242 &middot; PDF available</div>
-          <div class="doc-desc">Consolidated founding documents; removed voided racial covenant per Cal. Gov. Code 12955</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-2" data-level="A"><div class="ref-num"><a href="#ref-2">[2]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration No. 100 &mdash; Basic Protective Restrictions <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Corp. (Del.), Declaration of Establishment of Basic Protective Restrictions, Conditions, Covenants, Reservations, Liens and Charges, dated Oct. 7, 1929, recorded Oct. 10, 1929, Book 9436, pp.&nbsp;155&ndash;178, Official Records, L.A. County Recorder. Signed Jay Lawyer, VP; Donald K. Lawyer, Asst. Sec.; notarized Nellie Grace Frantz.</div>
+    <div class="entry-desc">Constitutional framework for all of Lot H outside PVE. Articles I&ndash;V establish general basic restrictions, the Community Association of Palos Verdes, the Art Jury, use-district zoning (Classes A&ndash;K), height districts, architecture types I&ndash;IV, and a duration running to January&nbsp;1, 1965 with auto-renewing 20-year periods thereafter. Page 155 (metes-and-bounds description) is illegible on the county microfilm.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/Declaration_100.md">Full verbatim</a>
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1929-declaration-100-basic-protective-restrictions-book-9436.md">Partial microfilm transcript</a>
+    </div>
+  </div></div>
 
-  <section id="landslide-documentation">
-    <h2>Landslide Documentation (1956–present)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">LGC Valley Geotechnical Study</div>
-          <div class="doc-meta">2011 &middot; Environmental Impact Report</div>
-          <div class="doc-desc">900-acre Ancient Portuguese Bend Landslide complex analysis</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">City Moratorium Ordinances</div>
-          <div class="doc-meta">Various &middot; RPV Municipal Code Chapter 15.20</div>
-          <div class="doc-desc">Zone 2 Landslide Moratorium Area restrictions</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">Governor's Emergency Declaration</div>
-          <div class="doc-meta">Sep 3, 2024 &middot; State of California</div>
-          <div class="doc-desc">Emergency declaration for Portuguese Bend area</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-3" data-level="A"><div class="ref-num"><a href="#ref-3">[3]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration No. 101 &mdash; Local Protective Restrictions <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Corp. (Del.), Declaration of Establishment of Local Protective Restrictions, Conditions, Covenants, Reservations, Liens and Charges, dated Oct. 14, 1929, recorded Oct. 19, 1929, Book 9482, p.&nbsp;37, Official Records, L.A. County Recorder.</div>
+    <div class="entry-desc">Implementing instrument under Declaration 100 assigning seven specific Portuguese Bend parcels to Class&nbsp;A residential, 2&frac12;-story height, Type&nbsp;I (Mediterranean, burned clay tile) architecture. $20,000 minimum construction cost; 25-foot setbacks. This is the source of the Portuguese Bend Red Tile District.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1929-declaration-101-local-protective-restrictions-book-9482.md">Verbatim transcription</a>
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1929-declaration-101-seven-parcels-legal-descriptions.md">Seven parcels legal descriptions</a>
+      <a class="access-map" href="/map/?layer=declaration-101">Map layer</a>
+    </div>
+  </div></div>
 
-  <section id="coastal-regulation">
-    <h2>Coastal Regulation (1973–1978)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">RPV General Plan</div>
-          <div class="doc-meta">1975 &middot; City of Rancho Palos Verdes</div>
-          <div class="doc-desc">First general plan after incorporation</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">California Coastal Act</div>
-          <div class="doc-meta">1976 &middot; Public Resources Code &sect;30000 et seq.</div>
-          <div class="doc-desc">Creates permanent Coastal Commission</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">Coastal Specific Plan</div>
-          <div class="doc-meta">Dec 19, 1978 &middot; Resolution No. 78-61</div>
-          <div class="doc-desc">Subregion 4 policies S4-1 through S4-14</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-4" data-level="A"><div class="ref-num"><a href="#ref-4">[4]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes Corp. &rarr; Filiorum Corp. Grant Deed <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Grant Deed, Palos Verdes Corp. to Filiorum Corp., dated Aug. 15, 1930, recorded Aug. 18, 1930, Book 10226, pp.&nbsp;170&ndash;174, Official Records, L.A. County Recorder. Consideration: $10.</div>
+    <div class="entry-desc">Conveys three portions of Lot&nbsp;H from PV Corp to the Filiorum Corporation and expressly incorporates <em>each and every provision</em> of Declarations 100 and 101. The operative link between the declaration scheme and the parcels later conveyed back to the City in the 2014 redevelopment dissolution.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1930-pvcorp-to-filiorum-grant-deed-book-10226.md">Verbatim transcription</a>
+      <a class="access-pdf" href="/docs/originals/deeds/1929-1930-pvcorp-easements-book-9511-10226.pdf">Original (PDF)</a>
+      <a class="access-image" href="/images/filiorum-deed-grant.jpeg">Deed image &mdash; grant</a>
+      <a class="access-image" href="/images/filiorum-deed-restrictions.jpeg">Deed image &mdash; restrictions</a>
+    </div>
+  </div></div>
 
-  <section id="clipper-road">
-    <h2>0 Clipper Road — APN 7573-006-024</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1980-06-17-Tract-32977-Lot-H-Subdivision-MB950-PG14-15.md&original=/docs/originals/tract-maps/1980-06-17-Tract-32977-Lot-H-Subdivision-MB950-PG14-15.pdf">
-          <div class="doc-title">Tract 32977 Map</div>
-          <div class="doc-meta">Jun 17, 1980 &middot; M.B. 950, Pages 14-15 &middot; PDF available</div>
-          <div class="doc-desc">Wong subdivision — proper density established</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/tract-maps/1986-02-26-Tract-43725-Reversion-To-Acreage-MB1063-PG91-92.md&original=/docs/originals/tract-maps/1986-02-26-Tract-43725-Reversion-To-Acreage-MB1063-PG91-92.pdf">
-          <div class="doc-title">Tract 43725 — Reversion to Acreage</div>
-          <div class="doc-meta">Feb 26, 1986 &middot; M.B. 1063, Pages 91-92 &middot; PDF available</div>
-          <div class="doc-desc">Wong lots reverted back to single acreage parcel</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/property/2026-03-25-CTC-Title-Report-0-Clipper-APN-7573-006-024.pdf">
-          <div class="doc-title">CTC Title Report — 0 Clipper</div>
-          <div class="doc-meta">Mar 2026 &middot; Commonwealth Title Company &middot; PDF</div>
-          <div class="doc-desc">Chain of title through Clipper Development LLC</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/originals/tract-maps/1985-Assessor-Map-7573-7-Setback.pdf">
-          <div class="doc-title">1985 Assessor Parcel Map</div>
-          <div class="doc-meta">1985 &middot; LA County Assessor &middot; PDF</div>
-          <div class="doc-desc">Handwritten notation: &ldquo;250 ft no plumb add on other restriction a variance&rdquo;</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-5" data-level="B"><div class="ref-num"><a href="#ref-5">[5]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration No. 150 &mdash; Rolling Hills General Plan <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Palos Verdes Corp., Declaration establishing General Plan of Restrictions for Rolling Hills, dated May&nbsp;14, 1936, recorded L.A. County Recorder.</div>
+    <div class="entry-desc">Master general plan for the original Rolling Hills tract. Contains the Tree-Cutting Covenant (Art.&nbsp;I, §&nbsp;11) and the Community Association framework. Recited in <em>Russell v. Palos Verdes Properties</em> (1963) and <em>Colyear v. Rolling Hills C.A.</em> (2024) as the direct analog of Declaration 100 for Rolling Hills. Covers only a narrow strip; subsequent tracts annexed under 150-A through 150-V and 150-W.</div>
+  </div></div>
 
-  <section id="rezoning-record">
-    <h2>Rezoning Record (2024)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/litigation/2024-06-04-Comment-to-City-Council-Re-0-Clipper-Rezoning-Verbatim.md">
-          <div class="doc-title">Community Opposition Letter</div>
-          <div class="doc-meta">Jun 4, 2024 &middot; Carney Mehr Law</div>
-          <div class="doc-desc">39 pages, 80 homeowners opposing rezoning</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">Ordinance 678U</div>
-          <div class="doc-meta">Apr 16, 2024 &middot; City of RPV</div>
-          <div class="doc-desc">Urgency ordinance, RS-4 &rarr; RM-22</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">Ordinance 680U</div>
-          <div class="doc-meta">Jun 4, 2024 &middot; City of RPV</div>
-          <div class="doc-desc">Second urgency ordinance</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">Ordinance 681</div>
-          <div class="doc-meta">Jun 18, 2024 &middot; City of RPV</div>
-          <div class="doc-desc">Regular ordinance</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">HCD Correspondence</div>
-          <div class="doc-meta">Jan 2025 &middot; California HCD</div>
-          <div class="doc-desc">Confirms Site 16 can be removed, city remains RHNA-compliant</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-6" data-level="B"><div class="ref-num"><a href="#ref-6">[6]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration No. 150-M &mdash; Rolling Hills Annexation <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Palos Verdes Corp., annexation declaration, recorded May&nbsp;29, 1944, L.A. County Recorder.</div>
+    <div class="entry-desc">Annexation instrument governing the property at issue in <em>Colyear</em>. Does not contain the Tree CC. Held insufficient to incorporate Declaration 150 by reference, establishing that PVC's intended uniform general plan is not enforceable where later implementing declarations were intentionally simplified.</div>
+  </div></div>
 
-  <section id="litigation">
-    <h2>Litigation (2024–present)</h2>
-    <ul class="doc-list">
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/litigation/2024-08-07-FPPC-Complaint-Cruikshank-Verbatim.md&original=/docs/originals/litigation/2024-08-07-FPPC-Complaint-Cruikshank.pdf">
-          <div class="doc-title">FPPC Complaint</div>
-          <div class="doc-meta">Aug 7, 2024 &middot; Complaint No. COM-08062024-02501</div>
-          <div class="doc-desc">Against Mayor Cruikshank</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="#">
-          <div class="doc-title">Verified Petition for Writ of Mandate</div>
-          <div class="doc-meta">Sep 11, 2024 &middot; Case No. 24TRCP00352</div>
-          <div class="doc-desc">Filed against City of RPV</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/litigation/2024-11-27-City-Demurrer-Verbatim.md&original=/docs/originals/litigation/2024-11-27-City-Demurrer.pdf">
-          <div class="doc-title">City Demurrer</div>
-          <div class="doc-meta">Nov 27, 2024 &middot; Superior Court</div>
-          <div class="doc-desc">City's motion to dismiss</div>
-        </a>
-      </li>
-      <li class="doc-entry">
-        <a href="/docs/viewer.html?doc=/docs/litigation/2024-12-18-Opposition-to-Demurrer-Verbatim.md&original=/docs/originals/litigation/2024-12-18-Opposition-to-Demurrer.pdf">
-          <div class="doc-title">Opposition to Demurrer</div>
-          <div class="doc-meta">Dec 18, 2024 &middot; Superior Court</div>
-          <div class="doc-desc">Community's response</div>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <div class="entry" id="ref-7" data-level="B"><div class="ref-num"><a href="#ref-7">[7]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration No. 160 &mdash; Flying Triangle <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Palos Verdes Corp., annexation declaration, recorded 1939, L.A. County Recorder.</div>
+    <div class="entry-desc">The annexation instrument from which, per Kelvin Vanderlip's 1947 letter, PVC's attorneys began to remove provisions "for the purpose of simplification." Documented in the Swaffield Study (1947) and confirmed by the California Court of Appeal in <em>Colyear</em> (2024).</div>
+  </div></div>
+
+  <div class="entry" id="ref-8" data-level="A"><div class="ref-num"><a href="#ref-8">[8]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration of Easements &mdash; Tract 14195 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">PV Corp, Declaration of Easements, 1948, Book 28991, L.A. County Recorder.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1948-declaration-of-easements-tract-14195-book-28991.md">Verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-9" data-level="A"><div class="ref-num"><a href="#ref-9">[9]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration of Easements &mdash; Tract 14500 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">PV Corp, Declaration of Easements, 1948, Book 28991, L.A. County Recorder.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1948-declaration-of-easements-tract-14500-book-28991.md">Verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-10" data-level="A"><div class="ref-num"><a href="#ref-10">[10]</a></div><div class="entry-body">
+    <div class="entry-title">Lot &ldquo;H&rdquo; Declaration of Protective Restrictions <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Corp. (Del.), Declaration of Protective Restrictions, dated Jan.&nbsp;25, 1950, recorded Book 32160, pp.&nbsp;26&ndash;36, Official Records, L.A. County Recorder.</div>
+    <div class="entry-desc">Cleanup-sweep declaration covering all Lot&nbsp;H property still held by PV Corp as of January&nbsp;25, 1950, with eleven named tracts excepted (Rolling Hills at MB 201/29&ndash;35 and Tract 14649 among them). Establishes single-family restrictions on remaining PV Corp land and auto-renews.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1950-Lot-H-Declaration-Verbatim.md">Verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-11" data-level="A"><div class="ref-num"><a href="#ref-11">[11]</a></div><div class="entry-body">
+    <div class="entry-title">PV Corp Grant Deed &mdash; Lot 1 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Corp., Grant Deed, 1952.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1952-PVCorp-Grant-Deed-Lot1-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/declarations/1952-PVCorp-Grant-Deed-Lot1.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-12" data-level="A"><div class="ref-num"><a href="#ref-12">[12]</a></div><div class="entry-body">
+    <div class="entry-title">Nelson &rarr; Taylor Grant Deed <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Grant Deed, 1952, Book 39174, Official Records, L.A. County Recorder.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/deeds/1952-nelson-taylor-grant-deed-book-39174.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s2">
+  <div class="section-num">§ II</div>
+  <h2>WPBCA Governance (1949&ndash;2009)</h2>
+  <p class="section-note">Founding and governing instruments of the West Portuguese Bend Community Association, the HOA that holds CC&amp;R enforcement authority over 71% of Subregion&nbsp;4.</p>
+
+  <div class="entry" id="ref-13" data-level="A"><div class="ref-num"><a href="#ref-13">[13]</a></div><div class="entry-body">
+    <div class="entry-title">WPBCA Declaration No. One <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">West Portuguese Bend Community Ass'n, Declaration No. One, dated Apr.&nbsp;29, 1949, recorded Book 29980, p.&nbsp;159, Official Records, L.A. County Recorder.</div>
+    <div class="entry-desc">Founding declaration of WPBCA. Subdivides 32 acres into 81 single-family lots, establishes the Architectural Committee, imposes CC&amp;Rs on Tract 14649.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1949-WPBCA-Declaration-No-One-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/declarations/1949-WPBCA-Declaration.pdf">Original (PDF)</a>
+      <a class="access-pdf" href="/docs/originals/declarations/1949-WPBCA-Declaration-ocr.pdf">OCR PDF</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-14" data-level="A"><div class="ref-num"><a href="#ref-14">[14]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration of Easements (Tract 14649) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Declaration of Easements, dated May&nbsp;5, 1949, recorded Book 30051, pp.&nbsp;385&ndash;393, Official Records, L.A. County Recorder.</div>
+    <div class="entry-desc">Records the bridle trail (ocean-access path), drainage, and utility easements for Tract 14649. The foundation of the HOA's beach path standing.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1949-Declaration-of-Easements-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/declarations/1949-Declaration-of-Easements.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-15" data-level="A"><div class="ref-num"><a href="#ref-15">[15]</a></div><div class="entry-body">
+    <div class="entry-title">Modification of Protective Restrictions <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">West Portuguese Bend Community Ass'n, Modification of Protective Restrictions, 1949.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1949-Modification-of-Protective-Restrictions-Verbatim.md">Verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-16" data-level="A"><div class="ref-num"><a href="#ref-16">[16]</a></div><div class="entry-body">
+    <div class="entry-title">1949&ndash;1950 Amendments <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">WPBCA, Declaration Amendments, 1949&ndash;1950.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/declarations/1949-1950-Amendments.pdf">Original (PDF)</a>
+      <a class="access-pdf" href="/docs/originals/declarations/1949-1950-Amendments-ocr.pdf">OCR PDF</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-17" data-level="A"><div class="ref-num"><a href="#ref-17">[17]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration One-A <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">West Portuguese Bend Community Ass'n, Declaration One-A, 1950.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/1950-Declaration-One-A-Verbatim.md">Verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-18" data-level="A"><div class="ref-num"><a href="#ref-18">[18]</a></div><div class="entry-body">
+    <div class="entry-title">Restated Declaration of Covenants, Conditions &amp; Restrictions <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">West Portuguese Bend Community Ass'n, Restated Declaration, recorded 2009, L.A. County Recorder.</div>
+    <div class="entry-desc">Current operative CC&amp;Rs of WPBCA. Consolidates and restates the 1949 declaration, 1949 easements, and subsequent amendments. The last time the HOA achieved a quorum.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/declarations/2009-Restated-Declaration-Text.md">Full text</a>
+      <a class="access-pdf" href="/docs/originals/declarations/2009-Restated-Declaration.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s3">
+  <div class="section-num">§ III</div>
+  <h2>Parcel History &amp; Conveyances (1880&ndash;2026)</h2>
+  <p class="section-note">The chain of title for Lot&nbsp;H, Tract 14649, Parcel 106, and 0&nbsp;Clipper Road (APN 7573-006-024).</p>
+
+  <div class="entry" id="ref-19" data-level="A"><div class="ref-num"><a href="#ref-19">[19]</a></div><div class="entry-body">
+    <div class="entry-title">Rancho Los Palos Verdes Patent Plat <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">U.S. Gov't, Rancho Los Palos Verdes Patent, 1880, recorded Patent Book 2, pp.&nbsp;543&ndash;546, L.A. County Recorder.</div>
+    <div class="entry-desc">Confirms the Sepulveda grant of Rancho Palos Verdes as U.S. patent. The legal origin of every Peninsula parcel.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/tract-maps/1880-rancho-los-palos-verdes-patent-plat-book-2-pp-543-546.md">Entry</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-20" data-level="A"><div class="ref-num"><a href="#ref-20">[20]</a></div><div class="entry-body">
+    <div class="entry-title">Bixby Partition Map of Rancho Los Palos Verdes <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation"><em>Bixby et al. v. Bent et al.</em>, No. 2373, Partition Decree, L.A. Co. Super. Ct., 1882; partition map recorded Book 4, p.&nbsp;57 of Judgments.</div>
+    <div class="entry-desc">Awards 16,002 acres (Lot&nbsp;H) to Jotham Bixby. Creates the legal unit from which every subsequent PV Peninsula tract is carved, including the parcel underlying 0&nbsp;Clipper Road.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/hdl-13328-partition-map-rancho-los-palos-verdes-a.jpeg">Partition map (sheet A)</a>
+      <a class="access-image" href="/images/hdl-13332-partition-map-rancho-los-palos-verdes-b.jpeg">Partition map (sheet B)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-21" data-level="A"><div class="ref-num"><a href="#ref-21">[21]</a></div><div class="entry-body">
+    <div class="entry-title">Tract 14649 Final Map <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Tract 14649, Final Map, recorded Apr.&nbsp;27, 1949, MB 345, pp.&nbsp;23&ndash;26, L.A. County Recorder.</div>
+    <div class="entry-desc">Subdivision that creates the 81 lots of the Community of Abalone Cove (West Portuguese Bend). 32 acres, five streets.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/tract-maps/1949-tract-14649-map-MB345-pp23-26.md">Entry</a>
+      <a class="access-pdf" href="/docs/originals/tract-maps/1949-04-27-Tract-14649-Map-MB345-PG23-26.pdf">Tract map (PDF)</a>
+      <a class="access-pdf" href="/docs/originals/tract-maps/LACA-Parcel-Maps-Tract-14649.pdf">LACA parcel maps</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-22" data-level="A"><div class="ref-num"><a href="#ref-22">[22]</a></div><div class="entry-body">
+    <div class="entry-title">Tract 23434 Final Map <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Tract 23434, Final Map, recorded 1957, MB 624, pp.&nbsp;57&ndash;60, L.A. County Recorder.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/tract-maps/1957-tract-23434-map-MB624-pp57-60.pdf">Tract map (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-23" data-level="A"><div class="ref-num"><a href="#ref-23">[23]</a></div><div class="entry-body">
+    <div class="entry-title">Tract 32977 &mdash; Wong Subdivision (0 Clipper Road) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Tract 32977, Final Map, recorded June&nbsp;17, 1980, MB 950, pp.&nbsp;14&ndash;15, L.A. County Recorder.</div>
+    <div class="entry-desc">City-approved subdivision of the vacant parcel at 0&nbsp;Clipper Road: four single-family residential lots plus one common-area open-space parcel preserving the flood-hazard / creek area. The city's own application of the Coastal Specific Plan to this parcel, eighteen months after Plan adoption.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/tract-maps/1980-06-17-Tract-32977-Lot-H-Subdivision-MB950-PG14-15.md">Entry</a>
+      <a class="access-pdf" href="/docs/originals/tract-maps/1980-06-17-Tract-32977-Lot-H-Subdivision-MB950-PG14-15.pdf">Tract map (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-24" data-level="A"><div class="ref-num"><a href="#ref-24">[24]</a></div><div class="entry-body">
+    <div class="entry-title">Assessor Map 7573-7 (Setback Documentation) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">L.A. County Assessor, Parcel Map Book 7573, Page 7, 1985.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/tract-maps/1985-Assessor-Map-7573-7-Setback.pdf">Assessor map (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-25" data-level="A"><div class="ref-num"><a href="#ref-25">[25]</a></div><div class="entry-body">
+    <div class="entry-title">Tract 43725 &mdash; Reversion to Acreage <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Tract 43725, Reversion to Acreage, recorded Feb.&nbsp;26, 1986, MB 1063, pp.&nbsp;91&ndash;92, L.A. County Recorder.</div>
+    <div class="entry-desc">Reverses Tract 32977, consolidating the four SFR lots and the open-space parcel back into a single 1.58-acre parcel. Flood-hazard notation carried forward on the new map. The legal description referenced in every subsequent conveyance of 0&nbsp;Clipper Road.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/tract-maps/1986-02-26-Tract-43725-Reversion-To-Acreage-MB1063-PG91-92.md">Entry</a>
+      <a class="access-pdf" href="/docs/originals/tract-maps/1986-02-26-Tract-43725-Reversion-To-Acreage-MB1063-PG91-92.pdf">Tract map (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-26" data-level="A"><div class="ref-num"><a href="#ref-26">[26]</a></div><div class="entry-body">
+    <div class="entry-title">Chain of Title &mdash; 0 Clipper Road <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Foundation research memorandum, compiled from LA County Recorder records and title company reports.</div>
+    <div class="entry-desc">Reconstructs the chain of conveyances for APN 7573-006-024 from the 1882 Bixby partition through the 2025 Hankey Capital loan.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/chain-of-title.md">Chain of title</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-27" data-level="A"><div class="ref-num"><a href="#ref-27">[27]</a></div><div class="entry-body">
+    <div class="entry-title">Wong &rarr; Hartman Grant Deed <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Grant Deed, Christopher Wong / The Wong Family Trust to Thomas J. Hartman / The Thomas J. Hartman Trust, dated Dec.&nbsp;16, 2005, recorded Dec.&nbsp;27, 2005, Doc.&nbsp;05-3178659, L.A. County Recorder. Consideration: $1,800,000.</div>
+    <div class="entry-desc">Sale of the reverted parcel (Tract 43725 Lot 1) to Hartman, a neighbor at 28 Sea Cove Drive. Title company: Progressive Title.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/property/2026-03-25-CTC-Title-Report-0-Clipper-APN-7573-006-024.pdf">Title report entry</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-28" data-level="A"><div class="ref-num"><a href="#ref-28">[28]</a></div><div class="entry-body">
+    <div class="entry-title">Hartman &rarr; Clipper Development LLC Grant Deed <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Grant Deed, Hartman Trust to Clipper Development LLC, dated Oct.&nbsp;8, 2021, recorded Apr.&nbsp;1, 2022, Doc.&nbsp;22-0362729, L.A. County Recorder. Consideration: $2,200,000. Title company: First American.</div>
+    <div class="entry-desc">Current owner conveyance. Clipper Development LLC is a California limited liability company associated with Ali Vahdani, a civil engineer in Vernon, California.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/property/2026-03-25-CTC-Title-Report-0-Clipper-APN-7573-006-024.pdf">Title report entry</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-29" data-level="A"><div class="ref-num"><a href="#ref-29">[29]</a></div><div class="entry-body">
+    <div class="entry-title">First Republic Bank Purchase-Money Mortgage <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Deed of Trust, Clipper Development LLC to First Republic Bank, dated Apr.&nbsp;1, 2022, Doc.&nbsp;22-0362730, L.A. County Recorder. Principal: $1,100,000.</div>
+    <div class="entry-desc">Later reassigned to Federal Deposit Insurance Corp. as Receiver, then to JPMorgan Chase Bank NA. Released Nov.&nbsp;17, 2025.</div>
+  </div></div>
+
+  <div class="entry" id="ref-30" data-level="A"><div class="ref-num"><a href="#ref-30">[30]</a></div><div class="entry-body">
+    <div class="entry-title">Hankey Capital Commercial Loan <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Deed of Trust, Clipper Development LLC to Hankey Capital LLC, dated Oct.&nbsp;28, 2025, recorded Nov.&nbsp;4, 2025, Doc.&nbsp;25-0767713, L.A. County Recorder. Principal: $2,100,000.</div>
+    <div class="entry-desc">Current senior lien on 0&nbsp;Clipper Road. Commercial loan, not purchase money.</div>
+  </div></div>
+
+  <div class="entry" id="ref-31" data-level="A"><div class="ref-num"><a href="#ref-31">[31]</a></div><div class="entry-body">
+    <div class="entry-title">CTC / First American Title Report &mdash; APN 7573-006-024 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Consumer's Title Company, Property Details Report and Transaction History, Order ID R213541248 / R213541249, dated Mar.&nbsp;25, 2026.</div>
+    <div class="entry-desc">Current title report for 0&nbsp;Clipper Road. Shows the full eight-transaction chain from the 2005 Wong conveyance forward and confirms no Declaration 100, Declaration 101, or Lot&nbsp;H Declaration reference in the chain of title.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/property/2026-03-25-CTC-Title-Report-0-Clipper-APN-7573-006-024.pdf">Title report (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s4">
+  <div class="section-num">§ IV</div>
+  <h2>Geological Studies (1935&ndash;2012)</h2>
+  <p class="section-note">Federal, state, academic, and commissioned studies documenting the instability of the Portuguese Bend and Abalone Cove landslide complex.</p>
+
+  <div class="entry" id="ref-32" data-level="A"><div class="ref-num"><a href="#ref-32">[32]</a></div><div class="entry-body">
+    <div class="entry-title">County Surveyor CSB 1082-2 &mdash; Palos Verdes Drive South <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">L.A. County Surveyor, County Surveyor Book 1082, p.&nbsp;2, 1935.</div>
+    <div class="entry-desc">Pre-landslide survey of PV Drive South. Source of the 1930s blueprint referenced in the article's &ldquo;Research&rdquo; section.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/1935-county-surveyor-CSB1082-2-pv-drive-south.md">Entry</a>
+      <a class="access-pdf" href="/docs/originals/surveys/county-surveyor-CSB1082-2-pv-drive-south.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-33" data-level="A"><div class="ref-num"><a href="#ref-33">[33]</a></div><div class="entry-body">
+    <div class="entry-title">County Surveyor CSB 1082-3 &mdash; Palos Verdes Drive South <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">L.A. County Surveyor, County Surveyor Book 1082, p.&nbsp;3, 1935.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/1935-county-surveyor-CSB1082-3-pv-drive-south.md">Entry</a>
+      <a class="access-pdf" href="/docs/originals/surveys/county-surveyor-CSB1082-3-pv-drive-south.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-34" data-level="A"><div class="ref-num"><a href="#ref-34">[34]</a></div><div class="entry-body">
+    <div class="entry-title">Woodring, Bramlette &amp; Kew, <em>Geology and Paleontology of the Palos Verdes Hills, California</em> <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">W.P. Woodring, M.N. Bramlette &amp; W.S.W. Kew, <em>Geology and Paleontology of the Palos Verdes Hills, California</em>, U.S. Geol. Surv. Prof. Paper 207 (1946).</div>
+    <div class="entry-desc">The foundational pre-development geologic report. Documents the Portuguese Bend landslide as a pre-existing feature based on 1930s fieldwork, identifies the Altamira Shale bentonitic slide plane, and plates the south-coast landslides as recognized geologic hazards. Federal scientists established the instability of this coast ten years before the 1956 reactivation and three years before Tract 14649 was recorded.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/1946-woodring-usgs-pp207-verbatim.md">Verbatim excerpt</a>
+      <a class="access-pdf" href="/docs/geological/1946-woodring-usgs-pp207-geology-palos-verdes.pdf">USGS PP 207 (PDF)</a>
+      <a class="access-external" href="https://pubs.usgs.gov/pp/0207/report.pdf">USGS original</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-35" data-level="B"><div class="ref-num"><a href="#ref-35">[35]</a></div><div class="entry-body">
+    <div class="entry-title">Merriam, &ldquo;Portuguese Bend Landslide, Palos Verdes Hills, California&rdquo; <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">R. Merriam, &ldquo;Portuguese Bend Landslide, Palos Verdes Hills, California,&rdquo; 68 <em>J. Geol.</em> 140 (1960).</div>
+    <div class="entry-desc">First major scientific paper following the 1956 reactivation. Establishes the modern mechanics literature for the slide.</div>
+  </div></div>
+
+  <div class="entry" id="ref-36" data-level="A"><div class="ref-num"><a href="#ref-36">[36]</a></div><div class="entry-body">
+    <div class="entry-title">Ehlig (comp. Cooper), <em>Landslides and Landslide Abatement, Palos Verdes Peninsula</em> <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">P.L. Ehlig &amp; M.E. Ray (leaders); J.D. Cooper (compiler), <em>Landslides and Landslide Abatement, Palos Verdes Peninsula, Southern California: Guidebook and Volume</em>, Field Trip No.&nbsp;10, 78th Annual Meeting, Cordilleran Section, Geol. Soc. Am. (Anaheim, Apr.&nbsp;19&ndash;21, 1982) (Ass'n of Eng'g Geologists, S. Cal. Sec., 1982).</div>
+    <div class="entry-desc">Comprehensive peer-reviewed synthesis of the Palos Verdes landslide complex. Contains Ehlig's own mechanics paper, Ray on South Shores, Vonder Linden &amp; Lindvall on Portuguese Bend, Ehlig &amp; Bean on Abalone Cove dewatering, Novak on bentonite chemistry, Lass &amp; Eagen on the Ancient Abalone Cove slides. Source of the widely cited line: &ldquo;laboratory tests demonstrated the stability of the landslide was adequate for residential development but nature expressed a contrary opinion.&rdquo;</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/1982-ehlig-landslides-guidebook-verbatim.md">Verbatim transcription</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-37" data-level="B"><div class="ref-num"><a href="#ref-37">[37]</a></div><div class="entry-body">
+    <div class="entry-title">Vonder Linden, &ldquo;The Portuguese Bend Landslide&rdquo; <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">K. Vonder Linden, &ldquo;The Portuguese Bend Landslide,&rdquo; 27 <em>Eng'g Geol.</em> 301 (1989).</div>
+    <div class="entry-desc">The definitive 73-page mechanics study of the Portuguese Bend landslide.</div>
+  </div></div>
+
+  <div class="entry" id="ref-38" data-level="B"><div class="ref-num"><a href="#ref-38">[38]</a></div><div class="entry-body">
+    <div class="entry-title">Ehlig, &ldquo;Evolution, Mechanics and Mitigation of the Portuguese Bend Landslide&rdquo; <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">P.L. Ehlig, &ldquo;Evolution, Mechanics and Mitigation of the Portuguese Bend Landslide, Palos Verdes Peninsula, California,&rdquo; in B.W. Pipkin &amp; R.J. Proctor (eds.), <em>Engineering Geology Practice in Southern California</em>, AEG Special Publ. No.&nbsp;4, 531&ndash;553 (1992).</div>
+    <div class="entry-desc">Ehlig's updated synthesis with a decade of additional monitoring and intervention experience.</div>
+  </div></div>
+
+  <div class="entry" id="ref-39" data-level="A"><div class="ref-num"><a href="#ref-39">[39]</a></div><div class="entry-body">
+    <div class="entry-title">Calabro et al., Seasonal Deformation at Portuguese Bend (InSAR) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">M.D. Calabro et al., &ldquo;An Examination of Seasonal Deformation at the Portuguese Bend Landslide, Southern California, Using Radar Interferometry,&rdquo; 115 <em>J. Geophys. Res.: Earth Surf.</em> F02020 (2010).</div>
+    <div class="entry-desc">Satellite InSAR documentation of seasonal deformation rates, tying movement to rainfall and groundwater.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/geological/2010-calabro-insar-portuguese-bend.pdf">Article (PDF)</a>
+      <a class="access-external" href="https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1029/2009JF001314">AGU</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-40" data-level="A"><div class="ref-num"><a href="#ref-40">[40]</a></div><div class="entry-body">
+    <div class="entry-title">LGC Valley &mdash; Zone 2 Landslide Moratorium Geotechnical Study <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">LGC Valley, Inc., <em>Geotechnical Study for Preparation of an Environmental Impact Report for the Zone 2 Landslide Moratorium Ordinance Revision</em>, Appendix D, City of Rancho Palos Verdes (2011).</div>
+    <div class="entry-desc">The City's own commissioned study. Zone 2: 112 acres, 111 lots, moving 0.3 in/yr. Factor of safety between 1.0 and 1.5. Basal rupture surface on sheared bentonite clay within the Altamira Shale. Development conditions: &lt; 1,000 CY grading per lot, mandatory ACLAD membership, public sewer.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/2011-lgc-valley-zone2-verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/geological/2011-lgc-valley-zone2-geotechnical-study.pdf">Study (PDF)</a>
+      <a class="access-external" href="https://www.rpvca.gov/DocumentCenter/View/1815/Appendix-D-Geotechnical-Study-PDF">RPV source</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-41" data-level="A"><div class="ref-num"><a href="#ref-41">[41]</a></div><div class="entry-body">
+    <div class="entry-title">McNulty &mdash; CSUDH Palos Verdes Field Guide <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">McNulty, <em>Palos Verdes Field Guide</em>, Cal. State Univ., Dominguez Hills, Dept. of Earth Sciences (2012).</div>
+    <div class="entry-desc">Academic field guide documenting Portuguese Bend at 14 feet per year movement (2012), the 13 marine terraces, the Altamira Shale bentonitic slide plane, and the post-WWII development (irrigation, pools, septic) as direct catalyst of modern Portuguese Bend reactivation.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/2012-csudh-field-guide-verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/geological/2012-csudh-palos-verdes-field-guide.pdf">Field guide (PDF)</a>
+      <a class="access-external" href="https://www.csudh.edu/Assets/csudh-sites/earth/docs/palosverdesfieldguide.pdf">CSUDH source</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-42" data-level="B"><div class="ref-num"><a href="#ref-42">[42]</a></div><div class="entry-body">
+    <div class="entry-title">Dibblee et al., Geologic Map of the Palos Verdes Peninsula <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">T.W. Dibblee et al., <em>Geologic Map of the Palos Verdes Peninsula and Vicinity</em>, Dibblee Geol. Found. Map DF-70 (1999), 1:24,000.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://ngmdb.usgs.gov/Prodesc/proddesc_71706.htm">NGMDB entry</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-43" data-level="B"><div class="ref-num"><a href="#ref-43">[43]</a></div><div class="entry-body">
+    <div class="entry-title">California Geological Survey &mdash; &ldquo;Portuguese Bend Landslide&rdquo; <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Geol. Surv., &ldquo;Portuguese Bend Landslide,&rdquo; 55 <em>California Geology</em> 30&ndash;32 (2024).</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://www.conservation.ca.gov/cgs/documents/publications/california-geology-magazine/CG_2024.pdf">CGS magazine</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-44" data-level="A"><div class="ref-num"><a href="#ref-44">[44]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes Landslide References (curated citation list) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Foundation research, <em>Palos Verdes Peninsula / Portuguese Bend / Abalone Cove Landslide, Geology &amp; Land-Use References</em> (Apr. 2026).</div>
+    <div class="entry-desc">Federal, state, professional society, and academic sources with full citations and download links, organized for scholarly use.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/geological/palos-verdes-landslide-references.md">Reference list</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s5">
+  <div class="section-num">§ V</div>
+  <h2>Case Law</h2>
+  <p class="section-note">Reported and active decisions bearing on the PV Corp declaration scheme, landslide liability, covenant enforceability, and the Coastal Act. Citations follow Bluebook form.</p>
+
+  <div class="entry" id="ref-45" data-level="B"><div class="ref-num"><a href="#ref-45">[45]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Werner v. Graham</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Werner v. Graham</em>, 181 Cal. 174 (1919).</div>
+    <div class="entry-desc">Cal. Supreme Court: where a developer subdivided and recorded a map but did not record any document imposing uniform restrictions on the entire subdivision, the property is not bound by restrictions appearing only in individual deeds. Foundational to the PV Corp declaration scheme analysis.</div>
+  </div></div>
+
+  <div class="entry" id="ref-46" data-level="B"><div class="ref-num"><a href="#ref-46">[46]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Russell v. Palos Verdes Properties</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Russell v. Palos Verdes Properties</em>, 218 Cal. App. 2d 754 (1963).</div>
+    <div class="entry-desc">Subdivision restriction case involving Declaration 150-W. Holds that where an instrument's covenants do not technically run with the land, equity will enforce them against transferees who acquired with actual or constructive notice where failure to enforce would produce an inequitable result. The &ldquo;General Plan&rdquo; commentary applied by subsequent associations was later held to be dicta. <em>Colyear</em> (2024) controls the current analysis.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://law.justia.com/cases/california/court-of-appeal/2d/218/754.html">Justia</a>
+      <a class="access-external" href="https://www.davis-stirling.com/HOME/Case-Law/Russell-v-Palos-Verdes">Davis-Stirling</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-47" data-level="B"><div class="ref-num"><a href="#ref-47">[47]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Albers v. County of Los Angeles</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Albers v. County of Los Angeles</em>, 62 Cal. 2d 250 (1965).</div>
+    <div class="entry-desc">81 consolidated actions arising from the Aug.&nbsp;20, 1956 Portuguese Bend landslide. Cal. Supreme Court held the County of Los Angeles liable in inverse condemnation for $5.36 million: any physical injury to real property proximately caused by a public improvement as deliberately designed and constructed is compensable under Cal. Const. art.&nbsp;I, &sect;&nbsp;14, <em>foreseeable or not</em>. The court expressly cited the 1946 USGS geologic report as evidence that the pre-existing landslide was known to geologists.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://scocal.stanford.edu/opinion/albers-v-county-los-angeles-27279">Stanford SCOCAL</a>
+      <a class="access-external" href="https://law.justia.com/cases/california/supreme-court/2d/62/250.html">Justia</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-48" data-level="B"><div class="ref-num"><a href="#ref-48">[48]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Riley v. Bear Creek Planning Committee</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Riley v. Bear Creek Planning Comm.</em>, 17 Cal. 3d 500 (1976).</div>
+    <div class="entry-desc">Cal. Supreme Court: restrictions recorded <em>after</em> conveyance, not referenced in the deed, do not bind the grantee. Parol evidence of the parties' intent is insufficient; covenants must be in writing and properly recorded.</div>
+  </div></div>
+
+  <div class="entry" id="ref-49" data-level="B"><div class="ref-num"><a href="#ref-49">[49]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Phillippe v. Shapell Industries</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Phillippe v. Shapell Indus., Inc.</em>, 43 Cal. 3d 1247 (1987).</div>
+    <div class="entry-desc">In April 1973, Shapell Industries attempted to purchase a parcel on the Palos Verdes Peninsula owned by the Filiorum Corporation. &ldquo;The sale of the Filiorum property was not consummated due to geological problems.&rdquo; The opinion stands for the proposition that Shapell, a large builder, walked away from Filiorum land because of the same geology that governs 0&nbsp;Clipper today.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://scocal.stanford.edu/opinion/phillippe-v-shapell-industries-28479">Stanford SCOCAL</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-50" data-level="B"><div class="ref-num"><a href="#ref-50">[50]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Citizens for Covenant Compliance v. Anderson</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Citizens for Covenant Compliance v. Anderson</em>, 12 Cal. 4th 345 (1995).</div>
+    <div class="entry-desc">Cal. Supreme Court: a declaration of restrictions for a subdivision need not be cited in a parcel's deed to be effective <em>if</em> it was recorded before the execution of the contract of sale, <em>describes the property it is to govern</em>, and states that it binds purchasers. The controlling authority on whether Declaration 100 binds 0&nbsp;Clipper.</div>
+  </div></div>
+
+  <div class="entry" id="ref-51" data-level="B"><div class="ref-num"><a href="#ref-51">[51]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Nunn v. Rolling Hills Community Association</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Nunn v. Rolling Hills Cmty. Ass'n of Rancho Palos Verdes</em>, No. BC314522 (L.A. Co. Super. Ct. 2004).</div>
+    <div class="entry-desc">Superior Court held that Declaration 150's Tree CC applied to the Nunn property because it was in the Nunn chain of title. The uphill Lorig property was held not bound because Declaration 150 was not in its chain. Discussed in <em>Colyear</em>.</div>
+  </div></div>
+
+  <div class="entry" id="ref-52" data-level="B"><div class="ref-num"><a href="#ref-52">[52]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Monks v. City of Rancho Palos Verdes</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Monks v. City of Rancho Palos Verdes</em>, 167 Cal. App. 4th 263 (2008).</div>
+    <div class="entry-desc">Cal. Court of Appeal: the City's blanket prohibition on developing undeveloped lots within the landslide moratorium amounted to an unconstitutional taking as applied to the plaintiffs. The City was required to adopt a case-by-case exception process. The moratorium framework itself survived.</div>
+  </div></div>
+
+  <div class="entry" id="ref-53" data-level="B"><div class="ref-num"><a href="#ref-53">[53]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Pacific Palisades Bowl Mobile Estates v. City of Los Angeles</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>Pac. Palisades Bowl Mobile Estates, LLC v. City of Los Angeles</em>, 55 Cal. 4th 783 (2012).</div>
+    <div class="entry-desc">Cal. Supreme Court: &ldquo;development&rdquo; under the Coastal Act receives an <em>expansive</em> interpretation. The statutory definition in PRC &sect;&nbsp;30106 expressly includes changes in the density or intensity of land use. Directly relevant to the question whether the 2024 upzoning of 0&nbsp;Clipper from RS-4 to RM-22 is &ldquo;development&rdquo; requiring Coastal Commission certification.</div>
+  </div></div>
+
+  <div class="entry" id="ref-54" data-level="A"><div class="ref-num"><a href="#ref-54">[54]</a></div><div class="entry-body">
+    <div class="entry-title"><em>Colyear v. Rolling Hills Community Association of Rancho Palos Verdes</em> <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation"><em>Colyear v. Rolling Hills Cmty. Ass'n of Rancho Palos Verdes</em>, No. B308382 (Cal. Ct. App., 2d Dist., Div. 4, Mar.&nbsp;1, 2024) (certified for partial publication).</div>
+    <div class="entry-desc">The most recent authoritative decision on the Palos Verdes Corporation declaration scheme. Rolling Hills C.A. could not enforce Declaration 150's Tree CC against Colyear's property because Declaration 150 does not describe his land and Declaration 150-M does not clearly incorporate Declaration 150. Extrinsic evidence of PVC's intent (including Kelvin Vanderlip's own letters) was insufficient. <em>Russell</em>'s general-plan commentary was dicta. Directly analogous to the Declaration 100 / 0&nbsp;Clipper question.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/litigation/2024-colyear-rolling-hills-community-association.md">Analysis</a>
+      <a class="access-pdf" href="/docs/litigation/2024-colyear-rolling-hills-community-association.pdf">Opinion (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-55" data-level="A"><div class="ref-num"><a href="#ref-55">[55]</a></div><div class="entry-body">
+    <div class="entry-title">Clipper Road Rezoning Litigation &mdash; 24TRCP00352 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Petition for Writ of Mandate, L.A. Co. Super. Ct. No. 24TRCP00352 (filed Sept.&nbsp;11, 2024).</div>
+    <div class="entry-desc">Active litigation challenging the City's rezoning of 0&nbsp;Clipper Road from RS-4 to RM-22 through Ordinances 678U, 680U, and 681. Four causes of action including Political Reform Act violation. See full filings in &sect;&nbsp;XII.</div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s6">
+  <div class="section-num">§ VI</div>
+  <h2>RPV Regulatory Record (1975&ndash;2025)</h2>
+  <p class="section-note">The City of Rancho Palos Verdes planning framework as adopted, certified, and enforced.</p>
+
+  <div class="entry" id="ref-56" data-level="B"><div class="ref-num"><a href="#ref-56">[56]</a></div><div class="entry-body">
+    <div class="entry-title">General Plan (1975, original) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, General Plan, adopted 1975.</div>
+    <div class="entry-desc">First General Plan adopted following the City's 1973 incorporation. Foundation for the Coastal Specific Plan.</div>
+  </div></div>
+
+  <div class="entry" id="ref-57" data-level="A"><div class="ref-num"><a href="#ref-57">[57]</a></div><div class="entry-body">
+    <div class="entry-title">Coastal Specific Plan (1978, updated 2015) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, <em>Coastal Specific Plan</em>, adopted by Resolution No.&nbsp;78-61 (Dec.&nbsp;19, 1978); certified by the Cal. Coastal Comm'n; restated with amendment 2015.</div>
+    <div class="entry-desc">The City's certified Local Coastal Program. Divides the coastal zone into eight subregions. Subregion 4 covers the Community of Abalone Cove (~40 acres, 81 lots). Policies, density designations, corridor designations, and Schematic Plans #1 and #2 governing the fire station site remain as re-adopted in 2015. Amended once (Section C, flag pole provisions) in connection with the Trump National Golf Club settlement. No Subregion 4 amendments.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/coastal-plan/1978-coastal-specific-plan-subregion4-urban-verbatim.md">Subregion 4 + Urban + Corridor verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-58" data-level="B"><div class="ref-num"><a href="#ref-58">[58]</a></div><div class="entry-body">
+    <div class="entry-title">General Plan (2018 update) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, General Plan (2018 update).</div>
+  </div></div>
+
+  <div class="entry" id="ref-59" data-level="B"><div class="ref-num"><a href="#ref-59">[59]</a></div><div class="entry-body">
+    <div class="entry-title">Resolution 78-61 &mdash; Coastal Specific Plan Adoption <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Rancho Palos Verdes City Council, Resolution No.&nbsp;78-61 (Dec.&nbsp;19, 1978).</div>
+    <div class="entry-desc">The adopting resolution for the Coastal Specific Plan.</div>
+  </div></div>
+
+  <div class="entry" id="ref-60" data-level="B"><div class="ref-num"><a href="#ref-60">[60]</a></div><div class="entry-body">
+    <div class="entry-title">LCP Amendment for Trump National Flagpole (2015) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Coastal Comm'n, Staff Report, LCP Amendment for Rancho Palos Verdes &mdash; Flagpole Height Provisions (2015).</div>
+    <div class="entry-desc">Amendment to Section C of the Coastal Specific Plan permitting flagpoles up to 70 feet under specific conditions (120-acre minimum parcel, public dedication, American flag, 20 free parking spaces, restrooms, fountain, bench seating). The only substantive amendment to the Plan since 1978. Adopted by the City and certified by the Coastal Commission to settle the Trump National Golf Club litigation commenced after a 70-foot flagpole was erected in 2006 without a Coastal Development Permit.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://documents.coastal.ca.gov/reports/2015/10/Tu6a-10-2015.pdf">CCC staff report</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-61" data-level="B"><div class="ref-num"><a href="#ref-61">[61]</a></div><div class="entry-body">
+    <div class="entry-title">Ordinance 678U (urgency) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Rancho Palos Verdes, Ordinance No.&nbsp;678U (April&nbsp;16, 2024).</div>
+    <div class="entry-desc">Urgency ordinance rezoning 0&nbsp;Clipper Road (and other Housing Element sites) from RS-4 to RM-22.</div>
+  </div></div>
+
+  <div class="entry" id="ref-62" data-level="B"><div class="ref-num"><a href="#ref-62">[62]</a></div><div class="entry-body">
+    <div class="entry-title">Ordinance 680U (urgency) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Rancho Palos Verdes, Ordinance No.&nbsp;680U (June&nbsp;4, 2024).</div>
+  </div></div>
+
+  <div class="entry" id="ref-63" data-level="B"><div class="ref-num"><a href="#ref-63">[63]</a></div><div class="entry-body">
+    <div class="entry-title">Ordinance 681 (regular) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Rancho Palos Verdes, Ordinance No.&nbsp;681 (June&nbsp;18, 2024).</div>
+    <div class="entry-desc">Regular ordinance. Three rezoning ordinances in sixty-three days. Subject of the Clipper Road Rezoning Litigation (No.&nbsp;24TRCP00352).</div>
+  </div></div>
+
+  <div class="entry" id="ref-64" data-level="B"><div class="ref-num"><a href="#ref-64">[64]</a></div><div class="entry-body">
+    <div class="entry-title">Resolution 2024-17 &mdash; Coastal Commission Submission <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Rancho Palos Verdes City Council, Resolution 2024-17.</div>
+    <div class="entry-desc">Submits the 2024 rezoning amendments to the Coastal Commission for certification under PRC &sect;&nbsp;30514. Per the City's own demurrer in 24TRCP00352, the rezoning is &ldquo;not effective pending Coastal Commission certification.&rdquo;</div>
+  </div></div>
+
+  <div class="entry" id="ref-65" data-level="A"><div class="ref-num"><a href="#ref-65">[65]</a></div><div class="entry-body">
+    <div class="entry-title">Long-Range Property Management Plan (LRPMP) &mdash; APN 7573-007-900 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Successor Agency to the Rancho Palos Verdes Redevelopment Agency, <em>Long-Range Property Management Plan</em>, pp.&nbsp;23&ndash;26 (approved Cal. Dep't of Finance, April 2014).</div>
+    <div class="entry-desc">The City's own state-reviewed admission, for the Abalone Cove Shoreline Park parcel at the SE corner of Sea Cove and PV Drive South: &ldquo;The parcel is also subject to various Covenants, Conditions, and Restrictions (CC&amp;Rs). &hellip; Those CC&amp;Rs could limit the type of development or use that is permissible on the parcel.&rdquo; The parcel is part of the same Parcel&nbsp;106 remainder strip as 0&nbsp;Clipper Road. Title history dates to the 1920s; 24-inch drainage pipe documented; NCCP Reserve status acknowledged; Coastal Commission certification noted as required for any zoning change.</div>
+  </div></div>
+
+  <div class="entry" id="ref-66" data-level="B"><div class="ref-num"><a href="#ref-66">[66]</a></div><div class="entry-body">
+    <div class="entry-title">Park &amp; Infrastructure Maintenance Easement <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Successor Agency to RPV RDA &amp; City of Rancho Palos Verdes, Park &amp; Infrastructure Maintenance Easement Agreement, dated May&nbsp;3, 2011.</div>
+    <div class="entry-desc">Grants the City perpetual easement rights across Abalone Cove Shoreline Park.</div>
+  </div></div>
+
+  <div class="entry" id="ref-67" data-level="B"><div class="ref-num"><a href="#ref-67">[67]</a></div><div class="entry-body">
+    <div class="entry-title">Horan Agreement (1987) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Successor Agency to RPV RDA, Section 7 of the Horan Agreement (Nov.&nbsp;10, 1987).</div>
+    <div class="entry-desc">Settles the Horan landslide litigation and conveys four parcels including the Abalone Cove Beach property from Los Angeles County to the RDA.</div>
+  </div></div>
+
+  <div class="entry" id="ref-68" data-level="B"><div class="ref-num"><a href="#ref-68">[68]</a></div><div class="entry-body">
+    <div class="entry-title">Natural Communities Conservation Plan / Habitat Conservation Plan <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, Natural Communities Conservation Plan / Habitat Conservation Plan (adopted 2019).</div>
+    <div class="entry-desc">The City's framework for habitat management on the Palos Verdes Nature Preserve. PVPLC serves as Habitat Manager.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://www.rpvca.gov/490/Palos-Verdes-Nature-Preserve-NCCP-PUMP-H">RPV portal</a>
+      <a class="access-external" href="https://pvplc.org/wp-content/uploads/2020/01/NCCP.pdf">NCCP Plan (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s7">
+  <div class="section-num">§ VII</div>
+  <h2>State &amp; Federal Framework</h2>
+  <p class="section-note">Statutes, regulations, and agency actions bearing on the coastal zone, endangered species, housing element, and landslide-area land use.</p>
+
+  <div class="entry" id="ref-69" data-level="B"><div class="ref-num"><a href="#ref-69">[69]</a></div><div class="entry-body">
+    <div class="entry-title">California Coastal Act of 1976 <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Pub. Res. Code &sect;&sect; 30000&ndash;30900 (Div. 20) (eff. Jan. 1, 1977).</div>
+    <div class="entry-desc">The governing statute for the California coastal zone. Establishes the Coastal Commission, Local Coastal Programs, and Coastal Development Permit requirements.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://www.coastal.ca.gov/coastact.pdf">Coastal Act (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-70" data-level="B"><div class="ref-num"><a href="#ref-70">[70]</a></div><div class="entry-body">
+    <div class="entry-title">PRC &sect;&nbsp;30106 &mdash; Definition of &ldquo;Development&rdquo; <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Pub. Res. Code &sect;&nbsp;30106.</div>
+    <div class="entry-desc">Defines &ldquo;development&rdquo; expansively to include &ldquo;change in the density or intensity of use of land.&rdquo; Construed in <em>Pacific Palisades Bowl Mobile Estates</em> (2012).</div>
+  </div></div>
+
+  <div class="entry" id="ref-71" data-level="B"><div class="ref-num"><a href="#ref-71">[71]</a></div><div class="entry-body">
+    <div class="entry-title">PRC &sect;&nbsp;30514 &mdash; LCP Amendments <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Pub. Res. Code &sect;&nbsp;30514(a).</div>
+    <div class="entry-desc">&ldquo;No amendment to a certified local coastal program shall take effect until it has been certified by the commission.&rdquo; The statutory basis for the flagpole amendment and for the question whether the 2024 rezoning requires Commission certification to take effect.</div>
+  </div></div>
+
+  <div class="entry" id="ref-72" data-level="B"><div class="ref-num"><a href="#ref-72">[72]</a></div><div class="entry-body">
+    <div class="entry-title">PRC &sect;&nbsp;30600 &mdash; Coastal Development Permits <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Pub. Res. Code &sect;&nbsp;30600.</div>
+    <div class="entry-desc">Requires a Coastal Development Permit for any &ldquo;development&rdquo; in the coastal zone.</div>
+  </div></div>
+
+  <div class="entry" id="ref-73" data-level="B"><div class="ref-num"><a href="#ref-73">[73]</a></div><div class="entry-body">
+    <div class="entry-title">State Park Bond Acts &mdash; Grant BB-19-349 <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">California Park and Recreational Facilities Act, 1986 &amp; 1988 Bond Acts; Grant No. BB-19-349.</div>
+    <div class="entry-desc">State Park Bond Acts funded $200,000+ of improvements to Abalone Cove Shoreline Park (parking lot, restrooms). Grant covenants require perpetual maintenance of park use; any change requires State Legislature approval.</div>
+  </div></div>
+
+  <div class="entry" id="ref-74" data-level="B"><div class="ref-num"><a href="#ref-74">[74]</a></div><div class="entry-body">
+    <div class="entry-title">Endangered Species Act &mdash; Palos Verdes Blue Butterfly <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Endangered Species Act &sect;&sect;&nbsp;4, 7, 16 U.S.C. &sect;&sect;&nbsp;1533, 1536; <em>Glaucopsyche lygdamus palosverdesensis</em> listed as endangered.</div>
+    <div class="entry-desc">Federal protection for the Palos Verdes Blue Butterfly, the rarest butterfly in the world, endemic to the peninsula. Section 7 requires federal agencies to ensure actions do not jeopardize listed species. Any 0&nbsp;Clipper development within range of the species must address habitat under Section 7.</div>
+  </div></div>
+
+  <div class="entry" id="ref-75" data-level="B"><div class="ref-num"><a href="#ref-75">[75]</a></div><div class="entry-body">
+    <div class="entry-title">FEMA Voluntary Buyout Program &mdash; Palos Verdes Landslide Complex <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Federal Emergency Management Agency, $42 million voluntary buyout, Portuguese Bend / Abalone Cove area (2024&ndash;25).</div>
+    <div class="entry-desc">Voluntary buyout program for severely impacted properties in the landslide complex at pre-disaster valuations. Structures demolished; land retired to open space.</div>
+  </div></div>
+
+  <div class="entry" id="ref-76" data-level="B"><div class="ref-num"><a href="#ref-76">[76]</a></div><div class="entry-body">
+    <div class="entry-title">HCD Housing Element Review &mdash; Site Removal Confirmed Allowable <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Dep't of Housing &amp; Cmty. Dev., Letter to City of Rancho Palos Verdes (Jan.&nbsp;23, 2025).</div>
+    <div class="entry-desc">HCD confirmed in writing that the City may remove Site&nbsp;16 (0&nbsp;Clipper Road) from its certified housing element and remain RHNA-compliant. The City Council voted on June&nbsp;3, 2025 to keep Site&nbsp;16 anyway.</div>
+  </div></div>
+
+  <div class="entry" id="ref-77" data-level="B"><div class="ref-num"><a href="#ref-77">[77]</a></div><div class="entry-body">
+    <div class="entry-title">HCD Compliance Letter <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Dep't of Housing &amp; Cmty. Dev., Letter to City of Rancho Palos Verdes (June&nbsp;12, 2024).</div>
+  </div></div>
+
+  <div class="entry" id="ref-78" data-level="B"><div class="ref-num"><a href="#ref-78">[78]</a></div><div class="entry-body">
+    <div class="entry-title">HCD Review of First Adopted Housing Element <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Dep't of Housing &amp; Cmty. Dev., Review Letter (Oct.&nbsp;14, 2022).</div>
+    <div class="entry-desc">Original HCD review of the City's first housing element submission; adopted after the Oct.&nbsp;15, 2022 state deadline.</div>
+  </div></div>
+
+  <div class="entry" id="ref-79" data-level="B"><div class="ref-num"><a href="#ref-79">[79]</a></div><div class="entry-body">
+    <div class="entry-title">CCC Staff Report &mdash; LCP Amendment 5-RPV-24-0017-1 <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Cal. Coastal Comm'n, Staff Report LCP-5-RPV-24-0017-1 (Aug.&nbsp;14, 2025).</div>
+    <div class="entry-desc">Coastal Commission's review of the City's 2024 LCP amendment submission relating to the housing element rezoning.</div>
+  </div></div>
+
+  <div class="entry" id="ref-80" data-level="B"><div class="ref-num"><a href="#ref-80">[80]</a></div><div class="entry-body">
+    <div class="entry-title">Montrose Chemical / DDT Superfund Settlement <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation"><em>United States v. Montrose Chemical Corp.</em>, settlement announced Dec.&nbsp;2000 ($140 million).</div>
+    <div class="entry-desc">From 1947 to 1982, Montrose Chemical discharged ~1,700 tons of DDT through the LA County White Point outfall; 110 tons remain on the Palos Verdes Shelf (17 sq mi). $140M Superfund settlement, the largest non-oil environmental damages recovery in history. Fish advisories posted continuously since 1985.</div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s8">
+  <div class="section-num">§ VIII</div>
+  <h2>Landslide &amp; Hazard Documentation</h2>
+  <p class="section-note">Active hazard documentation, moratorium record, and monitoring data for the Greater Portuguese Bend Landslide Complex.</p>
+
+  <div class="entry" id="ref-81" data-level="B"><div class="ref-num"><a href="#ref-81">[81]</a></div><div class="entry-body">
+    <div class="entry-title">Landslide Moratorium Ordinance <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, Landslide Moratorium Ordinance (original 1978; revised post-<em>Monks</em> 2009).</div>
+    <div class="entry-desc">Prohibits new construction on undeveloped land within the twelve-hundred-acre slide zone. Revised per <em>Monks v. RPV</em> to create a case-by-case exception process. Made permanent across the Greater Portuguese Bend Landslide Complex by City Council action effective September 2025.</div>
+  </div></div>
+
+  <div class="entry" id="ref-82" data-level="B"><div class="ref-num"><a href="#ref-82">[82]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Cove Landslide Abatement District (ACLAD) Reports <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">ACLAD, Well reports, GPS monitoring data, contractor documents (ongoing).</div>
+    <div class="entry-desc">22 dewatering wells, continuous GPS monitoring. As of May 2025 Working Group: ground moving 2.14 inches per week in the active complex.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://www.abalonecovelad.com/geological-reports">ACLAD portal</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-83" data-level="B"><div class="ref-num"><a href="#ref-83">[83]</a></div><div class="entry-body">
+    <div class="entry-title">Zone 2 Landslide EIR <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, Environmental Impact Report for Zone 2 Landslide Moratorium Ordinance Revision (2011), Appendix D (LGC Valley).</div>
+    <div class="entry-desc">The City's own EIR, with its geology section establishing that residential plumbing systems were &ldquo;likely catalysts&rdquo; for slide movement and that groundwater is &ldquo;the controlling factor.&rdquo; See also &sect;&nbsp;IV, Ref.&nbsp;40.</div>
+  </div></div>
+
+  <div class="entry" id="ref-84" data-level="B"><div class="ref-num"><a href="#ref-84">[84]</a></div><div class="entry-body">
+    <div class="entry-title">Governor's Declaration of State of Emergency <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Office of Gov. Gavin Newsom, Proclamation of State of Emergency (Palos Verdes Peninsula landslide), Sept.&nbsp;3, 2024.</div>
+  </div></div>
+
+  <div class="entry" id="ref-85" data-level="B"><div class="ref-num"><a href="#ref-85">[85]</a></div><div class="entry-body">
+    <div class="entry-title">Landslide Working Group Meeting Notes <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, Landslide Working Group, Meeting Notes (May&nbsp;7, 2025).</div>
+  </div></div>
+
+  <div class="entry" id="ref-86" data-level="B"><div class="ref-num"><a href="#ref-86">[86]</a></div><div class="entry-body">
+    <div class="entry-title">RPV Geology Survey &mdash; Landslide Map <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">City of Rancho Palos Verdes, Geology Survey, Landslide Map.</div>
+  </div></div>
+
+  <div class="entry" id="ref-87" data-level="B"><div class="ref-num"><a href="#ref-87">[87]</a></div><div class="entry-body">
+    <div class="entry-title">Permanent Moratorium Action <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Rancho Palos Verdes City Council, Action making landslide-area moratorium permanent (Aug.&nbsp;2025; effective Sept.&nbsp;2025).</div>
+    <div class="entry-desc">Prohibition on new residential construction (including additions) on vacant land made permanent across the Greater Portuguese Bend Landslide Complex.</div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s9">
+  <div class="section-num">§ IX</div>
+  <h2>Historical &amp; Promotional Records</h2>
+  <p class="section-note">Primary historical materials documenting the PV Corporation's development intent, the Vanderlip-era community, and the pre-existing geologic record.</p>
+
+  <div class="entry" id="ref-88" data-level="A"><div class="ref-num"><a href="#ref-88">[88]</a></div><div class="entry-body">
+    <div class="entry-title">Baughey, &ldquo;Rancho Palos Verdes 1784&ndash;1947&rdquo; <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Col. Robert M. Baughey, &ldquo;Rancho Palos Verdes 1784&ndash;1947,&rdquo; Palos Verdes Corp. anniversary article (1947).</div>
+    <div class="entry-desc">The source of the 1913 Vanderlip purchase narrative and the peninsula's early-20th-century chronology.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Higgins 12.png">Article (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-89" data-level="B"><div class="ref-num"><a href="#ref-89">[89]</a></div><div class="entry-body">
+    <div class="entry-title">Hanson, <em>Rolling Hills, The Early Years</em> <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">A.E. Hanson, <em>Rolling Hills, The Early Years</em> 24 (1978).</div>
+    <div class="entry-desc">Memoir by the first General Manager of Palos Verdes Corporation. Cited in <em>Colyear</em> for PVC's &ldquo;good restrictions&rdquo; framing and the development intent for Rolling Hills under Declaration 150.</div>
+  </div></div>
+
+  <div class="entry" id="ref-90" data-level="B"><div class="ref-num"><a href="#ref-90">[90]</a></div><div class="entry-body">
+    <div class="entry-title">Swaffield Study (1947) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">R. Swaffield, Study Regarding Inconsistencies Between Declaration 150 and the Annexation Declarations (1947).</div>
+    <div class="entry-desc">Contemporaneous analysis by a Rolling Hills attorney and resident documenting the &ldquo;wide divergence&rdquo; of restrictions across the 57 annexation declarations. Source of Kelvin Vanderlip's November 1947 admission that PVC intentionally removed substantive provisions from later declarations &ldquo;for the purpose of simplification.&rdquo; Quoted in <em>Colyear</em>.</div>
+  </div></div>
+
+  <div class="entry" id="ref-91" data-level="A"><div class="ref-num"><a href="#ref-91">[91]</a></div><div class="entry-body">
+    <div class="entry-title">Portuguese Bend Area, Nov.&nbsp;28, 1931 Aerial &mdash; Labeled Landslide Map <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Spence Air Photo Collection, Dep't of Geography, UCLA. Aerial photograph, Portuguese Bend Area, Nov.&nbsp;28, 1931. Overlay labels applied by geologists.</div>
+    <div class="entry-desc">Aerial photograph showing the Portuguese Bend Active Landslide, Klondike Canyon Landslide, Beach Club Landslide, and Seaview Syncline already mapped twenty-five years before the 1956 reactivation. Demonstrates the landslides were documented and geologically understood prior to post-war development.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Higgins 2.png">Aerial (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-92" data-level="A"><div class="ref-num"><a href="#ref-92">[92]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes Properties &mdash; Crenshaw Extension Progress Report <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Properties, <em>Progress Report: Crenshaw Extension Nears Palos Verdes Drive South</em> (1955), partnership of Rancho Palos Verdes Corp. and Capital Company.</div>
+    <div class="entry-desc">Promotional report published in 1955 announcing the Crenshaw Boulevard extension, forecasting completion &ldquo;by early 1956.&rdquo; The road construction dumped 175,000 cubic yards of fill on the known prehistoric slide area. The slide reactivated on August&nbsp;20, 1956. This document is the contemporaneous record of what the developer-operator was doing in the months preceding <em>Albers v. County</em>.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Higgins 1.png">Progress report (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-93" data-level="A"><div class="ref-num"><a href="#ref-93">[93]</a></div><div class="entry-body">
+    <div class="entry-title">&ldquo;Palos Verdes &mdash; The New City&rdquo; advertisement <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Corp., &ldquo;Palos Verdes &mdash; The New City: Beauty&middot;Health&middot;Happiness,&rdquo; promotional advertisement (c. 1924).</div>
+    <div class="entry-desc">The development vision as sold. Evidence of intended character and class of community.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Higgins 11.png">Advertisement (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-94" data-level="A"><div class="ref-num"><a href="#ref-94">[94]</a></div><div class="entry-body">
+    <div class="entry-title">Gruen &mdash; PV Peninsula Master Plan &amp; Zoning Map <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Victor Gruen Associates, Palos Verdes Peninsula Master Plan &amp; Zoning Map (1953).</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/1953-gruen-master-plan-zoning-map-pv-peninsula-crop.png">Zoning map (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-95" data-level="A"><div class="ref-num"><a href="#ref-95">[95]</a></div><div class="entry-body">
+    <div class="entry-title">Olmsted Brothers Topographic Survey <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Olmsted Brothers, Landscape Architects, Job File #5950, Topographic survey and landscape plan for the Palos Verdes Peninsula (c. 1914).</div>
+    <div class="entry-desc">Olmsted street plan overlaid on topographic survey. Shows Costa del Mar curving around Abalone Cove; Crenshaw descending; Hawthorne Boulevard not yet extant. The master landscape framework underlying all subsequent PV planning.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Topo_1914.png">1914 Olmsted topo (image)</a>
+      <a class="access-image" href="/images/olmsted%201.jpg">Olmsted landscape plan for Vanderlip</a>
+      <a class="access-image" href="/images/69.jpeg">PVE developed area map</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-96" data-level="A"><div class="ref-num"><a href="#ref-96">[96]</a></div><div class="entry-body">
+    <div class="entry-title">USGS Redondo Quadrangle Topographic Map <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">U.S. Geol. Surv., Redondo Quadrangle, California, 15-minute series topographic map (c. 1924).</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/circa-1924-usgs-redondo-quadrangle-topo-palos-verdes.png">USGS topo (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-97" data-level="A"><div class="ref-num"><a href="#ref-97">[97]</a></div><div class="entry-body">
+    <div class="entry-title">Vanderlip Estate Survey Blueprint <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Survey blueprint, Frank A. Vanderlip Estate, Palos Verdes Peninsula.</div>
+    <div class="entry-desc">Blueprint survey of the Vanderlip estate showing house, drives, topography. Primary historical artifact of the Vanderlip-era peninsula.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/vanderlip-estate-survey-blueprint.jpg">Blueprint (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-98" data-level="A"><div class="ref-num"><a href="#ref-98">[98]</a></div><div class="entry-body">
+    <div class="entry-title">Los Angeles County Surveyor Field Book 0117 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">L.A. County Road Dep't, Field Book 0117, Survey of Palos Verdes Drive (entries refer to Tract 14649, Sea Cove Drive, and Clipper Road).</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/surveys/rdfb0117-159.pdf">Field book entry 159</a>
+      <a class="access-pdf" href="/docs/originals/surveys/rdfb0117-171.pdf">Field book entry 171</a>
+      <a class="access-pdf" href="/docs/originals/surveys/pwfb0117-159a.pdf">Public works entry 159a</a>
+      <a class="access-pdf" href="/docs/originals/surveys/pwfb0117-159b.pdf">Public works entry 159b</a>
+      <a class="access-pdf" href="/docs/originals/surveys/pwfb0117-381.pdf">Public works entry 381</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-99" data-level="A"><div class="ref-num"><a href="#ref-99">[99]</a></div><div class="entry-body">
+    <div class="entry-title">Additional County Surveyor Field Books <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">L.A. County Engineer Field Books 0602, 1097, 2090; County Surveyor Book 1084-2.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/surveys/cefb0602-pv-drive-south-boundaries.pdf">CEFB 0602 &mdash; PVDS boundaries</a>
+      <a class="access-pdf" href="/docs/originals/surveys/cefb1097-pages-48-50.pdf">CEFB 1097</a>
+      <a class="access-pdf" href="/docs/originals/surveys/cefb2090-pages-4-9.pdf">CEFB 2090</a>
+      <a class="access-pdf" href="/docs/originals/surveys/csb1084-2.pdf">CSB 1084-2</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s10">
+  <div class="section-num">§ X</div>
+  <h2>Newspaper Record</h2>
+  <p class="section-note">Contemporaneous press documentation of development proposals, density fights, and the institutional history of the peninsula's community associations.</p>
+
+  <div class="entry" id="ref-100" data-level="A"><div class="ref-num"><a href="#ref-100">[100]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes News &mdash; WPBCA Bylaws &amp; Rolling Hills District 101 Zoning <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">&ldquo;By-Laws of Palos Verdes Homes Association&rdquo; and &ldquo;Change of Precise Plan, Rolling Hills Dist. No. 101,&rdquo; Palos Verdes News, Feb.&nbsp;28, 1957.</div>
+    <div class="entry-desc">Publication of the 1923 Palos Verdes Homes Association bylaws alongside Rolling Hills district zoning changes in the same newspaper issue. Documents the overlapping private-governance and public-zoning layers at the moment Rolling Hills was incorporating (1957).</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/PVNews 19570228.png">PV News Feb 28 1957 (image)</a>
+      <a class="access-image" href="/images/PV_News_1.png">PV News detail</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-101" data-level="A"><div class="ref-num"><a href="#ref-101">[101]</a></div><div class="entry-body">
+    <div class="entry-title">Rolling Hills Herald &mdash; Research Park Annexation Started <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">&ldquo;Research Park Annexation to Rolling Hills Estates Started&rdquo;; &ldquo;Marineland Included in City Annex Action,&rdquo; Rolling Hills Herald, Aug.&nbsp;30, 1962.</div>
+    <div class="entry-desc">Rolling Hills Estates proposes annexing 875 acres including Marineland and the Research Park corridor. The annexation was never consummated; RPV incorporated in 1973 and took the coastal land instead.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Screenshot 2026-04-17 at 9.18.10 PM.png">Headline (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-102" data-level="A"><div class="ref-num"><a href="#ref-102">[102]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes Peninsula News &mdash; County Density Fight <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Joan Lilligren, &ldquo;Density Count Twice Any Peninsula Area,&rdquo; Palos Verdes Peninsula News, Oct.&nbsp;27, 1966.</div>
+    <div class="entry-desc">LA County Planning Commission recommends 25 units per acre for the south side of the Peninsula. The PV Peninsula Advisory Committee, representing 26 homeowners associations and ~32,000 residents, opposes. Identical density (~22-25 u/ac) to the 2024 RPV rezoning of 0&nbsp;Clipper.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Screenshot 2026-04-17 at 12.34.27 PM.png">News page (image)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s11">
+  <div class="section-num">§ XI</div>
+  <h2>Shore Club Record (1971&ndash;1972)</h2>
+  <p class="section-note">The 1972 Abalone Shore Club vote. Community precedent for rejecting high-density condominium development in favor of public coastal park preservation.</p>
+
+  <div class="entry" id="ref-103" data-level="A"><div class="ref-num"><a href="#ref-103">[103]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Shore Club Corporate Archives <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Abalone Shore Club, Corporate Archives.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/Abalone-Shore-Club-Corporate-Archives-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/abalone-shore-club-corporate-archives.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-104" data-level="A"><div class="ref-num"><a href="#ref-104">[104]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Shore Club Site Map <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Abalone Shore Club, Site Map.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/Abalone-Shore-Club-Site-Map-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/abalone-shore-club-site-map.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-105" data-level="A"><div class="ref-num"><a href="#ref-105">[105]</a></div><div class="entry-body">
+    <div class="entry-title">Filiorum &ndash; Abalone Shore Club Lease <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Filiorum Corporation and Abalone Shore Club, Lease Agreement (1971).</div>
+    <div class="entry-desc">Lease of the Shore Club premises from the Vanderlip-family Filiorum Corporation to the Abalone Shore Club. Direct documentary link between the Vanderlip declaration scheme and the community use of Abalone Cove.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/1971-Filiorum-Abalone-Shore-Club-Lease-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/1971-Filiorum-Abalone-Shore-Club-Lease.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-106" data-level="A"><div class="ref-num"><a href="#ref-106">[106]</a></div><div class="entry-body">
+    <div class="entry-title">Shore Club Board Documents, 1971&ndash;1972 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Abalone Shore Club, Board Documents (1971&ndash;1972).</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/1971-1972-Shore-Club-Board-Docs-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/1971-1972-Shore-Club-Board-Docs.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-107" data-level="A"><div class="ref-num"><a href="#ref-107">[107]</a></div><div class="entry-body">
+    <div class="entry-title">Karshner Proposal (1972) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Dick Karshner, Proposal re Abalone Cove Public Park (1972).</div>
+    <div class="entry-desc">The community park proposal advanced by Shore Club president Dick Karshner in response to Karl Rodi's 138&ndash;170 condominium proposal.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/1972-Karshner-Proposal-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/1972-Karshner-Proposal.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-108" data-level="A"><div class="ref-num"><a href="#ref-108">[108]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Cove Fact Sheet (1972) <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Abalone Cove Fact Sheet (1972).</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/1972-Abalone-Cove-Fact-Sheet-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/1972-Abalone-Cove-Fact-Sheet.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-109" data-level="A"><div class="ref-num"><a href="#ref-109">[109]</a></div><div class="entry-body">
+    <div class="entry-title">WPBCA Letter &mdash; Condos vs. Park <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">West Portuguese Bend Community Ass'n, Letter to Members re Condominium Proposal vs. Park Alternative (1972), with vote tally.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/shore-club/WPBCA-Letter-Condos-vs-Park-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/wpbca-letter-condos-vs-park-p1.pdf">Page 1 (PDF)</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/wpbca-letter-condos-vs-park-p2.pdf">Page 2</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/wpbca-letter-condos-vs-park-p3.pdf">Page 3</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/wpbca-letter-condos-vs-park-p4.pdf">Page 4</a>
+      <a class="access-pdf" href="/docs/originals/shore-club/wpbca-letter-condos-vs-park-p5-vote.pdf">Page 5 &mdash; vote</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-110" data-level="A"><div class="ref-num"><a href="#ref-110">[110]</a></div><div class="entry-body">
+    <div class="entry-title">Shore Club Original Vawter &ndash; Filiorum Instrument <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Original Vawter-Filiorum Shore Club instrument.</div>
+    <div class="entry-access">
+      <a class="access-pdf" href="/docs/originals/shore-club/shoreclub-original-vawter-filiorum.pdf">Original (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s12">
+  <div class="section-num">§ XII</div>
+  <h2>Active Litigation (No. 24TRCP00352)</h2>
+  <p class="section-note">Filings in the 2024 petition for writ of mandate challenging the City's rezoning of 0&nbsp;Clipper Road.</p>
+
+  <div class="entry" id="ref-111" data-level="A"><div class="ref-num"><a href="#ref-111">[111]</a></div><div class="entry-body">
+    <div class="entry-title">Comment to City Council re 0 Clipper Rezoning <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Kendra Carney Mehr, Letter to City Council on behalf of eighty homeowners in Abalone Cove, opposing the rezoning of 0&nbsp;Clipper Road (June&nbsp;4, 2024), 39 pp.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/litigation/2024-06-04-Comment-to-City-Council-Re-0-Clipper-Rezoning-Verbatim.md">Verbatim</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-112" data-level="A"><div class="ref-num"><a href="#ref-112">[112]</a></div><div class="entry-body">
+    <div class="entry-title">FPPC Complaint &mdash; Cruikshank <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Fair Political Practices Commission Complaint against John Cruikshank, Mayor (Aug.&nbsp;7, 2024).</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/litigation/2024-08-07-FPPC-Complaint-Cruikshank-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/litigation/2024-08-07-FPPC-Complaint-Cruikshank.pdf">Complaint (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-113" data-level="A"><div class="ref-num"><a href="#ref-113">[113]</a></div><div class="entry-body">
+    <div class="entry-title">Petition for Writ of Mandate <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Verified Petition for Writ of Mandate, L.A. Co. Super. Ct. No. 24TRCP00352 (filed Sept.&nbsp;11, 2024). Four causes of action including CEQA, Coastal Act, and Political Reform Act.</div>
+  </div></div>
+
+  <div class="entry" id="ref-114" data-level="A"><div class="ref-num"><a href="#ref-114">[114]</a></div><div class="entry-body">
+    <div class="entry-title">City's Demurrer <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Defendants' Demurrer to Verified Petition for Writ of Mandate, L.A. Co. Super. Ct. No. 24TRCP00352 (filed Nov.&nbsp;27, 2024).</div>
+    <div class="entry-desc">City concedes rezoning &ldquo;isn't effective pending Coastal Commission certification (PRC &sect;&nbsp;30514(a)).&rdquo; Argues mootness and supersession of urgency ordinances 678U, 680U by regular ordinance 681.</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/litigation/2024-11-27-City-Demurrer-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/litigation/2024-11-27-City-Demurrer.pdf">Demurrer (PDF)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-115" data-level="A"><div class="ref-num"><a href="#ref-115">[115]</a></div><div class="entry-body">
+    <div class="entry-title">Petitioners' Opposition to Demurrer <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Petitioners' Opposition to Defendants' Demurrer, L.A. Co. Super. Ct. No. 24TRCP00352 (filed Dec.&nbsp;18, 2024).</div>
+    <div class="entry-access">
+      <a class="access-transcript" href="/docs/viewer.html?doc=/docs/litigation/2024-12-18-Opposition-to-Demurrer-Verbatim.md">Verbatim</a>
+      <a class="access-pdf" href="/docs/originals/litigation/2024-12-18-Opposition-to-Demurrer.pdf">Opposition (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s13">
+  <div class="section-num">§ XIII</div>
+  <h2>Conservancy &amp; Land Trust</h2>
+  <p class="section-note">The Palos Verdes Peninsula Land Conservancy, named after the Filiorum Corporation, is the adjacent land trust and the natural partner for open-space preservation of the 0&nbsp;Clipper creek and adjoining Parcel&nbsp;106 land.</p>
+
+  <div class="entry" id="ref-116" data-level="B"><div class="ref-num"><a href="#ref-116">[116]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes Peninsula Land Conservancy &mdash; Managed Lands <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">Palos Verdes Peninsula Land Conservancy, &ldquo;Lands&rdquo; overview.</div>
+    <div class="entry-desc">1,700 acres across the peninsula under conservation easements; 50-year management agreement with the City of Rancho Palos Verdes (2011).</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://pvplc.org/lands/">PVPLC Lands</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-117" data-level="B"><div class="ref-num"><a href="#ref-117">[117]</a></div><div class="entry-body">
+    <div class="entry-title">Filiorum Reserve (191 acres) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">PVPLC, Filiorum Reserve, acquired Dec.&nbsp;31, 2009, linking the Three Sisters and Portuguese Bend Reserves.</div>
+    <div class="entry-desc">Named after the Filiorum Corporation (&ldquo;of the sons,&rdquo; Latin) &mdash; the Vanderlip-family land corporation whose 1930 grant deed incorporated Declarations 100 and 101. The same corporation that leased the Shore Club in 1971 and that tried to sell to Shapell Industries in 1973 before geology stopped the deal.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://rpvca.gov/DocumentCenter/View/8854/Filiorium-Reserve">RPV Filiorum entry</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-118" data-level="B"><div class="ref-num"><a href="#ref-118">[118]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Cove Reserve (64 acres) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">PVPLC, Abalone Cove Ecological Reserve. Phase 4 restoration of 20.3 acres (coastal sage scrub and Southern Coastal Bluff Scrub), ongoing from 2022.</div>
+    <div class="entry-desc">State Ecological Preserve. Conservation easement held by PVPLC. Directly adjacent to 0&nbsp;Clipper Road. Conservation Center opened 2024.</div>
+  </div></div>
+
+  <div class="entry" id="ref-119" data-level="B"><div class="ref-num"><a href="#ref-119">[119]</a></div><div class="entry-body">
+    <div class="entry-title">Portuguese Bend Reserve (399 acres) <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">PVPLC, Portuguese Bend Reserve. Largest reserve. PV Blue Butterfly habitat. Trails closed as of 2025 due to active land movement.</div>
+  </div></div>
+
+  <div class="entry" id="ref-120" data-level="B"><div class="ref-num"><a href="#ref-120">[120]</a></div><div class="entry-body">
+    <div class="entry-title">Go Wild for the Peninsula Campaign &mdash; 96-Acre Wildlife Corridor <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">PVPLC, $30 million &ldquo;Go Wild for the Peninsula&rdquo; Campaign, announced Aug.&nbsp;26, 2022; completed 2025.</div>
+    <div class="entry-desc">Funding: US Fish &amp; Wildlife $12.6M; Cal. Dep't of Fish &amp; Wildlife $4.8M; state budget (Sen. Ben Allen) $5M; City of RPV $1.3M; LA Co. Measure A $1M; 700+ local donors for $1.2M additional. City owns the parcels; PVPLC holds conservation easement in perpetuity.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://pvplc.org/conservancyannounces30million-1/">Campaign announcement</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-121" data-level="B"><div class="ref-num"><a href="#ref-121">[121]</a></div><div class="entry-body">
+    <div class="entry-title">NCCP/HCP Subarea Plan <span class="lvl lvl-b">B</span></div>
+    <div class="entry-citation">PVPLC &amp; City of Rancho Palos Verdes, NCCP/HCP Subarea Plan.</div>
+    <div class="entry-access">
+      <a class="access-external" href="https://pvplc.org/wp-content/uploads/2020/01/NCCP.pdf">NCCP Plan (PDF)</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s14">
+  <div class="section-num">§ XIV</div>
+  <h2>Visual Evidence</h2>
+  <p class="section-note">Primary visual materials: maps, aerials, historical photographs, blueprints, and personal records. The full image library is indexed in the <a href="/gallery/">Gallery</a>.</p>
+
+  <div class="entry" id="ref-122" data-level="A"><div class="ref-num"><a href="#ref-122">[122]</a></div><div class="entry-body">
+    <div class="entry-title">Pre-Development Aerial, Palos Verdes Coast <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Library District, Historical Digital Library, item hdl-10584.</div>
+    <div class="entry-desc">Aerial photograph of the PV coast before development. The hero image establishing the pre-development baseline.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/hdl-10584-pre-development-aerial-pv-coast.jpg">Aerial (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-123" data-level="A"><div class="ref-num"><a href="#ref-123">[123]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Cove Postcard <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Library District, Historical Digital Library, item hdl-15658.</div>
+    <div class="entry-desc">Vintage postcard of Abalone Cove, RPV. Visible ground movement in the image.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/hdl-15658-postcard-abalone-cove-rpv.jpeg">Postcard (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-124" data-level="A"><div class="ref-num"><a href="#ref-124">[124]</a></div><div class="entry-body">
+    <div class="entry-title">Palos Verdes Corp. Promotional Series &mdash; Higgins 1&ndash;19 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Palos Verdes Corporation &amp; Palos Verdes Properties, promotional and historical records (Higgins collection), c. 1920s&ndash;1960s.</div>
+    <div class="entry-desc">Nineteen-item series of PV Corp promotional materials, historical aerials, civic photographs (Neptune Fountain dedication), and development-era documents. Items of particular citation value include:<br>
+      &bull; Higgins 1 &mdash; Crenshaw Extension Progress Report (1955) [Ref. 92]<br>
+      &bull; Higgins 2 &mdash; Nov. 28, 1931 aerial, Portuguese Bend, labeled landslides [Ref. 91]<br>
+      &bull; Higgins 3 &mdash; Portuguese Bend Club beach pavilion<br>
+      &bull; Higgins 6 &mdash; PV Drive South pre-development, single car<br>
+      &bull; Higgins 8 &mdash; Los Angeles as it appeared in 1871, with ranchos labeled<br>
+      &bull; Higgins 9 &mdash; PV Drive South with landslide-era pipe and damage<br>
+      &bull; Higgins 10 &mdash; &ldquo;Palos Verdes The New City&rdquo; illustrated map<br>
+      &bull; Higgins 11 &mdash; &ldquo;Palos Verdes &mdash; the New City&rdquo; advertisement [Ref. 93]<br>
+      &bull; Higgins 12 &mdash; Baughey &ldquo;Rancho Palos Verdes 1784&ndash;1947&rdquo; article [Ref. 88]<br>
+      &bull; Higgins 14 &mdash; Annie's Stand, south-coast agricultural heritage<br>
+      &bull; Higgins 19 &mdash; Neptune Fountain dedication ceremony, Malaga Cove</div>
+    <div class="entry-access">
+      <a class="access-image" href="/gallery/">Browse Gallery</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-125" data-level="A"><div class="ref-num"><a href="#ref-125">[125]</a></div><div class="entry-body">
+    <div class="entry-title">Then &amp; Now Aerial Series &mdash; Stewart 1&ndash;8 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Then-and-now aerial photographic comparisons, Palos Verdes Peninsula south coast.</div>
+    <div class="entry-desc">Eight-image comparison series pairing historical and contemporary aerials. Includes the active Portuguese Bend sediment plume discharging into the Pacific (Stewart 3) and Marineland / Terranea redevelopment contrast (Stewart 1).</div>
+    <div class="entry-access">
+      <a class="access-image" href="/gallery/">Browse Gallery</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-126" data-level="A"><div class="ref-num"><a href="#ref-126">[126]</a></div><div class="entry-body">
+    <div class="entry-title">Doug Rucker Architectural Rendering <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Douglas W. Rucker, AIA, Architectural Rendering, West Portuguese Bend Community residence (first professional commission).</div>
+    <div class="entry-desc">Original rendering for the house whose garage preserved the documentary archive referenced in the article's &ldquo;Research&rdquo; section.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/original rendering.png">Rendering (image)</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-127" data-level="A"><div class="ref-num"><a href="#ref-127">[127]</a></div><div class="entry-body">
+    <div class="entry-title">Betty at Construction Site, Douglas W. Rucker, Architect <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Photograph, Betty at construction site, with Douglas W. Rucker Architect signage and J. Harry Reynier Jr. contractor sign. Personal archive.</div>
+    <div class="entry-desc">Documentary photograph of Betty, former WPBCA director and Abalone Shore Club board member, at the construction of her house designed by Doug Rucker. The archival chain of custody underlying the Foundation's research.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/Betty.jpg">Photograph</a>
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-128" data-level="A"><div class="ref-num"><a href="#ref-128">[128]</a></div><div class="entry-body">
+    <div class="entry-title">Abalone Cove Today &mdash; Current Conditions Photographs <span class="lvl lvl-a">A</span></div>
+    <div class="entry-citation">Contemporary photographs, Abalone Cove shoreline and tidepools, 2024&ndash;2026.</div>
+    <div class="entry-access">
+      <a class="access-image" href="/images/IMG_0346.jpeg">Beach today</a>
+      <a class="access-image" href="/images/IMG_0894.jpeg">Tidepools</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s15">
+  <div class="section-num">§ XV</div>
+  <h2>Research Synthesis &mdash; Foundation Memoranda</h2>
+  <p class="section-note">Internal research memoranda synthesizing primary and secondary sources. Available on request; planned publication as white papers.</p>
+
+  <div class="entry" id="ref-129" data-level="A"><div class="ref-num"><a href="#ref-129">[129]</a></div><div class="entry-body">
+    <div class="entry-title">Declaration 100 &mdash; The City Before the City <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">Constitutional analysis of Declaration 100 as the private-municipal-government framework for Lot&nbsp;H, its implementing instruments (Declarations 101 and 150), and its current enforceability under <em>Colyear</em>.</div>
+  </div></div>
+
+  <div class="entry" id="ref-130" data-level="A"><div class="ref-num"><a href="#ref-130">[130]</a></div><div class="entry-body">
+    <div class="entry-title">Coastal Specific Plan &mdash; Subregion 4 Implementation <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">Policy analysis of the six Subregion 4 policies, the 1978 density designation (2 D.U./AC. seaward of Sea Cove Drive), the avoidance corridor system, and the 1980 Wong subdivision as the City's prior application of the Plan to 0&nbsp;Clipper Road.</div>
+  </div></div>
+
+  <div class="entry" id="ref-131" data-level="A"><div class="ref-num"><a href="#ref-131">[131]</a></div><div class="entry-body">
+    <div class="entry-title">PVPLC Partnership for Implementation <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">Framework for a three-entity partnership (WPBCA, Abalone Cove Foundation, PVPLC) to implement Subregion 4 as written: creek and flood-hazard area to PVPLC conservation easement; buildable remainder reverted to the 1980 Wong subdivision (four SFR lots + open space); existing fourplexes reclassified as affordable housing.</div>
+  </div></div>
+
+  <div class="entry" id="ref-132" data-level="A"><div class="ref-num"><a href="#ref-132">[132]</a></div><div class="entry-body">
+    <div class="entry-title">LRPMP Shoreline Park Parcel Analysis <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">Close reading of the Successor Agency's Long-Range Property Management Plan for APN 7573-007-900, the Parcel 106 remainder parcel that the City itself acknowledged is subject to CC&amp;Rs that could limit development.</div>
+  </div></div>
+
+  <div class="entry" id="ref-133" data-level="A"><div class="ref-num"><a href="#ref-133">[133]</a></div><div class="entry-body">
+    <div class="entry-title">Colyear v. Rolling Hills C.A. &mdash; Applicability to Declaration 100 <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">Analytical memorandum applying the <em>Colyear</em> (2024) framework to the Declaration 100 / 0&nbsp;Clipper question. Concludes the private-covenant argument is compromised by design; the public regulatory framework (Coastal Specific Plan, 1980 Wong approval) is the stronger foundation.</div>
+  </div></div>
+
+  <div class="entry" id="ref-134" data-level="A"><div class="ref-num"><a href="#ref-134">[134]</a></div><div class="entry-body">
+    <div class="entry-title">City Positions Cross-Reference <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">Track of documented contradictions in the City's own positions across the litigation record, LRPMP, housing element staff reports, and Coastal Commission submissions.</div>
+  </div></div>
+</section>
+
+<section class="ref-section" id="s16">
+  <div class="section-num">§ XVI</div>
+  <h2>Methodology &amp; Citation Notes</h2>
+  <p class="section-note">How this library was built and how to cite it.</p>
+
+  <div class="entry" id="ref-135" data-level="A"><div class="ref-num"><a href="#ref-135">[135]</a></div><div class="entry-body">
+    <div class="entry-title">Source and Access Methodology <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">
+      Primary sources were obtained from (a) the Los Angeles County Recorder (microfilm and certified copies); (b) the Los Angeles County Assessor; (c) the Los Angeles County Surveyor and Engineer; (d) the Palos Verdes Library District, Local History Center; (e) the U.S. Geological Survey; (f) the California Department of Conservation, Geological Survey; (g) the California Coastal Commission; (h) the California Department of Housing &amp; Community Development; (i) the City of Rancho Palos Verdes; (j) the Abalone Cove Landslide Abatement District; (k) the Palos Verdes Peninsula Land Conservancy; and (l) personal archives held by long-time members of the West Portuguese Bend community.
+      <br><br>
+      Verbatim transcriptions were prepared by human researchers with AI assistance, reviewed for accuracy against the source. Where microfilm or photographic evidence is partially illegible (notably Declaration&nbsp;100 page&nbsp;155), the condition of the source is stated in the transcription header and fragments are presented conservatively with bracketed notations.
+      <br><br>
+      All primary documents are retained in <code>/docs/originals/</code>. Verbatim transcriptions are in <code>/docs/</code> by category. Images referenced in this library are in <code>/images/</code> and indexed in the <a href="/gallery/">Gallery</a>.
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-136" data-level="A"><div class="ref-num"><a href="#ref-136">[136]</a></div><div class="entry-body">
+    <div class="entry-title">Citation Conventions <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">
+      Chicago style is used for historical, geological, regulatory, newspaper, promotional, and conservancy sources. Bluebook (20th ed.) form is used for case law, statutes, and litigation filings. Level&nbsp;A indicates a document held locally in this repository; Level&nbsp;B indicates a document cited but not yet obtained. Each entry carries a permanent anchor of the form <code>#ref-N</code>; external publications and internal documents may cite this library by reference number, e.g. <em>Abalone Cove Foundation, Library of Evidence, Ref.&nbsp;47 (Albers v. County of Los Angeles)</em>.
+    </div>
+  </div></div>
+
+  <div class="entry" id="ref-137" data-level="A"><div class="ref-num"><a href="#ref-137">[137]</a></div><div class="entry-body">
+    <div class="entry-title">How to Contribute <span class="lvl lvl-a">A</span></div>
+    <div class="entry-desc">
+      The Abalone Cove Foundation welcomes additions to this record. If you hold documents, photographs, correspondence, or other materials bearing on the history, geology, or governance of the south face of the Palos Verdes Peninsula and wish to make them part of the public record, please contact the Foundation through <a href="/sign/">the contact page</a>.
+    </div>
+  </div></div>
+</section>
+
+<!-- SECTIONS END -->
+
+  </div><!-- /library -->
 
 </main>
 
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
-    <p class="footer-cta">If you have documents, photos, or stories about Abalone Cove, we'd love to hear from you.</p>
+    <p class="footer-cta">If you hold documents or context relevant to this record, the Foundation is listening.</p>
   </div>
 </footer>
+
+<script>
+(function () {
+  'use strict';
+  var q = document.getElementById('q');
+  var chips = document.querySelectorAll('.filters .chip');
+  var countEl = document.getElementById('count');
+  var entries = document.querySelectorAll('.entry');
+  var filter = 'all';
+
+  function apply() {
+    var term = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    entries.forEach(function (e) {
+      var matchFilter = filter === 'all' || e.dataset.level === filter;
+      var matchTerm = !term || e.textContent.toLowerCase().indexOf(term) !== -1;
+      var show = matchFilter && matchTerm;
+      e.style.display = show ? '' : 'none';
+      if (show) shown++;
+    });
+    countEl.textContent = shown + ' of ' + entries.length + ' references';
+
+    // Hide empty sections
+    document.querySelectorAll('section.ref-section').forEach(function (s) {
+      var visible = s.querySelectorAll('.entry:not([style*="display: none"])').length;
+      s.style.display = visible ? '' : 'none';
+    });
+  }
+
+  q.addEventListener('input', apply);
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.classList.remove('active'); });
+      c.classList.add('active');
+      filter = c.dataset.f;
+      apply();
+    });
+  });
+  apply();
+})();
+</script>
 
 </body>
 </html>
