@@ -85,21 +85,21 @@ Beginning at a point which bears North 13° 20' 06" East, a distance of 2060.00 
 
 "PARCEL 4"
 
-Beginning at the Southwesterly corner of "Parcel 2" hereinabove described, said corner being in a curve concave to the South and having a radius of 2060.00 feet, a radial line to said curve at said point bearing North 2° 31' 07.5° West; thence parallel with and distant 120.00 feet Northwesterly from the Northwesterly boundary of the hereinabove described "Parcel 2" as follows: Southwesterly, along said last mentioned curve, 209.71 feet to the end thereof; South 61° 28' 15" West, 1229.08 feet to the beginning of a curve concave to the Southeast and having a radius of 2060.00 feet; Southwesterly, along said last mentioned curve, 787.22 feet to the end thereof; South 41° 43' 40" West, 225.21 feet, to the beginning of a curve concave to the Northwest and having a radius of 1940.00 feet;
+Beginning at the Southwesterly corner of "Parcel 3" hereinabove described, said corner being in a curve concave to the South and having a radius of 2060.00 feet, a radial line to said curve at said point bearing North 2° 31' 07.5" West; thence parallel with and distant 120.00 feet Northwesterly from the Northwesterly boundary of the hereinabove described "Parcel 2" as follows: Southwesterly, along said last mentioned curve, 207.71 feet to the end thereof; South 81° 42' 15" West, 1229.08 feet to the beginning of a curve concave to the Southeast and having a radius of 2060.00 feet; Southwesterly, along said last mentioned curve, 727.22 feet to the end thereof; South 61° 28' 40" West, 323.51 feet, to the beginning of a curve concave to the Northwest and having a radius of 1940.00 feet;
 
 ---
 
 ---PAGE 44--- *(IMG_1309)*
 
-*[Dense bearing/distance calls for Parcel 4 boundary — this page contains the most concentrated surveying data in the document]*
+*[Dense bearing/distance calls for Parcel 4 boundary — verified 2026-04-18 from cleaner copy (Book 9488, Page 40). Values below supersede earlier microfilm readings.]*
 
-curve, 378.94 feet, to a point therein at which point a radial line thereto bears South 11° 27' 40" East, thence North 11° 27' 40" West, along said radial line, [353?].[87?] feet; thence North 43° 52' 40" West, 415.29 feet; thence North 00° 50' 48" East, 1314.13 feet, thence North 43° 43' 35" East, 905.53 feet; thence South 74° 52' 00" East, 731.25 feet; thence North 66° 10' 25" West, 296.21 feet; [thence?] North 3° [08?]' 25" East, 367.35 feet; thence North 56° 49' 00" East, [315?] feet; thence North 45° 10' 10" East, 203.23 feet; thence North 80° 30' [40?]" East, 1473.[88?] feet; thence North 18° 14' 55" East, 2979.04 feet; thence South 44° 57' 05" East, 416.05 feet; thence South 36° 07' 45" East, 241.06 feet; thence South 5° 21' 30" East, a distance of 195.12 feet from Triangulation Station "Delaware" as shown on County Surveyor's Map Number 5060, on file in the office of the County Surveyor of said County; thence North 51° [52?]' 43" East, 355.77 feet; thence North 56° 49' 10" East, 100.74 feet, thence South 71° 01' 50" East, 131.23 feet; thence North 58° 47' 35" East, 179.00 feet, thence South 45° 25' 00" East, 162.55 feet; thence North 49° 23' 10" East, 315.51 feet, thence North 36° 23' 40" East, 815.00 feet; thence North 44° 41' 20" East, 880.06 feet; thence South 3° 06' 20" East, 180.80 feet, thence South 24° 06' 25" East, 1301.14 feet; thence North 84° 44' 45" East, 59.13 feet; thence North 51° 10' 30" East, 155.18 feet; thence South 64° 14' 50" East, 121.78 feet; thence North 48° 53' 10" East, 279.94 feet; thence North 6° 08' 35" East, 91.16 feet; thence North 24° 10' 50" East, 303.74 feet; thence North [?]° 83' 15" East, 164.76 feet, thence South 27° 45° East, 90.28 feet, thence South 00° 45' 30" West, 105.40 feet; thence South 42° 43' 35" East, 361.40 feet, thence South 9° 54' 25" East, 851.49 feet; thence South 44° 10' 27" East, 960.39 feet; thence South 78° 34' 05" East, [?].[86?] feet; thence North [29?]° [22?]' 55" East, 79.86 feet; thence North [?] 35" East, 159.14 feet; thence South 60° 07' 50" East, 111.[35?] feet; thence South [21?]° 07' 00" East, 154.95 feet; thence South 8° 07' 45" West, [?].17 feet; thence South 61° 25' 50" West, 863.33 feet; thence South 24° 21' 00" East, 204.[89?] feet, thence South 19° 57' 30" West, 494.57 feet, to a point in a curve concave to the Southwest and having a radius of 487.93 feet, a radial line to said curve at said point bearing North 38° 01' 30" East; thence Northwesterly along said last mentioned curve, 86.30 feet to the end thereof; thence North 45° 56' 10" West, 473.62 feet, more or less,
+curve, 572.04 feet, to a point therein at which point a radial line thereto bears South 11° 37' 40" East, thence North 11° 37' 40" West, along said radial line, 232.27 feet; thence North 43° 52' 40" West, 415.23 feet; thence North 00° 35' 45" East, 1314.12 feet, thence North 43° 45' 55" West, 905.53 feet; thence South 74° 26' 00" West, 731.23 feet; thence North 66° 10' 25" West, 296.21 feet; thence North 1° 56' 25" East, 367.35 feet; thence North 56° 48' 00" East, 258.[?] feet; thence North 58° 48' 10" East, 202.22 feet; thence North 80° 30' 30" East, 1471.92 feet; thence North 53° 16' 55" East, 1779.84 feet; thence South 46° 57' 05" East, 418.88 feet; thence South 3° 16' 25" West, 221.02 feet; thence South 36° 07' 45" East, 198.03 feet, more or less, to a point which bears South 5° 21' 30" East, a distance of 178.12 feet from Triangulation Station "Delaware" as shown on County Surveyor's Map Number 5360, on file in the office of the County Surveyor of said County; thence North 81° 33' 40" East, 253.27 feet; thence North 65° 49' 10" East, 180.74 feet; thence South 71° 01' 50" East, 131.22 feet; thence North 59° 47' 25" East, 179.85 feet; thence South 46° 25' 00" East, 162.33 feet; thence North 77° 32' 10" East, 313.51 feet; thence North 26° 31' 45" East, 215.53 feet; thence North 44° 41' 20" East, 281.06 feet; thence South 3° 08' 25" East, 198.30 feet; thence South 24° 05' 25" East, 101.14 feet; thence North 84° 44' 45" East, 59.13 feet; thence North 51° 10' 30" East, 152.18 feet; thence South 84° 14' 50" East, 121.78 feet; thence North 48° 55' 10" East, 175.94 feet; thence North 8° 58' 35" East, 91.16 feet; thence North 26° 18' 50" West, 332.74 feet; thence North 18° 03' 15" East, 164.76 feet; thence South 67° 16' 05" East, 90.28 feet; thence South 00° 45' 25" West, 105.40 feet; thence South 42° 46' 55" East, 521.45 feet; thence South 7° 52' 35" West, 174.49 feet; thence South 48° 10' 30" East, 850.88 feet; thence North 58° 34' 05" East, 79.86 feet; thence North 37° 03' 35" East, 159.14 feet; thence South 60° 07' 50" East, 111.31 feet; thence South 22° 07' 00" East, 154.95 feet; thence South 8° 07' 45" West, 373.17 feet; thence South 45° 23' 30" West, 663.33 feet; thence South 24° 21' 00" West, 604.69 feet; thence South 19° 37' 20" West, 494.57 feet, to a point in a curve concave to the Southwest and having a radius of 427.93 feet, a radial line to said curve at said point bearing North 38° 01' 30" East; thence Northwesterly along said last mentioned curve, 89.58 feet to the end thereof; thence North 45° 58' 10" West, 473.62 feet, more or less,
 
 ---
 
 ---PAGE 45--- *(IMG_1310)*
 
-to a point in the Northerly prolongation of the Easterly boundary of "Parcel 3", hereinabove described, distant thereon 34.23 feet Northerly from the Northeasterly corner of said "Parcel 3"; thence South 00° 24' 20" West, along said Northerly prolongation, 34.23 feet to said Northeasterly corner; thence following the Northerly and Westerly boundaries of said "Parcel 3", the following courses and distances: North 64° 00' 10" West, 312.66 feet; North 49° 58' 00" West, 104.09 feet; West, 433.[39?] feet, South 4° [39?]' 55" West, 334.19 feet; South 54° 15' 45" East, 358.79 feet; South 4° 02' 35" East, 606.61 feet to the point of beginning enclosing an area of 335.50 acres, more or less.
+to a point in the Northerly prolongation of the Easterly boundary of "Parcel 3", hereinabove described, distant thereon 34.23 feet Northerly from the Northeasterly corner of said "Parcel 3"; thence South 00° 24' 20" West, along said Northerly prolongation, 34.23 feet to said Northeasterly corner; thence following the Northerly and Westerly boundaries of said "Parcel 3", the following courses and distances: North 64° 00' 10" West, 312.66 feet; North 49° 52' 00" West, 104.09 feet; West, 433.39 feet, South 4° 39' 55" West, 334.19 feet; South 54° 15' 45" East, 358.79 feet; South 4° 02' 55" West, 606.61 feet to the point of beginning enclosing an area of 355.56 acres, more or less.
 
 "PARCEL 5"
 
@@ -151,15 +151,15 @@ All of said parcels 1 to 7 inclusive provided that each of said parcels may be s
 
 | Parcel | Building Sites |
 |--------|----------------|
-| 1 | [?] |
-| 2 | [?] |
-| 3 | [?] |
-| 4 | [?] |
-| 5 | [?] |
-| 6 | [?] |
-| 7 | [?] |
+| 1 | 1 building site |
+| 2 | 5 building sites |
+| 3 | 2 building sites |
+| 4 | 3 building sites |
+| 5 | 1 building site |
+| 6 | 1 building site |
+| 7 | 3 building sites |
 
-> **[Transcription note:** The building sites table is present and visible in the original but the numbers in the right column are too small and washed out to read reliably from this microfilm photograph. This table is the single most important data point still unresolved — it sets the maximum subdivision density for each of the seven parcels. A certified copy or magnified scan is needed.**]**
+> **[Transcription note:** Building sites table resolved 2026-04-18 from cleaner microfilm photographs. Total: 16 building sites across all 7 parcels (~1,131 acres). That's roughly 70 acres per building site — an extraordinarily low density cap.**]**
 
 ---
 
@@ -187,15 +187,13 @@ Parcels 1 to 7 inclusive — not less than Twenty Thousand Dollars ($20,000.00)
 
 **Section 5. Building Set-Back Lines.**
 
-(a) No building or part thereof, including porches, except steps, ledges and except steps, balconies or other architectural features approved by the Art Jury, shall be erected, placed, permitted or maintained nearer the street or lot line than the distance specified below:
+(a) No building or part thereof, including porches, except gate lodges and except steps, balconies or other architectural features approved by the Art Jury, shall be erected, placed, permitted or maintained nearer the street or lot line hereinafter specified than as follows:
 
-Parcels 1 to 7, inclusive, not less than twenty-five (25) feet from any exterior road, walk or property line of any building site, provided this setback shall not apply to outer ledges.
+Parcels 1 to 7, inclusive, not less than twenty-five (25) feet from any public road, walk, or property line of any building site, provided this setback shall not apply to gate lodges.
 
-**Section 6. Set-Back Lines.**
+(b) Variations in Set-Back Lines—
 
-(a)
-
-Anything to the contrary herein notwithstanding, the right and power is expressly reserved to Palos Verdes Corporation and its successors in interest, on account of the irregular topography to said road, the difficulty of making changes necessary and other irregular conditions, to alter or modify the setback and building lines [?] to the areas or courses of any lot or building site, to make by written agreement with the owner or owners of any lot or such other reasonable conditions as to the setback and other [roads?] conditions, provided [remainder cut off at bottom of frame]
+Anything to the contrary herein notwithstanding, the right and power is expressly reserved to Palos Verdes Corporation and its successors in interest, on account of the irregular topography in said tract, the difficulty of making garages accessible to the street, and other unforseen conditions which may work undue hardship in certain cases, to make by written agreement with the owner or owners of any lot in said tract reasonable variations in the set-back lines herein established, provided said variations are not, in the opinion of the Art Jury, injurious or undesirable to the neighborhood in which they occur, and the approval of the Art Jury be
 
 ---
 

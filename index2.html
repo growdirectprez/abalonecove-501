@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abalone Cove — The Land That Moves</title>
+  <meta name="description" content="From the Federal Reserve to a vacant parcel on an active landslide on the Palos Verdes Peninsula — from the Vanderlip purchase to a proposed development on an active landslide.">
+  <link rel="canonical" href="https://abalonecove.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Land That Moves">
+  <meta property="og:description" content="From the Federal Reserve to a vacant parcel on an active landslide on the Palos Verdes Peninsula — from the Vanderlip purchase to a proposed development on an active landslide.">
+  <meta property="og:url" content="https://abalonecove.org/">
+  <meta property="og:site_name" content="Abalone Cove">
+  <meta property="og:image" content="https://abalonecove.org/images/shell-blended-256.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Land That Moves">
+  <meta name="twitter:description" content="One small parcel tells the larger story of California.">
+  <meta name="twitter:image" content="https://abalonecove.org/images/shell-blended-256.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Land That Moves",
+    "description": "From the Federal Reserve to a vacant parcel on an active landslide on the Palos Verdes Peninsula.",
+    "author": {
+      "@type": "Person",
+      "name": "An HOA Board Member on the Palos Verdes Peninsula"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Abalone Cove Foundation",
+      "url": "https://abalonecove.org"
+    },
+    "url": "https://abalonecove.org/",
+    "about": [
+      "Palos Verdes Peninsula",
+      "Abalone Cove",
+      "California land use history",
+      "Portuguese Bend Landslide",
+      "Frank Vanderlip",
+      "Olmsted Brothers"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Progress Bar ── */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--shell-teal);
+      z-index: 1000;
+      transition: width 0.15s ease-out;
+    }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    /* Desktop nav */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* Hamburger (checkbox hack) */
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Article ── */
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .article-header h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+    }
+
+    .byline {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+
+    .dateline {
+      font-size: 0.85rem;
+      color: var(--shell-warm);
+      letter-spacing: 0.06em;
+    }
+
+    /* Sections */
+    .article section {
+      margin-bottom: 3rem;
+    }
+
+    .article section h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.4rem;
+    }
+
+    .article p {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Links */
+    .article a {
+      color: var(--shell-teal);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    .article a:hover {
+      color: var(--shell-sage);
+    }
+
+    /* Blockquotes */
+    .article blockquote {
+      border-left: 3px solid var(--shell-teal);
+      background: var(--shell-cream);
+      margin: 1.5rem 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--shell-dark);
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Mobile (< 768px) ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+
+      .article-header h1 { font-size: 1.75rem; }
+
+      .article section h2 { font-size: 1.3rem; }
+
+      /* Hamburger nav */
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      .site-header,
+      .progress-bar { display: none; }
+
+      body {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+      }
+
+      .article {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .article section { page-break-inside: avoid; }
+
+      .site-footer {
+        border-top: 1pt solid #ccc;
+        background: #fff;
+        font-size: 9pt;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 0.4rem;">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<article class="article">
+  <div class="article-header">
+    <h1>The Land That Moves</h1>
+    <p class="byline">By an HOA Community Member on the Palos Verdes Peninsula</p>
+    <p class="dateline">2026 &middot; 25 min read</p>
+  </div>
+
+  <figure style="margin: 0 -2rem 3rem; text-align: center;">
+    <img src="/images/hdl-10584-pre-development-aerial-pv-coast.jpg" alt="Pre-development aerial photograph of the Palos Verdes coast" style="width: 100%; max-width: 800px;">
+    <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">The Palos Verdes coast before development. Courtesy Palos Verdes Library District.</figcaption>
+  </figure>
+
+  <!-- Article header with original image kept -->
+
+  <div class="article-header">
+    <h1>The Land That Moves</h1>
+    <p class="byline">By an HOA Community Member on the Palos Verdes Peninsula</p>
+    <p class="dateline">2026 &middot; 28 min read</p>
+  </div>
+
+  <figure style="margin: 0 -2rem 3rem; text-align: center;">
+    <img src="/images/hdl-10584-pre-development-aerial-pv-coast.jpg" alt="Pre-development aerial photograph of the Palos Verdes coast" style="width: 100%; max-width: 800px;">
+    <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">The Palos Verdes coast before development. Courtesy Palos Verdes Library District.</figcaption>
+  </figure>
+
+  <section id="section-1">
+    <h2>What's a Quorum?</h2>
+    <p>It began, as so many California stories do, in a small meeting room. Eighty-one lots, five streets, dues under twenty dollars a month. We were talking about storm-damaged paths, neighbor disputes, and the latest city attempt to rezone a vacant hillside parcel to satisfy Sacramento's housing quotas. I asked the simplest question: What exactly is a quorum here? How do we actually decide anything?</p>
+    <p>The room went quiet. Someone pulled up the bylaws last revised in 2009&mdash;the last time anyone achieved a quorum. Others scrolled on their phones. The moment passed. But the question lingered.</p>
+    <p>That small procedural puzzle opened a far larger one. Because the land beneath us has never been ordinary suburban real estate. It is bentonite clay sliding toward the Catalina Channel for a hundred thousand years. And layered atop it are 140 years of private covenants, public moratoriums, and now state mandates that increasingly treat local geology and private deeds as inconveniences to be overridden.</p>
+  </section>
+
+  <section id="section-global">
+    <h2>The Dollar, the Banker, and the Sliding Hill</h2>
+    <p>To understand what is happening on 0 Clipper Road today, one must begin not in Rancho Palos Verdes but in the quiet corridors of early-20th-century American finance. Frank A. Vanderlip&mdash;Wall Street banker, former Assistant Secretary of the Treasury under President William McKinley&mdash;stood at the center of two revolutions: one in banking that helped make the U.S. dollar the world's reserve currency, and one in California land use that still shapes the peninsula.</p>
+    <p>In November 1910, Vanderlip joined a secret gathering on Jekyll Island, Georgia, with Senator Nelson Aldrich and a handful of the nation's most powerful financiers. There they drafted the plan that became the Federal Reserve Act of 1913. The Fed gave the United States a central bank capable of stabilizing the currency and backstopping the nation's rise as the world's financial power. By the mid-1920s the dollar had overtaken sterling as the leading reserve currency; after Bretton Woods in 1944 it became the undisputed global anchor.</p>
+    <p>That same year, 1913, Vanderlip purchased the 16,000-acre Rancho de los Palos Verdes from the Bixby family. The timing was not coincidence. The Bixbys had held the land since the 1882 court partition of the original Mexican grant. They had come west after the Civil War as cattle ranchers. But the great droughts of the 1860s&mdash;followed by lesser dry spells in the 1870s and 1890s&mdash;had already shattered the old rancho economy. Tens of thousands of cattle died across Southern California. Debts mounted, land values collapsed, and the great Mexican-era estates were carved up and sold. By the time Vanderlip arrived, the Bixbys were ready to exit ranching for the new urban California that McKinley's tariffs, gold-standard policies, and imperial expansion had helped create.</p>
+  </section>
+
+  <figure style="margin: 1.5rem 0; text-align: center;">
+    <img src="/images/hdl-13328-partition-map-rancho-los-palos-verdes-a.jpeg" alt="1882 Partition Map of the Rancho Los Palos Verdes, Lot H" style="width: 100%; max-width: 800px;">
+    <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Lot H. Partition Map of the Rancho Los Palos Verdes, 1882. Courtesy Palos Verdes Library District.</figcaption>
+  </figure>
+
+  <section id="section-2">
+    <h2>Private Vision on Public Land</h2>
+    <p>Vanderlip hired the Olmsted Brothers to design a Mediterranean idyll of red-tile roofs, view corridors, and walkable neighborhoods. To make the vision binding, he and his partners recorded a series of private declarations. Declaration No. 1 (1923) is famous. Far less known are Declarations 100 and 101, recorded in late 1929, which extended the same Art Jury, Community Association, and architectural standards to the Portuguese Bend and Abalone Cove coastline. A 1930 grant deed to the Filiorum Corporation expressly incorporated those covenants &ldquo;as fully and completely as if herein set forth in full.&rdquo; Those restrictions still run with the land.</p>
+    <p>Yet the land itself never cooperated fully. Beneath the grand plans lies the same restless geology that killed the Bixby herds a generation earlier. In 1978, after the Abalone Cove landslide reactivated, Rancho Palos Verdes enacted its Landslide Moratorium Ordinance. The courts later forced exceptions, but in 2025 the city made the prohibition on new residential construction across the Greater Portuguese Bend Landslide Complex permanent.</p>
+  </section>
+
+  <section id="section-3">
+    <h2>Condos or the Beach&mdash;Again</h2>
+    <p>In 1972 the community faced the identical choice: a Beverly Hills developer proposed 138&ndash;170 condominiums on Portuguese Point. Residents voted for preservation instead. That decision created today's public shoreline park. Fifty-four years later the question has returned, this time at 0 Clipper Road.</p>
+  </section>
+
+  <section id="section-9">
+    <h2>The Wong Parcel and the Rezoning</h2>
+    <p>The 1.58-acre vacant lot at 0 Clipper Road was subdivided in 1980 (Tract 32977) into four single-family sites and one flood-hazard open-space parcel. It was reverted in 1986. Subsequent owners tried commercial uses and were repeatedly told no. In 2021 it sold to Clipper Development LLC for $2.2 million. A $2.1 million commercial loan followed in 2025.</p>
+    <p>In April 2024 the City Council passed urgency ordinances rezoning the parcel from RS-4 to RM-22. Sixteen units were proposed. State housing law (RHNA) supplied the rationale, even after HCD confirmed the city could remove the site and remain compliant. The parcel sits inside the landslide moratorium zone, on a flood easement, adjacent to a fire station whose own ground is moving. A 39-page legal letter, an FPPC complaint, and a writ petition followed.</p>
+  </section>
+
+  <section id="section-politics">
+    <h2>California's New Arithmetic</h2>
+    <p>This is where the larger story surfaces. California once marketed itself as the ultimate environmental haven&mdash;rugged coast, rare butterflies, open space, the California bear on the flag. Yet the same state that protects the Palos Verdes Blue Butterfly under the Endangered Species Act now pressures cities to rezone active landslide zones for density. The rhetoric is &ldquo;equality of outcome&rdquo; and &ldquo;housing justice.&rdquo; The reality is that individual property rights, private covenants, and site-specific science are treated as obstacles to be steamrolled.</p>
+    <p>The real Angelenos&mdash;the ones who still remember the bear, the open hills, and the hard-won lessons of the 1860s droughts&mdash;watch this with a sense of historical whiplash. The same banking families and visionaries who helped birth the modern dollar and planned the peninsula's low-density future are now invoked as relics. In their place stands a regulatory regime that lectures about climate and conservation while ignoring the literal movement of the earth beneath our feet.</p>
+    <p>The DDT contamination on the Palos Verdes Shelf, the FEMA buyouts, the cracked roads and failing infrastructure&mdash;all of it is real. So is the 100-year record that says this particular parcel was never suited for dense development. Reverting to the 1980 Wong subdivision&mdash;four single-family lots and preserved open space&mdash;would honor both the land's geology and the original private covenants that Vanderlip himself helped write.</p>
+  </section>
+
+  <section id="section-12">
+    <h2>Listening to the Land</h2>
+    <p>Drive Palos Verdes Drive South today and the warnings are literal: cracked pavement, leaning signs, flashing alerts. The Governor declared an emergency here in 2024. The ground is still moving. Our tiny HOA cannot litigate against well-financed development. State law limits what covenants can restrict; courts still enforce those that were properly recorded. The city cites our deeds when convenient and overrides them when Sacramento calls.</p>
+    <p>The record&mdash;Declarations 100 and 101, the Filiorum deed, the Wong maps, the geotechnical reports&mdash;is now organized and public. We created the Abalone Cove Foundation, a 501(c)(3), precisely so it stays that way.</p>
+
+    <figure style="margin: 2rem -2rem 0; text-align: center;">
+      <img src="/images/IMG_0346.jpeg" alt="Abalone Cove beach today, looking toward Portuguese Point" style="width: 100%; max-width: 800px;">
+    </figure>
+
+    <p>The land has spoken clearly for more than a century. It moved when the Bixby cattle died. It moves still. The question is no longer whether we can hear it. The question is whether we still have the will&mdash;and the legal and political framework&mdash;to listen.</p>
+    <p>If you hold documents, stories, or perspective from any chapter of this history, the Foundation is listening. The bear on the flag is still watching.</p>
+  </section>
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents or stories, get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  // Reading progress bar using IntersectionObserver
+  (function () {
+    var bar = document.getElementById('progress-bar');
+    var article = document.querySelector('.article');
+    if (!bar || !article) return;
+
+    function updateProgress() {
+      var rect = article.getBoundingClientRect();
+      var articleTop = rect.top + window.scrollY;
+      var articleHeight = rect.height;
+      var viewportHeight = window.innerHeight;
+      var scrollY = window.scrollY;
+
+      var start = articleTop;
+      var end = articleTop + articleHeight - viewportHeight;
+      var progress = 0;
+
+      if (scrollY >= end) {
+        progress = 100;
+      } else if (scrollY > start) {
+        progress = ((scrollY - start) / (end - start)) * 100;
+      }
+
+      bar.style.width = progress + '%';
+    }
+
+    // Use IntersectionObserver to activate scroll tracking only when article is visible
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', updateProgress, { passive: true });
+          updateProgress();
+        } else {
+          window.removeEventListener('scroll', updateProgress);
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(article);
+    updateProgress();
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abalone Cove — What's a Quorum?</title>
+  <meta name="description" content="A board member traces 113 years of land use history on the Palos Verdes Peninsula — from the Vanderlip purchase to a proposed development on an active landslide.">
+  <link rel="canonical" href="https://abalonecove.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="What's a Quorum?">
+  <meta property="og:description" content="A board member traces 113 years of land use history on the Palos Verdes Peninsula — from the Vanderlip purchase to a proposed development on an active landslide.">
+  <meta property="og:url" content="https://abalonecove.org/">
+  <meta property="og:site_name" content="Abalone Cove">
+  <meta property="og:image" content="https://abalonecove.org/images/shell-blended-256.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="What's a Quorum?">
+  <meta name="twitter:description" content="113 years of land use history on the Palos Verdes Peninsula.">
+  <meta name="twitter:image" content="https://abalonecove.org/images/shell-blended-256.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "What's a Quorum?",
+    "description": "A board member traces 113 years of land use history on the Palos Verdes Peninsula.",
+    "author": {
+      "@type": "Person",
+      "name": "An HOA Board Member on the Palos Verdes Peninsula"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Abalone Cove Foundation",
+      "url": "https://abalonecove.org"
+    },
+    "url": "https://abalonecove.org/",
+    "about": [
+      "Palos Verdes Peninsula",
+      "Abalone Cove",
+      "California land use history",
+      "Portuguese Bend Landslide",
+      "Frank Vanderlip",
+      "Olmsted Brothers"
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Design Tokens ── */
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-sage: #6b8f7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Progress Bar ── */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: var(--shell-teal);
+      z-index: 1000;
+      transition: width 0.15s ease-out;
+    }
+
+    /* ── Body ── */
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--shell-dark);
+      background: var(--shell-cream);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header / Nav ── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .wordmark {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+
+    /* Desktop nav */
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    /* Hamburger (checkbox hack) */
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block;
+      background: var(--shell-dark);
+      height: 2px;
+      width: 24px;
+      border-radius: 2px;
+      position: relative;
+      transition: transform 0.3s, opacity 0.2s;
+    }
+
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      content: "";
+      position: absolute;
+    }
+
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* ── Article ── */
+    .article {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .article-header h1 {
+      font-size: 2.25rem;
+      line-height: 1.25;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+    }
+
+    .byline {
+      font-size: 0.95rem;
+      color: var(--shell-sage);
+      font-style: italic;
+      margin-bottom: 0.25rem;
+    }
+
+    .dateline {
+      font-size: 0.85rem;
+      color: var(--shell-warm);
+      letter-spacing: 0.06em;
+    }
+
+    /* Sections */
+    .article section {
+      margin-bottom: 3rem;
+    }
+
+    .article section h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
+      color: var(--shell-dark);
+      border-bottom: 1px solid var(--shell-warm);
+      padding-bottom: 0.4rem;
+    }
+
+    .article p {
+      margin-bottom: 1.25rem;
+    }
+
+    /* Links */
+    .article a {
+      color: var(--shell-teal);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+    }
+
+    .article a:hover {
+      color: var(--shell-sage);
+    }
+
+    /* Blockquotes */
+    .article blockquote {
+      border-left: 3px solid var(--shell-teal);
+      background: var(--shell-cream);
+      margin: 1.5rem 0;
+      padding: 1rem 1.25rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--shell-dark);
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid var(--shell-warm);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      background: var(--shell-mist);
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .footer-org {
+      font-size: 0.9rem;
+      color: var(--shell-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-cta {
+      font-size: 0.85rem;
+      color: var(--shell-sage);
+      font-style: italic;
+    }
+
+    /* ── Mobile (< 768px) ── */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+
+      .article-header h1 { font-size: 1.75rem; }
+
+      .article section h2 { font-size: 1.3rem; }
+
+      /* Hamburger nav */
+      .nav-toggle-label { display: flex; align-items: center; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--shell-cream);
+        border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+        gap: 0.75rem;
+      }
+
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+    }
+
+    /* ── Print ── */
+    @media print {
+      .site-header,
+      .progress-bar { display: none; }
+
+      body {
+        font-size: 11pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+      }
+
+      .article {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .article section { page-break-inside: avoid; }
+
+      .site-footer {
+        border-top: 1pt solid #ccc;
+        background: #fff;
+        font-size: 9pt;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress-bar"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 0.4rem;">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<article class="article">
+  <div class="article-header">
+    <h1>What's a Quorum?</h1>
+    <p class="byline">By an HOA Community Member on the Palos Verdes Peninsula</p>
+    <p class="dateline">2026 &middot; 25 min read</p>
+  </div>
+
+  <figure style="margin: 0 -2rem 3rem; text-align: center;">
+    <img src="/images/hdl-10584-pre-development-aerial-pv-coast.jpg" alt="Pre-development aerial photograph of the Palos Verdes coast" style="width: 100%; max-width: 800px;">
+    <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">The Palos Verdes coast before development. Courtesy Palos Verdes Library District.</figcaption>
+  </figure>
+
+  <section id="section-1">
+    <h2>What's a Quorum?</h2>
+    <p>It was at the HOA meeting. We were discussing the community path, the damage from the storms two years ago, the disputes with neighbors over access, the lawsuit that went nowhere, and all the money we spent on lawyers to fight the city over rezoning part of our community to high density to meet SB 9 housing element requirements. Eighty-one lots. Five streets. Dues under twenty dollars a month. With an annual budget under three hundred dollars per household, it's not like we have a war chest to do anything substantial.</p>
+    <p>I asked a straightforward question. What is a quorum anyway? How do we actually make a decision around here? And even if we all agree, does it even matter?</p>
+    <p>The room went quiet. Some people said it was a simple majority. A few of the longtime owners said it was more complicated. It was all spelled out in the bylaws. The bylaws that were updated in 2009, the last time the HOA actually achieved a quorum. And everyone just seems to mention that they need updating again. They probably do, based on Davis-Stirling.</p>
+    <p>One neighbor even looked up the definition for me on ChatGPT. A couple of others scowled at me. Said we should move on. Didn't seem to care.</p>
+    <p>So I got a copy, and I went home to read them myself. This is what I found out&hellip;</p>
+  </section>
+
+  <figure style="margin: 0 -2rem 2rem; text-align: center;">
+    <img src="/images/hdl-15658-postcard-abalone-cove-rpv.jpeg" alt="Postcard: Abalone Cove, Rancho Palos Verdes, California" style="width: 100%; max-width: 800px;">
+    <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Abalone Cove, Rancho Palos Verdes, California. You can see the moving land.</figcaption>
+  </figure>
+
+  <section id="section-community">
+    <h2>The Community of Abalone Cove</h2>
+    <p>We are eighty-one lots on five streets at the southern tip of the Palos Verdes Peninsula. The West Portuguese Bend Community Association was founded in 1949, one of three subdivisions created at the same time by the Palos Verdes Corporation from Tract 14649. The first lot was sold in 1952 with CC&Rs attached, and we have had a functioning HOA and Architectural Review Committee since that day. The community later renamed itself the Community of Abalone Cove, in part to separate itself from the stigma of Portuguese Bend and the landslide that has defined the area for decades.</p>
+    <p>We have a community path to the beach. It matters to everyone who lives here. We maintain it ourselves. It is one of the few points of coastal access on the entire peninsula, and it is a private easement recorded in the founding declarations.</p>
+    <p>The community today is a mix. Newer owners who paid current market rates for their homes. Long-time owners who bought decades ago at a fraction of what newcomers pay. And the bluff residents along Sea Cove Drive, whose properties are in another category entirely. Most of the bluff owners pay little attention to the HOA or the neighborhood. Several have sued each other over views, trees, and easement access. When the board considers getting involved, individual directors get threatened with personal litigation. A volunteer board operating on dues of less than twenty dollars a month cannot afford that exposure.</p>
+    <p>We have faced a series of decisions at the city that have not gone our way. The rezoning of the vacant lot next door. The closure of the park we maintained. Code enforcement actions over leaf blowers in a neighborhood the city can barely keep a road open to. Through all of it, the HOA has continued to function, hold meetings, and try to represent the interests of the community. That is what we are. That is what this site documents.</p>
+  </section>
+
+  <section id="section-2">
+    <h2>The Layers</h2>
+    <p>This stretch of coast was never meant to be ordinary suburban land. If you were standing here in 1542, in the <a href="/map/?layer=indigenous">Tongva village</a>, you would have seen Cabrillo's ships appear on the horizon of the Catalina Channel, unaware of what was coming. Beneath your feet, the bentonite clay that has been sliding into the Catalina Channel for a hundred thousand years. Above you, a hundred years of declarations, deeds, moratoriums, and coastal plans stacked on top of each other. When we talk about the layers, we mean all of them. The layers of land. The layers of time. The layers of regulation. The sliding layer of clay. There are a lot of layers here.</p>
+    <p>The land has changed hands four times between sovereigns. In 1784, a sixty-three-year-old Spanish soldier named Juan Jose Dominguez petitioned Governor Fages at Monterey for a permit to run cattle over the hills and lowlands joining the Harbor of San Pedro. It was the first private land use grant in California history. The original Rancho San Pedro covered 43,119 acres. After the Mexican Revolution, Jose Dolores Sepulveda obtained permission from the Dominguez interests to run cattle on the portion known as Rancho Palos Verdes. By 1827 the Sepulvedas had a provisional grant. On June 4, 1846, Pio Pico, the last Mexican governor of Alta California, granted the Sepulvedas a formal decree to the rancho. That was twenty-three days before Commodore Sloat raised the United States flag over the Monterey customs house and claimed California for the Union. In 1853 the U.S. Land Commission confirmed the Sepulveda title.</p>
+    <p>Litigation beset the Sepulvedas for decades. In 1882, a Superior Court partition in <em>Bixby et al. vs. Bent et al.</em> (Case No. 2373) awarded the bulk of the rancho — 16,002 acres — to Jotham Bixby. The partition created Lot H. If you look at the original vellum, this is Lot H. Everything else on the peninsula is a portion of it. Every tract, every subdivision, every road dedication, every park — carved out of Lot H over the next hundred and forty years. It is the coastline. It is Portuguese Bend. It is the land under our feet right now.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/hdl-13328-partition-map-rancho-los-palos-verdes-a.jpeg" alt="1882 Partition Map of the Rancho Los Palos Verdes, Lot H" style="width: 100%; max-width: 800px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Lot H. Partition Map of the Rancho Los Palos Verdes, by Order of the Superior Court of Los Angeles County, 1882. This is the original. Courtesy Palos Verdes Library District.</figcaption>
+      <p style="font-size: 0.8rem; color: var(--shell-sage); margin-top: 0.5rem; font-style: italic;"><em>Editor's note:</em> The hand-drawn coast road ends at Portuguese Point. The marker to the west, just before Abalone Cove, appears to be the farmhouse from the original photograph.</p>
+    </figure>
+
+    <p>Bixby and his syndicate held Lot H for thirty years. The great droughts of the 1860s had already shattered the old rancho cattle economy across Southern California. Tens of thousands of head died. Debts mounted, land values collapsed, and the Mexican-era estates were carved up and sold. By the early 1900s, the Bixbys were ready to exit.</p>
+    <p>In 1913, Frank Vanderlip bought it all — 16,002 acres. According to Col. Robert M. Baughey of the Palos Verdes Corporation, writing in 1947, Vanderlip conducted all of the negotiations and assumed full responsibility in the purchase, and closed the deal without first having seen the property. Vanderlip was not a rancher. He was a Wall Street banker, former Assistant Secretary of the Treasury under President McKinley, and one of the architects of the Federal Reserve Act. Three years before purchasing the peninsula, he had attended the secret meeting on Jekyll Island that drafted the plan for a central bank. In 1920 he sold approximately 3,200 acres to the developers of Palos Verdes Estates and Miraleste. The Palos Verdes Corporation was founded shortly after. He hired the Olmsted Brothers to draw the plan.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/Topo_1914.png" alt="Olmsted Brothers street plan for the Palos Verdes Peninsula, overlaid on topographic survey" style="width: 100%; max-width: 800px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">The original Olmsted street plan for the hill. Costa del Mar curves up around Abalone Cove as drawn on the later plans. Crenshaw descends over the hill. Hawthorne Boulevard does not exist yet.</figcaption>
+    </figure>
+
+    <p>To make that vision enforceable, the Vanderlip interests recorded a series of private declarations over the following decades.</p>
+    <p><a href="/evidence/#declaration-1">Declaration No. 1</a>, recorded January 25, 1923, established the framework that anyone familiar with Palos Verdes already knows. The Malaga Cove Red Tile District. The Miraleste Red Tile District. The Art Jury. The Mediterranean architectural standards. The Olmsted plan connected the peninsula with commercial zones interspersed amongst the residential areas, walkable neighborhoods, and a double-lane boulevard encircling the peninsula. The 90274 ZIP code, which splits strangely across the hill, traces back to 1923, when those were the only pieces of civilization up here.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/69.jpeg" alt="The Developed Area of Palos Verdes Estates, Los Angeles County, California. Olmsted Brothers, Landscape Architects. Charles H. Cheney, City Planning Consultant." style="width: 100%; max-width: 800px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">The Developed Area of Palos Verdes Estates. Olmsted Brothers, Landscape Architects. Charles H. Cheney, City Planning Consultant. The zoning districts, the boulevards, the Art Jury. This is the plan.</figcaption>
+    </figure>
+
+    <p>What that map does not show is the Red Tile District defined for Portuguese Bend. The Portuguese Bend Riding Club, the gatehouse at Portuguese Point, Villa Narcissa. These are all remnants of a parallel plan for the south coast that never fully materialized.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/olmsted 1.jpg" alt="Olmsted Brothers landscape plan for Mr. F.A. Vanderlip, showing Portuguese Bend and Abalone Cove" style="width: 100%; max-width: 800px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Olmsted Brothers landscape plan for Mr. F.A. Vanderlip. Portuguese Bend, Portuguese Point, and Abalone Cove labeled. The driveway plan so grand it became a county road.</figcaption>
+    </figure>
+
+    <p><a href="/evidence/#declaration-100">Declarations 100</a> and <a href="/evidence/#declaration-101">101</a> were recorded in late 1929 as the Vanderlip interests attempted to extend the full suite of protective restrictions to the Portuguese Bend area. Declaration No. 100 is dated October 7, 1929 and recorded in Book 9436, Page 155. Declaration No. 101, a separate document dated October 14, 1929 and recorded in Book 9482, Page 37, describes the seven specific parcels to which Declaration 100 applies. Together they established a general plan for development, created a Community Association of Palos Verdes, and provided for an Art Jury.</p>
+    <p>A related <a href="/evidence/#filiorum-deed">grant deed</a>, recorded on August 15, 1930 in Book 10226, Page 170, transferred three certain portions of Lot "H" of the Rancho Los Palos Verdes from the Palos Verdes Corporation to the Filiorum Corporation for ten dollars. That deed expressly incorporates each and every provision, condition, restriction, reservation, lien, charge, easement and covenant contained in Declarations 100 and 101, making them binding on the conveyed property as fully and completely as if herein set forth in full.</p>
+    <p>These are not abstract historical parcels. In 2014, when California dissolved its redevelopment agencies, the Successor Agency to the RPV Redevelopment Agency conveyed eleven properties back to the city by grant deed. Five of them are the Abalone Cove Shoreline Park parcels. Their legal descriptions reference the same Lot H partition map, the same Filiorum Corporation deed, the same parcels described in Declaration 101. The grant deed states that the city accepted them subject to all covenants, conditions, and restrictions of record. Whatever declarations ran with that land came with it.</p>
+    <p>The Successor Agency's own Long-Range Property Management Plan, a state-mandated document reviewed and approved by the California Department of Finance in April 2014, is even more explicit. For every coastal parcel, the LRPMP states under Title Information that the parcel is subject to various Covenants, Conditions, and Restrictions, and that those CC&Rs could limit the type of development or use that is permissible on the parcel.</p>
+    <p>One parcel is particularly relevant. APN 7573-007-900, at the southeast corner of Sea Cove Drive and Palos Verdes Drive South, is part of the same Parcel 106 remainder strip as 0 Clipper Road. It shares the same assessor book, the same title history back to the 1920s, and the same open creek that drains through both parcels. The LRPMP describes the drainage as a 24-inch pipe under Palos Verdes Drive South, but the creek itself is open on this parcel. It is the same watercourse. The city's own staff, in a document prepared for state oversight, acknowledged that CC&R restrictions exist on this Parcel 106 land and may constrain what can be built. Even here, Declarations 100 and 101, sitting at the county recorder's office the entire time, were never referenced.</p>
+    <p>Declaration 1 is famous. Declaration 150 has been litigated for decades. Even today, Declarations 100 and 101 remain surprisingly obscure. Despite the fact that the same legal descriptions later appeared in city documents conveying land for Abalone Cove Beach Park and Catalina View Gardens, the full text of Declarations 100 and 101 has never been digitized. I obtained copies the old-fashioned way, by going downtown and pulling the microfilm at the Los Angeles County Recorder's Office.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/filiorum-deed-grant.jpeg" alt="Grant deed from Palos Verdes Corporation to Filiorum Corporation, recorded August 15, 1930, Book 10226, Page 170" style="width: 100%; max-width: 800px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Grant Deed. Palos Verdes Corporation to Filiorum Corporation. Recorded August 15, 1930. Book 10226, Page 170.</figcaption>
+    </figure>
+
+    <p>Perhaps it is not so strange that these documents were never found. The references to Declarations 100 and 101 are buried six pages deep in the assessor's metes-and-bounds description of the entire south shore. Even if you compared the legal descriptions to the survey, you would not see them. They appear as a to-wit clause, point two, in case you care to read that far. Nobody ever did.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/filiorum-deed-restrictions.jpeg" alt="Filiorum grant deed, page showing incorporation of Declarations 100 and 101, Community Association of Palos Verdes, and Art Jury" style="width: 100%; max-width: 800px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Page six. The highlighted passage incorporates every provision of Declarations 100 and 101, including the Community Association of Palos Verdes and the Art Jury.</figcaption>
+    </figure>
+
+  </section>
+
+  <section id="section-3a">
+    <h2>Cityhood</h2>
+    <p>Palos Verdes Estates has never been a typical city. It operates under the original Declaration 1 covenant system, with a surcharge on property taxes that funds the Art Jury, the Homes Association, and the private police force. The restrictions are the municipality. PVE incorporated early and never changed the model.</p>
+    <p>The rest of the peninsula was unincorporated Los Angeles County through the twenties, the thirties, the war, and the postwar boom. Suburbia was growing. LA was expanding south. The Vanderlip declarations sat in the county recorder's office while the world around them changed. By the time the other cities began to incorporate, it was because the development pressure had become too much to leave to the county.</p>
+    <p>The cities themselves emerged as another layer of control.</p>
+    <p>The City of Rolling Hills incorporated in 1957, one of the earliest on the peninsula, explicitly to preserve the low-density, rural character envisioned in the Vanderlip declarations. Rolling Hills has a population of 1,739. It is a gated city with three entry gates and a pass system. Its median household income exceeds $250,000, and it has the third-highest median house value in the United States. The Vanderlip restrictions are not academic here. They are enforced.</p>
+    <p>When Rolling Hills began annexing surrounding unincorporated land in the 1960s, the new city put those old 1930s rules to the test. When it began annexing surrounding unincorporated land in the 1960s, the new city put those old 1930s rules to the test. New residents were required to comply with height limits, view preservation regulations, and architectural standards derived from the private CC&amp;Rs. This enforcement led to significant legal disputes, most notably in <em>Colyear v. Rolling Hills Community Association</em> (2024), where the California Court of Appeal ruled that the HOA could not enforce certain old tree-cutting covenants against a property owner because his lot had never been expressly made subject to those restrictions.</p>
+    <p>Rancho Palos Verdes incorporated in 1973 for similar reasons, to gain local control and protect the coastal character from the denser development Los Angeles County had been approving. In 1978 the city adopted its Coastal Specific Plan, which includes detailed policies for Subregion 4 that includes Abalone Cove. That same year, after the Abalone Cove landslide reactivated, the city enacted the Landslide Moratorium Ordinance. It generally prohibited new construction on undeveloped land within the twelve-hundred-acre slide zone.</p>
+    <p>That moratorium faced its own legal challenge. In 2008, property owners sued the city in <em>Monks v. City of Rancho Palos Verdes</em>. The California Court of Appeal ruled that the blanket prohibition on developing certain undeveloped lots amounted to an unconstitutional taking. The city was forced to amend the ordinance in 2009, creating a case-by-case exception process. The moratorium survived, however. In August 2025 the City Council made the prohibition on new residential construction (including additions) permanent across the Greater Portuguese Bend Landslide Complex, effective September 2025. Repairs and replacements within existing footprints remain allowed, but new development on vacant land now faces an extremely high bar.</p>
+    <p>Federal involvement adds yet another layer. The Endangered Species Act protects habitat for the Palos Verdes Blue Butterfly in this area. More recently, FEMA has funded a $42 million voluntary buyout program for severely impacted properties in the landslide complex. Homeowners who accept the buyout sell to the city at a pre-disaster valuation. The structures are demolished and the land is permanently retired to open space. If the city approves sixteen units on an active landslide and those units fail, are taxpayers on the hook for the next buyout too?</p>
+
+    <p>This has to be one of the most surveyed pieces of land in the world. There are records going back over a hundred years from the original Olmsted surveys, the county road department field books, the 1930s Palos Verdes Drive South reroutes, the Wong subdivision and reversion, the Monks litigation, and every geotechnical report since the slide started moving in 1956. On top of all that, we now have modern satellites and measuring equipment constantly monitoring the active land movement in Portuguese Bend.</p>
+    <p>There's something else about this piece of land that rarely gets mentioned. If you were standing on 0 Clipper Road in the 1500s, in what was clearly a Tongva village&mdash;the shell middens and artifacts are still visible in the soil today and show up on city maps&mdash;you would have had one of the best vantage points on the entire peninsula. You could have seen Juan Cabrillo's ships approaching from as far away as San Clemente Island or Dana Point the moment they appeared on the horizon. This little promontory was the natural lookout for the area. That may be exactly why it was never fully incorporated into the grand Olmsted plans. It served as a key survey point for the entire layout.</p>
+    <p>I think the fact that this little slice of land at 0 Clipper Road is just on the edge of everything makes it even more revealing. There's a reason it still shows up on an analyst's desk. It's a 1.5-acre undeveloped, unaccounted-for piece of land in the planning pipeline. It's near transit. It has transportation corridors. It's near shopping. It fits all the right criteria for a rezoning in Sacramento or at RPV City Hall.</p>
+    <p>But there's a reason that it's still vacant after a hundred years, and there's a reason why it sits outside all of these things that we've described.</p>
+    <p>It's because it's a creek.</p>
+    <p>And it doesn't matter how many times you pave it. When it rains, it will flood and the land will move.</p>
+  </section>
+
+  <section id="section-3">
+    <h2>Condos vs. the Beach</h2>
+    <p>In 1972 the community that used Abalone Cove faced almost the exact same question we are facing today.</p>
+    <p>A Beverly Hills attorney named Karl Rodi proposed building 138 to 170 condominiums on Portuguese Point, the headland that separates the cove from the open ocean. At the same time, Dick Fitzgerald from the Los Angeles County Department of Beaches pushed hard for a public shoreline park instead.</p>
+    <p>Dick Karshner, who was president of the Abalone Shore Club at the time, organized the vote. The community chose the park.</p>
+    <p>That is why Abalone Cove Shoreline Park exists today. It is one of the few publicly accessible beaches on the entire Palos Verdes Peninsula. Fifty-four years later, the question is the same: condos or preservation. The parcel is different, but the geology has not changed.</p>
+  </section>
+
+  <section id="section-9">
+    <h2>The Wong Subdivision</h2>
+    <p>In 1980, a man named Wong subdivided the vacant parcel at 0 Clipper Road into five parcels. <a href="/evidence/#tract-32977">Tract 32977</a>. Four single-family building sites and one common-area open space parcel covering the clearly marked flood hazard area. That was the density the city considered appropriate for this land, and it is the last subdivision that was actually approved and recorded.</p>
+    <p>Six years later, for reasons the record doesn't fully explain, the subdivision was reversed. <a href="/evidence/#tract-43725">Tract 43725</a>, filed in 1986, reverted the five lots back to a single parcel. Same owner, same engineer. The flood hazard notation carried forward on the new map.</p>
+    <p>The Wong Family Trust eventually sold to a neighbor in the community. The previous owners, a neighbor in the community, held the parcel for sixteen years. They wanted to do more with it. They explored commercial zoning. They wanted to use it for parking. They proposed a warehouse, a "museum" for their car collection. The city said no. Not enough tax revenue in that. The city held them to what was appropriate for this land.</p>
+    <p>At the city council hearings, everyone fought and complained. But no one pulled title. No one pointed out the previous subdivision and reversion. It was not easy to find; it was buried in probate and opaque title transfers that were part of an estate being settled. Not that it matters. None of it does, really. But it's the lack of transparency and the attention to detail that can permeate the situation.</p>
+    <p>In October 2021, the previous owner sold to Clipper Development LLC for $2.2 million. The buyer was Ali Vahdani, a civil engineer from Vernon, California. In November 2025, Hankey Capital issued a $2.1 million commercial loan secured by the parcel.</p>
+    <p>There is a reason a 1.58-acre lot has sat vacant for a hundred years of California development, owned by the man who invented it. Every owner since has held it, tried to build, and moved on. The pattern is hard to miss. Someone acquires the parcel, holds it, tries to build, and eventually sells to the next buyer. A hundred years of this.</p>
+  </section>
+
+  <section id="section-10">
+    <h2>The Rezoning</h2>
+    <p>On April 16, 2024, the Rancho Palos Verdes City Council passed an urgency ordinance rezoning the vacant parcel from RS-4 to RM-22. Single-family residential to multi-family, twenty-two units per acre. They followed it with a second urgency ordinance on June 4 and a regular ordinance on June 18. Three ordinances in sixty-three days.</p>
+    <p>The proposal called for fourteen townhomes and two cottages, sixteen units on a lot and a half acres. The city calculated density based on the full 1.56-acre parcel. But the assessor's maps show a flood hazard easement that reduces the usable area to roughly one acre. At that size, sixteen units works out to about sixteen per acre, not the ten per acre the city presented.</p>
+    <p>On June 4, 2024, attorney Kendra Carney Mehr submitted a letter to the city council on behalf of eighty homeowners in Abalone Cove opposing the rezoning. It was thirty-nine pages long. On August 7, an <a href="/evidence/#fppc">FPPC complaint</a> was filed against the mayor. On September 11, a <a href="/evidence/#petition">petition for writ of mandate</a> was filed in Superior Court, Case No. 24TRCP00352. The city filed a demurrer in November. The community filed its opposition in December.</p>
+    <p>In January 2025, the California Department of Housing and Community Development confirmed that the city could remove Site 16, the 0 Clipper parcel, from its housing element and remain RHNA-compliant. The numbers worked without it. In June 2025, the city council voted to keep it anyway.</p>
+    <p>In April 2025, the city's housing consultant, Dudek, an Encinitas-based environmental and planning firm under contract funded by state HCD grants, presented to the planning commission. Dudek also holds the housing element contract for Palos Verdes Estates. Their message was reassuring: this was just about numbers. Compliance with the housing element. Nobody would ever actually need permits here.</p>
+    <p>If that is true, if the rezoning is purely theoretical, a paper exercise to satisfy Sacramento, then it raises its own question. Why rezone a parcel on an active landslide if nobody intends to build? And if someone does intend to build, then the assurance was not accurate. The Hankey Capital loan secured by this parcel suggests the latter.</p>
+    <p>The housing element exists because Sacramento requires every city in California to plan for its share of new housing. That framework makes sense in places where housing is needed and infrastructure can support it. The question is whether a vacant parcel on an active landslide, in a flood hazard zone, inside a landslide moratorium area, adjacent to a failing fire station, on a road the city can barely maintain, within a certified Coastal Specific Plan that restricts exactly this kind of development, is the right place to put sixteen units.</p>
+  </section>
+
+  <figure style="margin: 0 -2rem 2rem; text-align: center;">
+    <img src="/images/Screenshot 2026-04-16 at 1.19.43 PM.png" alt="Road Department Field Book survey showing Tract 14649, Sea Cove Drive, and Clipper Road" style="width: 100%; max-width: 800px;">
+    <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Road Department Field Book 0117, Survey of Palos Verdes Drive. The handwritten notes reference TR. 14649, Sea Cove Drive, and Clipper Road.</figcaption>
+  </figure>
+
+  <section id="section-11">
+    <h2>The Research</h2>
+    <p>None of this research would have been possible five years ago, not for one person working alone.</p>
+    <p>My wife joined the HOA board at the urging of a neighbor. I lived in a previous board member's house. When I bought it, the previous owner had left documents in the garage. A couple of banker boxes and a mailing tube, sitting there for twenty years.</p>
+    <p>I later learned that the previous owner had served on the HOA board in the 1950s and had been a director of the Abalone Shore Club, the private beach club that leased property from the Vanderlip family. The documents weren't random. They were the archives of someone who cared. She had handwritten notes, hand-drawn parcel maps, pristine copies of the city's own documents. She was an architecture student. She had her house designed by a fellow classmate, Doug Rucker, AIA. It was his first professional commission.</p>
+
+    <figure style="margin: 1.5rem 0; text-align: center;">
+      <img src="/images/original rendering.png" alt="Original architectural rendering by Doug Rucker, AIA" style="width: 100%; max-width: 680px;">
+      <figcaption style="font-size: 0.8rem; color: var(--shell-warm); margin-top: 0.5rem; font-style: italic;">Doug Rucker's original rendering. His first professional commission. This is why she kept the box.</figcaption>
+    </figure>
+    <p>I took all the old documents and started scanning them. One after the next. And then I found the founding declaration. And I saw the name on it. Kelvin C. Vanderlip, President, Palos Verdes Corporation. The same family that helped create the Federal Reserve. The same family that hired the Olmsted Brothers. They signed both sides of the document; president of the land corporation and president of the HOA at the same time. The same people, creating the restrictions and the body to enforce them.</p>
+    <p>I used AI to process the scanned documents. Seventy-five-year-old declarations recorded in books at the Los Angeles County Recorder's Office. The faded typewriter text, the legal descriptions, the metes and bounds. I asked it to compare legal descriptions across documents, and it found matches I would have missed. I gave it engineering drawings and assessor parcel maps, and it helped me trace boundary lines from one document to another.</p>
+    <p>The <a href="/evidence/#lot-h">Lot H Declaration</a> was instructive, but not in the way I expected. The Vanderlips put declarations on the parcels they were selling. Lot H covered the negative space. But when I read the actual document, the only restriction it contained was a racial covenant, now void under California law. The architectural protections I assumed were there simply weren't. That correction changed the legal strategy. The strongest arguments for protecting this land are geological, environmental, and procedural, not CC&R-based.</p>
+    <p>The real discovery came from the engineering drawings. County surveys of Palos Verdes Drive South from the 1930s. The AI flagged a map document reference in tiny notation on a thirty-by-forty-inch blueprint. A book and page number. I pulled the referenced document from the county recorder. It pointed to two declarations I had never heard anyone mention: <a href="/evidence/#declaration-100">Declaration 100</a> and <a href="/evidence/#declaration-101">Declaration 101</a>.</p>
+    <p>They defined a Palos Verdes Community Association and an Art Jury for Portuguese Bend. The same body that governs Palos Verdes Estates today. The same red tile district. The same Mediterranean architectural standards. Written on the same typewriter, signed by the same people who signed everything else the Vanderlips recorded. These documents have never been publicly discussed. They never mattered because the land was always private. But when the Filiorum Corporation dissolved and the family's land speculation ended, recorded declarations run with the land.</p>
+    <p>I used GIS mapping tools to plot the seven parcels described in Declaration 101. The metes and bounds are partially illegible on the microfilm. I overlaid the declaration boundaries on modern assessor parcel maps. The lot at 0 Clipper Road sits just outside the Declaration 101 boundary. The result is in the <a href="/map/">interactive map</a> on this site.</p>
+    <p>What one person can do now with these tools used to require a law firm, a title company, and a surveyor. The work is not perfect. The microfilm quality is poor on some of the oldest documents, and there are gaps. But the timeline is assembled, the documents are indexed, and the contradictions in the public record are visible to anyone who wants to look.</p>
+  </section>
+
+  <section id="section-12">
+    <h2>Current Conditions</h2>
+    <p>Drive Palos Verdes Drive South past the fire station in the spring of 2026. The road is cracked. City works signs are broken and leaning. Flashing electronic signs warn of dangerous conditions. The Governor declared a state of emergency for this area in September 2024. FEMA has been involved. The ground beneath the fire station, which sits on land carved from Parcel 106, the same remainder strip that borders the vacant lot, is moving.</p>
+    <p>The HOA that the Vanderlips built in 1949 to protect this land operates on dues of less than twenty dollars a month. That budget cannot fund legal action against a developer backed by a commercial loan. When the board tries to enforce the CC&Rs, individual board members get personally named in lawsuits. A volunteer board with a shoestring budget cannot afford directors and officers insurance.</p>
+    <p>The state tells HOAs they can't restrict development. The courts say CC&Rs still have teeth. The city uses the restrictions as an obstacle when it doesn't want to spend money on the beach path, but ignores them when a developer wants to build next door. The city cites residents for leaf blower violations and off-leash dogs in a park it closed. But sixteen units on an active landslide is a matter of housing compliance.</p>
+    <p>The Shore Club vote was in 1972. The Coastal Specific Plan was adopted in 1978. The moratorium ordinance the same year. The Wong subdivision in 1980. The previous owners tried and were told no. Every generation on this coastline has faced the same question, and the land itself has always made the argument. The geology says no. The hydrology says no. A hundred years of recorded instruments say no. The city's own engineers say no.</p>
+    <p>The housing element was designed for infill corridors. Jefferson Boulevard in West LA. La Cienega. Pleasanton in the East Bay. Places where density makes sense, where infrastructure exists, where the ground doesn't move. Not for a vacant parcel on an active landslide in a high fire zone next to a failing fire station on a road the city can barely maintain.</p>
+    <p>There is also the matter of the Palos Verdes Blue Butterfly (<em>Glaucopsyche lygdamus palosverdesensis</em>), listed as endangered by the U.S. Fish and Wildlife Service under Section 4 of the Endangered Species Act (16 U.S.C. &sect;1533). The parcel is within the range of this species. Any development would need to address the habitat question under Section 7 (16 U.S.C. &sect;1536), which requires federal agencies to ensure their actions do not jeopardize the continued existence of listed species. The Coastal Specific Plan also identifies this area as a native habitation site. The Palos Verdes Land Conservancy, which manages the adjacent Portuguese Bend Reserve, has not commented publicly on the ESA implications.</p>
+    <p>Look at this parcel on an assessor's map. It doesn't look like any other APN polygon on the hill. It's an irregular shape, unlike any buildable lot, because it isn't one. It's leftovers. The remainder of Parcel 106 after a hundred years of carving — road dedications, the fire station, the park, the subdivisions. What's left is 1.01 usable acres after the 0.57-acre creek and flood hazard area. That is not a condo site. It is and always has been single-family residential land.</p>
+    <p>The only thing that seems settled in a hundred and forty years is the Bixby partition. But if you asked Juan Sepulveda or the Gabrielino-Tongva, they might have a different opinion on whose authority actually trumps whose. Maybe this land should just go back to the federal government. A national seashore. A living laboratory for the forces of time.</p>
+    <p>The waters off this coast are contaminated. From 1947 to 1982, the Montrose Chemical plant in Torrance, the largest DDT manufacturer in the country, discharged an estimated 1,700 tons of DDT through the county sewer outfall at White Point. An estimated 110 tons remain on the Palos Verdes Shelf, covering seventeen square miles of ocean floor. Scripps Institution has identified up to 100,000 barrels of DDT waste on the seafloor between here and Catalina. The $140 million Superfund settlement in 2000 was the largest non-oil environmental damages recovery in history. Fish consumption advisories have been posted continuously since 1985 and remain in effect today. The land moves. The water is contaminated. The federal government is already here.</p>
+    <p>Here is what we think should happen. Revert to the <a href="/evidence/#tract-32977">1980 Wong subdivision</a>. Honor the flood hazard designation. Preserve the 0.57 acres of open space as habitat. The remaining four single-family residential lots, zoned RS-4 as they were always intended, are consistent with the neighborhood. They can be built if the land is stable enough.</p>
+    <p>The record is in the <a href="/evidence/">evidence room</a>.</p>
+    <p>We created a 501(c)(3) to make sure it stays there.</p>
+    <p>If you hold documents, stories, or perspective from any chapter of this history, the Foundation is listening.</p>
+
+    <figure style="margin: 2rem -2rem 0; text-align: center;">
+      <img src="/images/IMG_0346.jpeg" alt="Abalone Cove beach today, looking toward Portuguese Point" style="width: 100%; max-width: 800px;">
+    </figure>
+  </section>
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation &middot; abalonecove.org</p>
+    <p class="footer-cta">If you have documents or stories, get in touch.</p>
+  </div>
+</footer>
+
+<script>
+  // Reading progress bar using IntersectionObserver
+  (function () {
+    var bar = document.getElementById('progress-bar');
+    var article = document.querySelector('.article');
+    if (!bar || !article) return;
+
+    function updateProgress() {
+      var rect = article.getBoundingClientRect();
+      var articleTop = rect.top + window.scrollY;
+      var articleHeight = rect.height;
+      var viewportHeight = window.innerHeight;
+      var scrollY = window.scrollY;
+
+      var start = articleTop;
+      var end = articleTop + articleHeight - viewportHeight;
+      var progress = 0;
+
+      if (scrollY >= end) {
+        progress = 100;
+      } else if (scrollY > start) {
+        progress = ((scrollY - start) / (end - start)) * 100;
+      }
+
+      bar.style.width = progress + '%';
+    }
+
+    // Use IntersectionObserver to activate scroll tracking only when article is visible
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          window.addEventListener('scroll', updateProgress, { passive: true });
+          updateProgress();
+        } else {
+          window.removeEventListener('scroll', updateProgress);
+        }
+      });
+    }, { threshold: 0 });
+
+    observer.observe(article);
+    updateProgress();
+  })();
+</script>
+
+</body>
+</html>

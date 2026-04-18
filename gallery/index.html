@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Gallery — Abalone Cove</title>
+  <style>
+    :root {
+      --shell-teal: #2a7a7a;
+      --shell-cream: #f5f0e8;
+      --shell-dark: #1a1a2e;
+      --shell-warm: #c4a87a;
+      --shell-mist: #e8ede9;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--shell-cream);
+      color: var(--shell-dark);
+    }
+
+    /* Nav */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: var(--shell-cream);
+      border-bottom: 1px solid var(--shell-warm);
+      z-index: 900;
+      padding: 0 1.5rem;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+    .wordmark {
+      font-size: 1.25rem;
+      font-weight: normal;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.75rem;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--shell-dark);
+      text-decoration: none;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
+    .nav-links a.active { opacity: 1; color: var(--shell-teal); }
+
+    .nav-toggle { display: none; }
+    .nav-toggle-label { display: none; cursor: pointer; }
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+      display: block; background: var(--shell-dark); height: 2px; width: 24px;
+      border-radius: 2px; position: relative; transition: transform 0.3s;
+    }
+    .nav-toggle-label span::before, .nav-toggle-label span::after { content: ""; position: absolute; }
+    .nav-toggle-label span::before { top: -7px; }
+    .nav-toggle-label span::after { top: 7px; }
+    .nav-toggle:checked + .nav-toggle-label span { background: transparent; }
+    .nav-toggle:checked + .nav-toggle-label span::before { top: 0; transform: rotate(45deg); background: var(--shell-dark); }
+    .nav-toggle:checked + .nav-toggle-label span::after { top: 0; transform: rotate(-45deg); background: var(--shell-dark); }
+
+    /* Page */
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--shell-warm);
+      margin-bottom: 2rem;
+    }
+
+    /* Filter */
+    .filter-bar {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-bar input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.5rem 0.75rem;
+      font-family: Georgia, serif;
+      font-size: 0.85rem;
+      border: 1px solid var(--shell-warm);
+      border-radius: 6px;
+      background: white;
+      color: var(--shell-dark);
+    }
+
+    .filter-bar input:focus {
+      outline: none;
+      border-color: var(--shell-teal);
+    }
+
+    .count {
+      font-size: 0.8rem;
+      color: var(--shell-warm);
+      padding: 0.5rem 0;
+    }
+
+    /* Grid */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-item {
+      background: white;
+      border: 1px solid var(--shell-warm);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.15s, box-shadow 0.15s;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: var(--shell-mist);
+    }
+
+    .gallery-item .caption {
+      padding: 0.5rem 0.65rem;
+      font-size: 0.7rem;
+      color: var(--shell-dark);
+      opacity: 0.7;
+      word-break: break-all;
+      line-height: 1.3;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      border-radius: 4px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    }
+
+    .lightbox .lb-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 0.8rem;
+      background: rgba(0,0,0,0.6);
+      padding: 0.4rem 1rem;
+      border-radius: 4px;
+      max-width: 80vw;
+      text-align: center;
+    }
+
+    .lightbox .lb-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      background: none;
+      border: none;
+    }
+    .lightbox .lb-close:hover { opacity: 1; }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+      .gallery-item img { height: 130px; }
+      h1 { font-size: 1.4rem; }
+      .nav-toggle-label { display: flex; align-items: center; }
+      .nav-links {
+        display: none; position: absolute; top: 56px; left: 0; right: 0;
+        background: var(--shell-cream); border-bottom: 1px solid var(--shell-warm);
+        flex-direction: column; padding: 1rem 1.5rem; gap: 0.75rem;
+      }
+      .nav-toggle:checked ~ .nav-links { display: flex; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28" style="vertical-align: middle; margin-right: 0.4rem;">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/timeline/">Timeline</a></li>
+      <li><a href="/gallery/" class="active">Gallery</a></li>
+      <li><a href="/sign/">Sign</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="page">
+  <h1>Image Gallery</h1>
+  <div class="subtitle" id="count">Loading...</div>
+
+  <div class="filter-bar">
+    <input type="text" id="filter" placeholder="Filter by filename..." autocomplete="off">
+  </div>
+
+  <div class="gallery-grid" id="grid"></div>
+</main>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose">&times;</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var grid = document.getElementById('grid');
+  var filterInput = document.getElementById('filter');
+  var countEl = document.getElementById('count');
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCaption = document.getElementById('lbCaption');
+  var allImages = [];
+
+  // Fetch directory listing from the images folder
+  // Python's http.server returns an HTML directory listing
+  fetch('/images/')
+    .then(function (r) { return r.text(); })
+    .then(function (html) {
+      // Parse links from directory listing
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var links = doc.querySelectorAll('a');
+      var exts = ['.jpg', '.jpeg', '.png', '.gif', '.webp'];
+
+      links.forEach(function (a) {
+        var href = decodeURIComponent(a.getAttribute('href') || '');
+        var lower = href.toLowerCase();
+        for (var i = 0; i < exts.length; i++) {
+          if (lower.endsWith(exts[i])) {
+            allImages.push(href);
+            break;
+          }
+        }
+      });
+
+      allImages.sort(function (a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+      });
+
+      renderGrid(allImages);
+    })
+    .catch(function (err) {
+      countEl.textContent = 'Error loading images: ' + err.message;
+    });
+
+  function renderGrid(images) {
+    grid.innerHTML = '';
+    countEl.textContent = images.length + ' images';
+
+    images.forEach(function (filename) {
+      var item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.setAttribute('data-file', filename);
+
+      var img = document.createElement('img');
+      img.src = '/images/' + encodeURIComponent(filename);
+      img.alt = filename;
+      img.loading = 'lazy';
+
+      var cap = document.createElement('div');
+      cap.className = 'caption';
+      cap.textContent = filename;
+
+      item.appendChild(img);
+      item.appendChild(cap);
+
+      item.addEventListener('click', function () {
+        lbImg.src = '/images/' + encodeURIComponent(filename);
+        lbCaption.textContent = filename;
+        lightbox.classList.add('open');
+      });
+
+      grid.appendChild(item);
+    });
+  }
+
+  // Filter
+  filterInput.addEventListener('input', function () {
+    var q = filterInput.value.toLowerCase();
+    var filtered = allImages.filter(function (f) {
+      return f.toLowerCase().indexOf(q) !== -1;
+    });
+    renderGrid(filtered);
+  });
+
+  // Lightbox close
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox || e.target.id === 'lbClose') {
+      lightbox.classList.remove('open');
+      lbImg.src = '';
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      lightbox.classList.remove('open');
+      lbImg.src = '';
+    }
+  });
+
+})();
+</script>
+
+</body>
+</html>
