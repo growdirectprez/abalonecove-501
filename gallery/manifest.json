@@ -13,7 +13,9 @@
     "height": 1980,
     "thumb_400": "images/.thumbs/400/Topo_1914.png",
     "thumb_1200": "images/.thumbs/1200/Topo_1914.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -35,27 +37,30 @@
     "height": 1750,
     "thumb_400": "images/.thumbs/400/circa-1924-usgs-redondo-quadrangle-topo-palos-verdes.png",
     "thumb_1200": "images/.thumbs/1200/circa-1924-usgs-redondo-quadrangle-topo-palos-verdes.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
-    "kind": "multipage",
-    "path": "images/PVE_Civics_1939/PVE-Civics-1939-OCR.odt",
-    "filename": "PVE-Civics-1939-OCR.odt",
-    "caption": "PVE Civics 1939 OCR",
+    "kind": "collection",
+    "path": "images/PVE_Civics_1939",
+    "filename": "PVE_Civics_1939",
+    "caption": "PVE Civics 1939",
     "date": "1939",
     "tags": [
       "civics",
+      "collection",
       "multipage",
-      "ocr",
-      "odt",
       "pve"
     ],
-    "size_bytes": 26134,
+    "size_bytes": 49492247,
     "width": null,
     "height": null,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/PVE-Civics-1939-OCR.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/PVE-Civics-1939-OCR.png",
-    "page_count": 11
+    "thumb_400": "images/.thumbs/400/PVE_Civics_1939.png",
+    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939.png",
+    "page_count": null,
+    "item_count": 13,
+    "href": "/images/PVE_Civics_1939/"
   },
   {
     "kind": "multipage",
@@ -74,7 +79,9 @@
     "height": null,
     "thumb_400": "images/.thumbs/400/1944 - PB parcels.png",
     "thumb_1200": "images/.thumbs/1200/1944 - PB parcels.png",
-    "page_count": 1
+    "page_count": 1,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -97,7 +104,9 @@
     "height": 972,
     "thumb_400": "images/.thumbs/400/1953-gruen-master-plan-zoning-map-pv-peninsula-crop.png",
     "thumb_1200": "images/.thumbs/1200/1953-gruen-master-plan-zoning-map-pv-peninsula-crop.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -113,7 +122,9 @@
     "height": 1520,
     "thumb_400": "images/.thumbs/400/PVNews 19570228.png",
     "thumb_1200": "images/.thumbs/1200/PVNews 19570228.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -130,7 +141,9 @@
     "height": 1442,
     "thumb_400": "images/.thumbs/400/SeaCove_5h.png",
     "thumb_1200": "images/.thumbs/1200/SeaCove_5h.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -147,7 +160,9 @@
     "height": 1474,
     "thumb_400": "images/.thumbs/400/SeaCove_8d.png",
     "thumb_1200": "images/.thumbs/1200/SeaCove_8d.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -164,7 +179,9 @@
     "height": 1479,
     "thumb_400": "images/.thumbs/400/SeaCove_8e.png",
     "thumb_1200": "images/.thumbs/1200/SeaCove_8e.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -181,7 +198,9 @@
     "height": 13632,
     "thumb_400": "images/.thumbs/400/48049830791_a3f69e38c3_o.png",
     "thumb_1200": "images/.thumbs/1200/48049830791_a3f69e38c3_o.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -198,7 +217,9 @@
     "height": 16133,
     "thumb_400": "images/.thumbs/400/48049904272_8f7b9385bc_o.png",
     "thumb_1200": "images/.thumbs/1200/48049904272_8f7b9385bc_o.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -218,7 +239,9 @@
     "height": 1574,
     "thumb_400": "images/.thumbs/400/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a 2.png",
     "thumb_1200": "images/.thumbs/1200/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a 2.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -238,7 +261,9 @@
     "height": 1574,
     "thumb_400": "images/.thumbs/400/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a.png",
     "thumb_1200": "images/.thumbs/1200/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -259,7 +284,9 @@
     "height": 716,
     "thumb_400": "images/.thumbs/400/FC70E0CD-68A4-48E3-B3AA-CAAE2F3F9A86_1_105_c.png",
     "thumb_1200": "images/.thumbs/1200/FC70E0CD-68A4-48E3-B3AA-CAAE2F3F9A86_1_105_c.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -273,7 +300,9 @@
     "height": 3024,
     "thumb_400": "images/.thumbs/400/IMG_0346.png",
     "thumb_1200": "images/.thumbs/1200/IMG_0346.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -287,7 +316,9 @@
     "height": 3024,
     "thumb_400": "images/.thumbs/400/IMG_0894.png",
     "thumb_1200": "images/.thumbs/1200/IMG_0894.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -305,7 +336,9 @@
     "height": 1697,
     "thumb_400": "images/.thumbs/400/filiorum-deed-grant.png",
     "thumb_1200": "images/.thumbs/1200/filiorum-deed-grant.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -323,7 +356,9 @@
     "height": 1626,
     "thumb_400": "images/.thumbs/400/filiorum-deed-restrictions.png",
     "thumb_1200": "images/.thumbs/1200/filiorum-deed-restrictions.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -340,7 +375,9 @@
     "height": 1800,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-16 at 1.16.25 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-16 at 1.16.25 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -357,7 +394,9 @@
     "height": 1804,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-16 at 1.17.00 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-16 at 1.17.00 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -374,7 +413,9 @@
     "height": 1872,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-16 at 1.19.43 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-16 at 1.19.43 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -391,7 +432,9 @@
     "height": 868,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 12.34.27 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 12.34.27 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -408,7 +451,9 @@
     "height": 310,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 9.17.51 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 9.17.51 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -425,7 +470,9 @@
     "height": 968,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 9.18.01 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 9.18.01 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -442,7 +489,9 @@
     "height": 952,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 9.18.10 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 9.18.10 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -459,7 +508,9 @@
     "height": 964,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 9.18.19 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 9.18.19 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -476,7 +527,9 @@
     "height": 966,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 9.18.24 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 9.18.24 PM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -493,2133 +546,9 @@
     "height": 1914,
     "thumb_400": "images/.thumbs/400/Screenshot 2026-04-17 at 9.42.40 PM.png",
     "thumb_1200": "images/.thumbs/1200/Screenshot 2026-04-17 at 9.42.40 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.39.18 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.39.18 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.39.18 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 2129011,
-    "width": 846,
-    "height": 1428,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.39.18 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.39.18 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.39.47 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.39.47 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.39.47 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4162232,
-    "width": 1700,
-    "height": 1432,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.39.47 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.39.47 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.03 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.40.03 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.40.03 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 3671047,
-    "width": 1660,
-    "height": 1426,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.03 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.03 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.17 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.40.17 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.40.17 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4286686,
-    "width": 1644,
-    "height": 1416,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.17 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.17 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.32 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.40.32 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.40.32 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4180874,
-    "width": 1656,
-    "height": 1422,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.32 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.32 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.52 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.40.52 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.40.52 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4262701,
-    "width": 1650,
-    "height": 1424,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.52 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.40.52 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.09 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.41.09 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.41.09 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4161106,
-    "width": 1662,
-    "height": 1430,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.09 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.09 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.34 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.41.34 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.41.34 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4411099,
-    "width": 1658,
-    "height": 1440,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.34 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.34 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.52 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.41.52 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.41.52 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4161895,
-    "width": 1654,
-    "height": 1432,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.52 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.41.52 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.12 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.42.12 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.42.12 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4299335,
-    "width": 1658,
-    "height": 1430,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.12 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.12 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.26 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.42.26 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.42.26 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 3666739,
-    "width": 1670,
-    "height": 1420,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.26 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.26 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.42 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.42.42 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.42.42 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 4013291,
-    "width": 1668,
-    "height": 1424,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.42 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.42.42 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/PVE_Civics_1939/Screenshot 2026-04-18 at 2.43.04 PM.png",
-    "filename": "Screenshot 2026-04-18 at 2.43.04 PM.png",
-    "caption": "Screenshot 2026 04 18 at 2.43.04 PM",
-    "date": "2026-04-18",
-    "tags": [
-      "civics",
-      "pm",
-      "pve",
-      "screenshot"
-    ],
-    "size_bytes": 2086231,
-    "width": 846,
-    "height": 1422,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/Screenshot 2026-04-18 at 2.43.04 PM.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/Screenshot 2026-04-18 at 2.43.04 PM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.41.37 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.41.37 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.41.37 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 814805,
-    "width": 810,
-    "height": 1024,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.41.37 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.41.37 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.41.53 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.41.53 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.41.53 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 795509,
-    "width": 838,
-    "height": 1046,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.41.53 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.41.53 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.42.04 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.42.04 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.42.04 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 622332,
-    "width": 698,
-    "height": 976,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.42.04 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.42.04 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.42.26 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.42.26 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.42.26 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 715476,
-    "width": 784,
-    "height": 992,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.42.26 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.42.26 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.42.42 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.42.42 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.42.42 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 829903,
-    "width": 788,
-    "height": 1000,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.42.42 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.42.42 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.42.56 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.42.56 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.42.56 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 807114,
-    "width": 782,
-    "height": 1000,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.42.56 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.42.56 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.44.10 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.44.10 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.44.10 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1475293,
-    "width": 1006,
-    "height": 1344,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.44.10 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.44.10 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.44.18 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.44.18 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.44.18 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1512118,
-    "width": 1052,
-    "height": 1370,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.44.18 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.44.18 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.44.29 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.44.29 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.44.29 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1002323,
-    "width": 1044,
-    "height": 1372,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.44.29 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.44.29 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.44.36 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.44.36 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.44.36 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1249026,
-    "width": 1076,
-    "height": 1392,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.44.36 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.44.36 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.44.49 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.44.49 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.44.49 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1337192,
-    "width": 1070,
-    "height": 1386,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.44.49 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.44.49 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.45.13 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.45.13 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.45.13 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1189364,
-    "width": 1072,
-    "height": 1374,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.45.13 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.45.13 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.45.28 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.45.28 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.45.28 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1273318,
-    "width": 1048,
-    "height": 1352,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.45.28 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.45.28 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.48.57 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.48.57 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.48.57 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1192848,
-    "width": 1086,
-    "height": 1352,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.48.57 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.48.57 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.49.39 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.49.39 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.49.39 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1487614,
-    "width": 1174,
-    "height": 1380,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.49.39 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.49.39 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.50.14 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.50.14 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.50.14 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 618276,
-    "width": 960,
-    "height": 732,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.50.14 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.50.14 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.50.29 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.50.29 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.50.29 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 861186,
-    "width": 976,
-    "height": 768,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.50.29 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.50.29 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.50.45 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.50.45 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.50.45 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 765600,
-    "width": 740,
-    "height": 978,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.50.45 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.50.45 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.50.59 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.50.59 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.50.59 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 764615,
-    "width": 760,
-    "height": 980,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.50.59 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.50.59 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.51.29 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.51.29 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.51.29 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1387525,
-    "width": 1066,
-    "height": 1340,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.51.29 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.51.29 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.51.43 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.51.43 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.51.43 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1157402,
-    "width": 1012,
-    "height": 1360,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.51.43 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.51.43 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.51.55 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.51.55 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.51.55 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1456781,
-    "width": 1090,
-    "height": 1362,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.51.55 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.51.55 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.52.09 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.52.09 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.52.09 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1403182,
-    "width": 1040,
-    "height": 1364,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.52.09 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.52.09 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.52.29 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.52.29 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.52.29 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1392657,
-    "width": 1046,
-    "height": 1360,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.52.29 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.52.29 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.53.21 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.53.21 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.53.21 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1728971,
-    "width": 1510,
-    "height": 1368,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.53.21 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.53.21 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.53.59 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.53.59 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.53.59 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1435117,
-    "width": 1080,
-    "height": 1376,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.53.59 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.53.59 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.54.17 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.54.17 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.54.17 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1402388,
-    "width": 1022,
-    "height": 1340,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.54.17 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.54.17 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.54.31 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.54.31 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.54.31 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1347428,
-    "width": 1088,
-    "height": 1368,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.54.31 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.54.31 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.54.45 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.54.45 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.54.45 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1461638,
-    "width": 1076,
-    "height": 1380,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.54.45 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.54.45 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.54.57 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.54.57 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.54.57 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1545043,
-    "width": 1070,
-    "height": 1370,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.54.57 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.54.57 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.55.15 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.55.15 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.55.15 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1157631,
-    "width": 1016,
-    "height": 1348,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.55.15 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.55.15 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.55.29 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.55.29 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.55.29 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1146547,
-    "width": 1038,
-    "height": 1378,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.55.29 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.55.29 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.55.47 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.55.47 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.55.47 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1019844,
-    "width": 964,
-    "height": 1362,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.55.47 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.55.47 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.56.03 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.56.03 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.56.03 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1406305,
-    "width": 1078,
-    "height": 1364,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.56.03 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.56.03 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.56.15 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.56.15 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.56.15 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1260593,
-    "width": 1030,
-    "height": 1324,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.56.15 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.56.15 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.56.35 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.56.35 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.56.35 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1343232,
-    "width": 1072,
-    "height": 1346,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.56.35 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.56.35 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.56.55 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.56.55 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.56.55 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1276257,
-    "width": 1008,
-    "height": 1344,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.56.55 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.56.55 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.57.10 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.57.10 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.57.10 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1425935,
-    "width": 1092,
-    "height": 1352,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.57.10 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.57.10 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.57.32 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.57.32 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.57.32 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1436780,
-    "width": 1030,
-    "height": 1344,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.57.32 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.57.32 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.57.44 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.57.44 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.57.44 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1482713,
-    "width": 1108,
-    "height": 1360,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.57.44 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.57.44 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Landslide_Guide/Screenshot 2026-04-18 at 7.57.59 AM.png",
-    "filename": "Screenshot 2026-04-18 at 7.57.59 AM.png",
-    "caption": "Screenshot 2026 04 18 at 7.57.59 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "guide",
-      "landslide",
-      "screenshot"
-    ],
-    "size_bytes": 1442097,
-    "width": 1002,
-    "height": 1348,
-    "thumb_400": "images/.thumbs/400/Landslide_Guide/Screenshot 2026-04-18 at 7.57.59 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Landslide_Guide/Screenshot 2026-04-18 at 7.57.59 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.27.40 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.27.40 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.27.40 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 6001432,
-    "width": 2664,
-    "height": 2058,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.27.40 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.27.40 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.27.56 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.27.56 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.27.56 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1796132,
-    "width": 2648,
-    "height": 2052,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.27.56 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.27.56 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.28.13 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.28.13 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.28.13 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2285817,
-    "width": 2652,
-    "height": 2042,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.28.13 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.28.13 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.28.35 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.28.35 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.28.35 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2416786,
-    "width": 2648,
-    "height": 2048,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.28.35 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.28.35 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.07 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.29.07 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.29.07 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2748746,
-    "width": 2652,
-    "height": 2060,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.07 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.07 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.39 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.29.39 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.29.39 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2816016,
-    "width": 2652,
-    "height": 2052,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.39 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.39 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.57 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.29.57 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.29.57 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2865846,
-    "width": 2652,
-    "height": 2052,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.57 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.29.57 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.22 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.30.22 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.30.22 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2497251,
-    "width": 2646,
-    "height": 2048,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.22 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.22 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.43 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.30.43 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.30.43 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3390295,
-    "width": 2650,
-    "height": 2050,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.43 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.43 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.58 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.30.58 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.30.58 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2624616,
-    "width": 2656,
-    "height": 2048,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.58 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.30.58 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.16 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.31.16 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.31.16 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2917069,
-    "width": 2660,
-    "height": 2052,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.16 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.16 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.32 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.31.32 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.31.32 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1908876,
-    "width": 2640,
-    "height": 2048,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.32 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.32 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.47 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.31.47 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.31.47 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3311705,
-    "width": 2662,
-    "height": 2052,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.47 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.31.47 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.32.02 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.32.02 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.32.02 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2504749,
-    "width": 2652,
-    "height": 2064,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.32.02 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.32.02 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.33.23 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.33.23 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.33.23 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 5928885,
-    "width": 2660,
-    "height": 2048,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.33.23 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.33.23 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.06 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.34.06 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.34.06 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2546095,
-    "width": 2628,
-    "height": 1944,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.06 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.06 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.20 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.34.20 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.34.20 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3923024,
-    "width": 2630,
-    "height": 2056,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.20 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.20 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.35 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.34.35 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.34.35 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2718798,
-    "width": 2644,
-    "height": 2030,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.35 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.34.35 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.00 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.35.00 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.35.00 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3396530,
-    "width": 2680,
-    "height": 2052,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.00 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.00 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.11 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.35.11 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.35.11 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2336634,
-    "width": 2624,
-    "height": 2050,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.11 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.11 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.23 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.35.23 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.35.23 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2005918,
-    "width": 2612,
-    "height": 2038,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.23 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.23 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.35 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.35.35 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.35.35 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3849126,
-    "width": 2642,
-    "height": 2048,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.35 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.35 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.48 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.35.48 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.35.48 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2728076,
-    "width": 2652,
-    "height": 2046,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.48 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.48 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.58 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.35.58 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.35.58 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3279688,
-    "width": 2652,
-    "height": 2040,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.58 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.35.58 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.10 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.36.10 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.36.10 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2320897,
-    "width": 2660,
-    "height": 2034,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.10 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.10 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.24 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.36.24 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.36.24 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2878680,
-    "width": 2664,
-    "height": 2074,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.24 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.24 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.30 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.36.30 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.36.30 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2025004,
-    "width": 2732,
-    "height": 2090,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.30 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.36.30 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.30 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.37.30 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.37.30 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2218670,
-    "width": 2620,
-    "height": 1912,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.30 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.30 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.41 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.37.41 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.37.41 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2364566,
-    "width": 2632,
-    "height": 2030,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.41 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.41 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.51 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.37.51 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.37.51 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1795182,
-    "width": 2630,
-    "height": 1930,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.51 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.37.51 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.38.02 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.38.02 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.38.02 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2106742,
-    "width": 2656,
-    "height": 1984,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.38.02 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.38.02 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.38.31 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.38.31 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.38.31 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 3276030,
-    "width": 2634,
-    "height": 2016,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.38.31 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.38.31 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.28 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.39.28 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.39.28 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1553070,
-    "width": 2354,
-    "height": 1820,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.28 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.28 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.48 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.39.48 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.39.48 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1623257,
-    "width": 2318,
-    "height": 1774,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.48 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.48 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.58 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.39.58 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.39.58 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1618092,
-    "width": 2340,
-    "height": 1820,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.58 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.39.58 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.40.46 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.40.46 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.40.46 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1645224,
-    "width": 2352,
-    "height": 1804,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.40.46 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.40.46 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.01 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.41.01 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.41.01 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2479861,
-    "width": 2396,
-    "height": 1830,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.01 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.01 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.14 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.41.14 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.41.14 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2254707,
-    "width": 2364,
-    "height": 1820,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.14 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.14 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.25 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.41.25 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.41.25 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2242172,
-    "width": 2436,
-    "height": 1810,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.25 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.25 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.35 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.41.35 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.41.35 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2204675,
-    "width": 2356,
-    "height": 1814,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.35 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.35 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.46 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.41.46 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.41.46 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2525657,
-    "width": 2356,
-    "height": 1808,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.46 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.41.46 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.07 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.42.07 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.42.07 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1992166,
-    "width": 2342,
-    "height": 1862,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.07 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.07 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.35 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.42.35 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.42.35 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1688525,
-    "width": 2346,
-    "height": 1826,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.35 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.35 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.49 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.42.49 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.42.49 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1733601,
-    "width": 2376,
-    "height": 1778,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.49 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.42.49 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.00 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.00 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.00 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2185856,
-    "width": 2324,
-    "height": 1794,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.00 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.00 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.10 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.10 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.10 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2056648,
-    "width": 2322,
-    "height": 1768,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.10 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.10 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.18 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.18 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.18 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1362063,
-    "width": 2346,
-    "height": 1794,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.18 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.18 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.29 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.29 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.29 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1739424,
-    "width": 2278,
-    "height": 1808,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.29 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.29 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.39 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.39 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.39 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2400792,
-    "width": 2358,
-    "height": 1790,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.39 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.39 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.48 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.48 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.48 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 1968936,
-    "width": 2382,
-    "height": 1726,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.48 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.48 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.56 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.43.56 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.43.56 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2299606,
-    "width": 2280,
-    "height": 1800,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.56 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.43.56 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.44.03 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.44.03 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.44.03 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2092265,
-    "width": 2356,
-    "height": 1756,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.44.03 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.44.03 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.54.57 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.54.57 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.54.57 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2011520,
-    "width": 2428,
-    "height": 1850,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.54.57 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.54.57 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.55.12 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.55.12 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.55.12 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2227561,
-    "width": 2402,
-    "height": 1842,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.55.12 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.55.12 AM.png",
-    "page_count": null
-  },
-  {
-    "kind": "image",
-    "path": "images/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.55.28 AM.png",
-    "filename": "Screenshot 2026-04-18 at 8.55.28 AM.png",
-    "caption": "Screenshot 2026 04 18 at 8.55.28 AM",
-    "date": "2026-04-18",
-    "tags": [
-      "am",
-      "coastal",
-      "plan",
-      "screenshot",
-      "specific"
-    ],
-    "size_bytes": 2379146,
-    "width": 2488,
-    "height": 1840,
-    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.55.28 AM.png",
-    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan/Screenshot 2026-04-18 at 8.55.28 AM.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2633,7 +562,9 @@
     "height": 540,
     "thumb_400": "images/.thumbs/400/0994061.png",
     "thumb_1200": "images/.thumbs/1200/0994061.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2649,7 +580,9 @@
     "height": 1405,
     "thumb_400": "images/.thumbs/400/13332-max.png",
     "thumb_1200": "images/.thumbs/1200/13332-max.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2663,7 +596,9 @@
     "height": 440,
     "thumb_400": "images/.thumbs/400/69.png",
     "thumb_1200": "images/.thumbs/1200/69.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2679,7 +614,31 @@
     "height": 1024,
     "thumb_400": "images/.thumbs/400/Betty.png",
     "thumb_1200": "images/.thumbs/1200/Betty.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
+  },
+  {
+    "kind": "collection",
+    "path": "images/Coastal_Specific_Plan",
+    "filename": "Coastal_Specific_Plan",
+    "caption": "Coastal Specific Plan",
+    "date": null,
+    "tags": [
+      "coastal",
+      "collection",
+      "multipage",
+      "plan",
+      "specific"
+    ],
+    "size_bytes": 138068705,
+    "width": null,
+    "height": null,
+    "thumb_400": "images/.thumbs/400/Coastal_Specific_Plan.png",
+    "thumb_1200": "images/.thumbs/1200/Coastal_Specific_Plan.png",
+    "page_count": null,
+    "item_count": 55,
+    "href": "/images/Coastal_Specific_Plan/"
   },
   {
     "kind": "multipage",
@@ -2702,7 +661,9 @@
     "height": null,
     "thumb_400": "images/.thumbs/400/county-surveyor-CSB1082-3-pv-drive-south.png",
     "thumb_1200": "images/.thumbs/1200/county-surveyor-CSB1082-3-pv-drive-south.png",
-    "page_count": 1
+    "page_count": 1,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2719,7 +680,9 @@
     "height": 10935,
     "thumb_400": "images/.thumbs/400/file-page1.png",
     "thumb_1200": "images/.thumbs/1200/file-page1.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2740,7 +703,9 @@
     "height": 1024,
     "thumb_400": "images/.thumbs/400/hdl-10584-pre-development-aerial-pv-coast.png",
     "thumb_1200": "images/.thumbs/1200/hdl-10584-pre-development-aerial-pv-coast.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2762,7 +727,9 @@
     "height": 1401,
     "thumb_400": "images/.thumbs/400/hdl-13328-partition-map-rancho-los-palos-verdes-a.png",
     "thumb_1200": "images/.thumbs/1200/hdl-13328-partition-map-rancho-los-palos-verdes-a.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2785,7 +752,9 @@
     "height": 1405,
     "thumb_400": "images/.thumbs/400/hdl-13332-partition-map-rancho-los-palos-verdes-b.png",
     "thumb_1200": "images/.thumbs/1200/hdl-13332-partition-map-rancho-los-palos-verdes-b.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2805,7 +774,9 @@
     "height": 832,
     "thumb_400": "images/.thumbs/400/hdl-15658-postcard-abalone-cove-rpv.png",
     "thumb_1200": "images/.thumbs/1200/hdl-15658-postcard-abalone-cove-rpv.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2821,7 +792,9 @@
     "height": 1534,
     "thumb_400": "images/.thumbs/400/Higgins 1.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 1.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2837,7 +810,9 @@
     "height": 1424,
     "thumb_400": "images/.thumbs/400/Higgins 10.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 10.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2853,7 +828,9 @@
     "height": 1312,
     "thumb_400": "images/.thumbs/400/Higgins 11.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 11.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2869,7 +846,9 @@
     "height": 1906,
     "thumb_400": "images/.thumbs/400/Higgins 12.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 12.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2885,7 +864,9 @@
     "height": 1892,
     "thumb_400": "images/.thumbs/400/Higgins 13.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 13.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2901,7 +882,9 @@
     "height": 1592,
     "thumb_400": "images/.thumbs/400/Higgins 14.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 14.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2917,7 +900,9 @@
     "height": 1904,
     "thumb_400": "images/.thumbs/400/Higgins 15.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 15.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2933,7 +918,9 @@
     "height": 1904,
     "thumb_400": "images/.thumbs/400/Higgins 16.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 16.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2949,7 +936,9 @@
     "height": 1878,
     "thumb_400": "images/.thumbs/400/Higgins 17.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 17.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2965,7 +954,9 @@
     "height": 1904,
     "thumb_400": "images/.thumbs/400/Higgins 18.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 18.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2981,7 +972,9 @@
     "height": 1624,
     "thumb_400": "images/.thumbs/400/Higgins 19.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 19.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -2997,7 +990,9 @@
     "height": 978,
     "thumb_400": "images/.thumbs/400/Higgins 2.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 2.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3013,7 +1008,9 @@
     "height": 1312,
     "thumb_400": "images/.thumbs/400/Higgins 3.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 3.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3029,7 +1026,9 @@
     "height": 1882,
     "thumb_400": "images/.thumbs/400/Higgins 4.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 4.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3045,7 +1044,9 @@
     "height": 1178,
     "thumb_400": "images/.thumbs/400/Higgins 5.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 5.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3061,7 +1062,9 @@
     "height": 1090,
     "thumb_400": "images/.thumbs/400/Higgins 6.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 6.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3077,7 +1080,9 @@
     "height": 1616,
     "thumb_400": "images/.thumbs/400/Higgins 7.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 7.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3093,7 +1098,9 @@
     "height": 880,
     "thumb_400": "images/.thumbs/400/Higgins 8.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 8.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3109,7 +1116,30 @@
     "height": 968,
     "thumb_400": "images/.thumbs/400/Higgins 9.png",
     "thumb_1200": "images/.thumbs/1200/Higgins 9.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
+  },
+  {
+    "kind": "collection",
+    "path": "images/Landslide_Guide",
+    "filename": "Landslide_Guide",
+    "caption": "Landslide Guide",
+    "date": null,
+    "tags": [
+      "collection",
+      "guide",
+      "landslide",
+      "multipage"
+    ],
+    "size_bytes": 49429978,
+    "width": null,
+    "height": null,
+    "thumb_400": "images/.thumbs/400/Landslide_Guide.png",
+    "thumb_1200": "images/.thumbs/1200/Landslide_Guide.png",
+    "page_count": null,
+    "item_count": 41,
+    "href": "/images/Landslide_Guide/"
   },
   {
     "kind": "image",
@@ -3126,7 +1156,9 @@
     "height": 1104,
     "thumb_400": "images/.thumbs/400/legend template.png",
     "thumb_1200": "images/.thumbs/1200/legend template.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3144,7 +1176,9 @@
     "height": 170,
     "thumb_400": "images/.thumbs/400/map-legend-bg.png",
     "thumb_1200": "images/.thumbs/1200/map-legend-bg.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3160,7 +1194,9 @@
     "height": 1088,
     "thumb_400": "images/.thumbs/400/olmsted 1.png",
     "thumb_1200": "images/.thumbs/1200/olmsted 1.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3177,7 +1213,9 @@
     "height": 771,
     "thumb_400": "images/.thumbs/400/original rendering.png",
     "thumb_1200": "images/.thumbs/1200/original rendering.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3193,7 +1231,9 @@
     "height": 1056,
     "thumb_400": "images/.thumbs/400/PIA03348.png",
     "thumb_1200": "images/.thumbs/1200/PIA03348.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3210,27 +1250,9 @@
     "height": 1468,
     "thumb_400": "images/.thumbs/400/PV_News_1.png",
     "thumb_1200": "images/.thumbs/1200/PV_News_1.png",
-    "page_count": null
-  },
-  {
-    "kind": "multipage",
-    "path": "images/PVE_Civics_1939/quorum.odt",
-    "filename": "quorum.odt",
-    "caption": "quorum",
-    "date": null,
-    "tags": [
-      "civics",
-      "multipage",
-      "odt",
-      "pve",
-      "quorum"
-    ],
-    "size_bytes": 16015,
-    "width": null,
-    "height": null,
-    "thumb_400": "images/.thumbs/400/PVE_Civics_1939/quorum.png",
-    "thumb_1200": "images/.thumbs/1200/PVE_Civics_1939/quorum.png",
-    "page_count": 14
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "multipage",
@@ -3248,7 +1270,9 @@
     "height": null,
     "thumb_400": "images/.thumbs/400/RDFB0117-21.png",
     "thumb_1200": "images/.thumbs/1200/RDFB0117-21.png",
-    "page_count": 1
+    "page_count": 1,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3265,7 +1289,9 @@
     "height": 128,
     "thumb_400": "images/.thumbs/400/shell-blended-128.png",
     "thumb_1200": "images/.thumbs/1200/shell-blended-128.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3282,7 +1308,9 @@
     "height": 256,
     "thumb_400": "images/.thumbs/400/shell-blended-256.png",
     "thumb_1200": "images/.thumbs/1200/shell-blended-256.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3299,7 +1327,9 @@
     "height": 32,
     "thumb_400": "images/.thumbs/400/shell-blended-32.png",
     "thumb_1200": "images/.thumbs/1200/shell-blended-32.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3316,7 +1346,9 @@
     "height": 64,
     "thumb_400": "images/.thumbs/400/shell-blended-64.png",
     "thumb_1200": "images/.thumbs/1200/shell-blended-64.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3332,7 +1364,9 @@
     "height": 1898,
     "thumb_400": "images/.thumbs/400/Stewart 1.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 1.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3348,7 +1382,9 @@
     "height": 1724,
     "thumb_400": "images/.thumbs/400/Stewart 2.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 2.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3364,7 +1400,9 @@
     "height": 1906,
     "thumb_400": "images/.thumbs/400/Stewart 3.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 3.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3380,7 +1418,9 @@
     "height": 1870,
     "thumb_400": "images/.thumbs/400/Stewart 4.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 4.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3396,7 +1436,9 @@
     "height": 1912,
     "thumb_400": "images/.thumbs/400/Stewart 5.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 5.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3412,7 +1454,9 @@
     "height": 1848,
     "thumb_400": "images/.thumbs/400/Stewart 6.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 6.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3428,7 +1472,9 @@
     "height": 1892,
     "thumb_400": "images/.thumbs/400/Stewart 7.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 7.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3444,7 +1490,9 @@
     "height": 1088,
     "thumb_400": "images/.thumbs/400/Stewart 8.png",
     "thumb_1200": "images/.thumbs/1200/Stewart 8.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3460,7 +1508,9 @@
     "height": 1140,
     "thumb_400": "images/.thumbs/400/Surveys.png",
     "thumb_1200": "images/.thumbs/1200/Surveys.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3476,7 +1526,9 @@
     "height": 1184,
     "thumb_400": "images/.thumbs/400/tPDX5.png",
     "thumb_1200": "images/.thumbs/1200/tPDX5.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3492,7 +1544,9 @@
     "height": 176,
     "thumb_400": "images/.thumbs/400/Unknown-1.png",
     "thumb_1200": "images/.thumbs/1200/Unknown-1.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3508,7 +1562,9 @@
     "height": 178,
     "thumb_400": "images/.thumbs/400/Unknown.png",
     "thumb_1200": "images/.thumbs/1200/Unknown.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   },
   {
     "kind": "image",
@@ -3527,6 +1583,8 @@
     "height": 6144,
     "thumb_400": "images/.thumbs/400/vanderlip-estate-survey-blueprint.png",
     "thumb_1200": "images/.thumbs/1200/vanderlip-estate-survey-blueprint.png",
-    "page_count": null
+    "page_count": null,
+    "item_count": null,
+    "href": null
   }
 ]

@@ -90,9 +90,9 @@ _STOP_TAGS = {
 
 @dataclass
 class GalleryItem:
-    kind: str                 # "image" | "multipage"
-    path: str                 # relative to ROOT, e.g. "images/foo.jpg"
-    filename: str
+    kind: str                 # "image" | "multipage" | "collection"
+    path: str                 # relative to ROOT: file path (image/multipage) or folder path (collection)
+    filename: str             # file name (image/multipage) or folder name (collection)
     caption: str
     date: Optional[str]       # ISO8601 (partial ok: YYYY, YYYY-MM, YYYY-MM-DD)
     tags: list[str]
@@ -102,6 +102,8 @@ class GalleryItem:
     thumb_400: Optional[str] = None
     thumb_1200: Optional[str] = None
     page_count: Optional[int] = None     # multi-page only
+    item_count: Optional[int] = None     # collection only: total images in folder
+    href: Optional[str] = None           # override click-through URL (collections link to /.../index.html)
 
 
 # ── Helpers ─────────────────────────────────────────────────────────
@@ -411,94 +413,370 @@ def build_multipage_thumb(src: Path, dst_400: Path, dst_1200: Path) -> int:
         return total
 
 
+# ── Collection (image folder treated as multi-page document) ────────
+
+COLLECTION_MIN = 2
+COLLECTION_CAPTION_FILE = "caption.txt"
+
+
+def build_collection_thumb(image_paths: list[Path], dst_400: Path, dst_1200: Path) -> None:
+    """Spine thumb for an image collection — first SPINE_MAX_VISIBLE_PAGES images
+    fanned horizontally, same look as the PDF spine."""
+    shown = image_paths[:SPINE_MAX_VISIBLE_PAGES]
+    total = len(image_paths)
+
+    imgs: list[Image.Image] = []
+    for p in shown:
+        try:
+            im = Image.open(p)
+            im.load()
+            # respect EXIF orientation
+            try:
+                exif = im.getexif()
+                orientation = exif.get(0x0112) if exif else None
+                if orientation:
+                    rotations = {3: 180, 6: 270, 8: 90}
+                    if orientation in rotations:
+                        im = im.rotate(rotations[orientation], expand=True)
+            except Exception:
+                pass
+            # downsize before spine so the 55-file folder doesn't allocate 500 MB
+            im.thumbnail((1800, 1800), Image.LANCZOS)
+            imgs.append(im)
+        except Exception as exc:
+            sys.stderr.write(f"collection thumb: open failed {p}: {exc}\n")
+    if not imgs:
+        raise RuntimeError("no usable images for collection spine")
+
+    big = compose_spine(imgs, 1200)
+    if total > len(shown):
+        big = draw_page_count_badge(big, total, len(shown))
+    dst_1200.parent.mkdir(parents=True, exist_ok=True)
+    big.save(dst_1200, format="PNG", optimize=True, compress_level=9)
+
+    small = compose_spine(imgs, 400)
+    if total > len(shown):
+        small = draw_page_count_badge(small, total, len(shown))
+    dst_400.parent.mkdir(parents=True, exist_ok=True)
+    small.save(dst_400, format="PNG", optimize=True, compress_level=9)
+
+
+def write_collection_index(folder: Path, images: list[Path]) -> None:
+    """Auto-generate <folder>/index.html listing every image.
+
+    If <folder>/caption.txt exists, its first line is the title and the rest
+    is rendered as a descriptive paragraph. Otherwise a default description
+    is used.
+    """
+    from urllib.parse import quote
+
+    rel = folder.relative_to(ROOT)
+    href_dir = "/" + str(rel).rstrip("/") + "/"
+
+    cap_file = folder / COLLECTION_CAPTION_FILE
+    title = clean_caption(folder.name)
+    description: Optional[str] = None
+    if cap_file.is_file():
+        try:
+            txt = cap_file.read_text(encoding="utf-8").strip()
+            parts = [p for p in txt.splitlines() if p.strip()]
+            if parts:
+                title = parts[0]
+            if len(parts) > 1:
+                description = " ".join(parts[1:])
+        except Exception:
+            pass
+
+    def esc(s: str) -> str:
+        return (s.replace("&", "&amp;")
+                 .replace("<", "&lt;")
+                 .replace(">", "&gt;")
+                 .replace('"', "&quot;"))
+
+    total = len(images)
+    tile_html = []
+    for i, p in enumerate(images, 1):
+        name = p.name
+        href = href_dir + quote(name)
+        caption = f"Page {i} of {total}"
+        tile_html.append(
+            f'<a class="collection-tile" href="{esc(href)}">'
+            f'<img src="{esc(href)}" alt="{esc(caption)}" loading="lazy">'
+            f'<span class="collection-caption">{esc(caption)}</span></a>'
+        )
+
+    # Companion files in the folder that aren't images (ODTs, PDFs, transcripts, README)
+    companions = sorted(
+        p for p in folder.iterdir()
+        if p.is_file()
+        and p.suffix.lower() not in RASTER_EXT
+        and p.name not in ("index.html", COLLECTION_CAPTION_FILE)
+        and not p.name.startswith(".")
+    )
+    companion_html = ""
+    if companions:
+        links = []
+        for p in companions:
+            href = href_dir + quote(p.name)
+            label = clean_caption(p.stem)
+            ext = p.suffix.lstrip(".").upper()
+            size_kb = max(1, p.stat().st_size // 1024)
+            links.append(
+                f'<li><a href="{esc(href)}">{esc(label)}</a> '
+                f'<small style="color:var(--shell-warm)">({esc(ext)} · {size_kb} KB)</small></li>'
+            )
+        companion_html = (
+            f'<section style="margin-top:2.5rem;">'
+            f'<h2>Related files in this folder</h2>'
+            f'<ul>{"".join(links)}</ul>'
+            f'</section>'
+        )
+
+    intro = esc(description) if description else (
+        f"{len(images)} source scans in this collection. Each page opens full-size in a new tab. "
+        f"To edit this page's description, create a <code>caption.txt</code> in "
+        f"<code>{esc(str(rel))}</code> with the title on the first line and the description below it, "
+        "then re-run <code>scripts/build-gallery.py</code>."
+    )
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{esc(title)} — Abalone Cove</title>
+  <link rel="canonical" href="https://abalonecove.org{esc(href_dir)}">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/the-story/1-the-land/">The Story</a></li>
+      <li><a href="/position/">Position</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<article class="article article-wide">
+  <header class="article-header" style="text-align: left;">
+    <p class="kicker">Collection · {len(images)} scans</p>
+    <h1>{esc(title)}</h1>
+    <p class="byline">{intro}</p>
+  </header>
+
+  <div class="collection-grid">
+    {''.join(tile_html)}
+  </div>
+
+  {companion_html}
+
+  <p style="margin-top: 2.5rem;"><a href="/gallery/">← Back to gallery</a></p>
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation</p>
+    <p class="footer-cta">A nonprofit, neutral-documentation project</p>
+    <p class="footer-links">
+      <a href="/">Home</a> ·
+      <a href="/the-story/1-the-land/">The Story</a> ·
+      <a href="/position/">Position</a> ·
+      <a href="/evidence/">Evidence</a> ·
+      <a href="/about/">About</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
+"""
+    (folder / "index.html").write_text(html, encoding="utf-8")
+
+
 # ── Main scan ───────────────────────────────────────────────────────
+
+def identify_collections() -> dict[Path, list[Path]]:
+    """Top-level subdirs of IMG_ROOT that contain COLLECTION_MIN+ images."""
+    collections: dict[Path, list[Path]] = {}
+    for child in sorted(IMG_ROOT.iterdir()):
+        if not child.is_dir():
+            continue
+        if child.name.startswith("."):
+            continue
+        imgs = sorted(
+            p for p in child.rglob("*")
+            if p.is_file()
+            and p.suffix.lower() in RASTER_EXT
+            and not p.name.startswith(".")
+        )
+        if len(imgs) >= COLLECTION_MIN:
+            collections[child.resolve()] = imgs
+    return collections
+
 
 def scan() -> list[GalleryItem]:
     items: list[GalleryItem] = []
     skipped: list[str] = []
 
-    for root, dirs, files in os.walk(IMG_ROOT):
-        dirs[:] = [d for d in dirs if not d.startswith(".")]
-        rp = Path(root)
-        for f in files:
-            p = rp / f
-            ext = p.suffix.lower()
-            if ext not in ALL_EXT:
-                continue
-            if p.name.startswith("."):
-                continue
+    collections = identify_collections()
+
+    # Pass 1 — flat items at IMG_ROOT top level (not inside a collection folder)
+    for p in sorted(IMG_ROOT.iterdir()):
+        if p.is_dir():
+            continue
+        if p.name.startswith("."):
+            continue
+        ext = p.suffix.lower()
+        if ext not in ALL_EXT:
+            continue
+
+        rel = p.relative_to(ROOT)
+        rel_img = p.relative_to(IMG_ROOT)
+
+        kind = "multipage" if ext in MULTIPAGE_EXT else "image"
+
+        width: Optional[int] = None
+        height: Optional[int] = None
+        exif_date: Optional[str] = None
+        if ext in RASTER_EXT:
             try:
-                rel = p.relative_to(ROOT)
-            except ValueError:
-                continue
-            rel_img = p.relative_to(IMG_ROOT)
+                with Image.open(p) as im:
+                    width, height = im.size
+                    exif_date = parse_exif_date(im)
+            except Exception as exc:
+                skipped.append(f"{rel}: {exc}")
 
-            kind = "multipage" if ext in MULTIPAGE_EXT else "image"
+        caption = read_sidecar_caption(p) or clean_caption(p.stem)
+        date = exif_date or parse_date_from_filename(p.name)
+        tags = derive_tags(p, rel_img)
+        size_b = p.stat().st_size
 
-            width: Optional[int] = None
-            height: Optional[int] = None
-            exif_date: Optional[str] = None
-            if ext in RASTER_EXT:
+        thumb_400 = None
+        thumb_1200 = None
+        page_count = None
+
+        thumb_stem = rel_img.with_suffix("")
+        t400 = THUMB_DIR / "400" / f"{thumb_stem}.png"
+        t1200 = THUMB_DIR / "1200" / f"{thumb_stem}.png"
+
+        if kind == "image" and ext in RASTER_EXT:
+            try:
+                build_raster_thumb(p, t400, 400)
+                build_raster_thumb(p, t1200, 1200)
+                thumb_400  = str(t400.relative_to(ROOT))
+                thumb_1200 = str(t1200.relative_to(ROOT))
+            except Exception as exc:
+                skipped.append(f"thumb {rel}: {exc}")
+        elif kind == "multipage":
+            def stale(t: Path) -> bool:
+                return not t.exists() or t.stat().st_mtime < p.stat().st_mtime
+            if stale(t400) or stale(t1200):
                 try:
-                    with Image.open(p) as im:
-                        width, height = im.size
-                        exif_date = parse_exif_date(im)
+                    page_count = build_multipage_thumb(p, t400, t1200)
                 except Exception as exc:
-                    skipped.append(f"{rel}: {exc}")
+                    skipped.append(f"spine {rel}: {exc}")
+                    page_count = 0
+            else:
+                page_count = count_pages(p) if ext in PDF_EXT else None
+            if t400.exists():
+                thumb_400 = str(t400.relative_to(ROOT))
+            if t1200.exists():
+                thumb_1200 = str(t1200.relative_to(ROOT))
 
-            caption = read_sidecar_caption(p) or clean_caption(p.stem)
-            date = exif_date or parse_date_from_filename(p.name)
-            tags = derive_tags(p, rel_img)
-            size_b = p.stat().st_size
+        items.append(GalleryItem(
+            kind=kind,
+            path=str(rel),
+            filename=p.name,
+            caption=caption,
+            date=date,
+            tags=tags,
+            size_bytes=size_b,
+            width=width,
+            height=height,
+            thumb_400=thumb_400,
+            thumb_1200=thumb_1200,
+            page_count=page_count,
+        ))
 
-            thumb_400 = None
-            thumb_1200 = None
-            page_count = None
+    # Pass 2 — one item per collection folder
+    for folder, images in collections.items():
+        rel_folder = folder.relative_to(ROOT)
+        rel_in_img = folder.relative_to(IMG_ROOT)
 
-            # Thumb destinations, always PNG
-            thumb_stem = rel_img.with_suffix("")   # drop the source extension
-            t400 = THUMB_DIR / "400"  / f"{thumb_stem}.png"
-            t1200 = THUMB_DIR / "1200" / f"{thumb_stem}.png"
+        t400  = THUMB_DIR / "400"  / f"{rel_in_img}.png"
+        t1200 = THUMB_DIR / "1200" / f"{rel_in_img}.png"
 
-            if kind == "image" and ext in RASTER_EXT:
-                try:
-                    build_raster_thumb(p, t400, 400)
-                    build_raster_thumb(p, t1200, 1200)
-                    thumb_400  = str(t400.relative_to(ROOT))
-                    thumb_1200 = str(t1200.relative_to(ROOT))
-                except Exception as exc:
-                    skipped.append(f"thumb {rel}: {exc}")
-            elif kind == "multipage":
-                # Regen only if source is newer than either thumb (both checked)
-                def stale(t: Path) -> bool:
-                    return not t.exists() or t.stat().st_mtime < p.stat().st_mtime
-                if stale(t400) or stale(t1200):
-                    try:
-                        page_count = build_multipage_thumb(p, t400, t1200)
-                    except Exception as exc:
-                        skipped.append(f"spine {rel}: {exc}")
-                        page_count = 0
-                else:
-                    page_count = count_pages(p) if ext in PDF_EXT else None
-                if t400.exists():
-                    thumb_400 = str(t400.relative_to(ROOT))
-                if t1200.exists():
-                    thumb_1200 = str(t1200.relative_to(ROOT))
+        # Regen thumbs if any image inside is newer than the thumb
+        def stale(t: Path, imgs: list[Path]) -> bool:
+            if not t.exists():
+                return True
+            thumb_mtime = t.stat().st_mtime
+            return any(im.stat().st_mtime > thumb_mtime for im in imgs)
 
-            items.append(GalleryItem(
-                kind=kind,
-                path=str(rel),
-                filename=p.name,
-                caption=caption,
-                date=date,
-                tags=tags,
-                size_bytes=size_b,
-                width=width,
-                height=height,
-                thumb_400=thumb_400,
-                thumb_1200=thumb_1200,
-                page_count=page_count,
-            ))
+        try:
+            if stale(t400, images) or stale(t1200, images):
+                build_collection_thumb(images, t400, t1200)
+        except Exception as exc:
+            skipped.append(f"collection spine {rel_folder}: {exc}")
+
+        # Always (re)write the collection's index.html — cheap and keeps
+        # the listing in sync with what's on disk.
+        try:
+            write_collection_index(folder, images)
+        except Exception as exc:
+            skipped.append(f"collection index {rel_folder}: {exc}")
+
+        caption_file = folder / COLLECTION_CAPTION_FILE
+        title = clean_caption(folder.name)
+        if caption_file.is_file():
+            try:
+                first_line = caption_file.read_text(encoding="utf-8").strip().splitlines()
+                if first_line and first_line[0].strip():
+                    title = first_line[0].strip()
+            except Exception:
+                pass
+
+        # Collection date: EXIF of first image if available, else folder-name parse
+        date: Optional[str] = parse_date_from_filename(folder.name)
+        if not date and images:
+            try:
+                with Image.open(images[0]) as im:
+                    date = parse_exif_date(im)
+            except Exception:
+                pass
+
+        tags = derive_tags(folder, rel_in_img)
+        tags.append("collection")
+        if "multipage" not in tags:
+            tags.append("multipage")
+        tags = sorted(set(tags))
+
+        href = "/" + str(rel_folder) + "/"
+
+        size_b = sum(im.stat().st_size for im in images)
+
+        items.append(GalleryItem(
+            kind="collection",
+            path=str(rel_folder),
+            filename=folder.name,
+            caption=title,
+            date=date,
+            tags=tags,
+            size_bytes=size_b,
+            thumb_400=str(t400.relative_to(ROOT)) if t400.exists() else None,
+            thumb_1200=str(t1200.relative_to(ROOT)) if t1200.exists() else None,
+            item_count=len(images),
+            href=href,
+        ))
 
     def sort_key(it: GalleryItem):
         d = it.date or ""
@@ -528,8 +806,9 @@ def render_index(items: list[GalleryItem]) -> str:
 
     tiles = []
     multipage_count = 0
+    collection_count = 0
     for it in items:
-        href = "/" + it.path
+        href = it.href or ("/" + it.path)
         thumb = "/" + (it.thumb_400 or it.path)
         big = "/" + (it.thumb_1200 or it.path)
         caption_esc = esc(it.caption)
@@ -540,8 +819,17 @@ def render_index(items: list[GalleryItem]) -> str:
             multipage_count += 1
             pp = f" · {it.page_count} pp" if it.page_count else ""
             extra = f'<span class="gallery-kind" title="multi-page document{pp}">DOC{pp}</span>'
+        elif it.kind == "collection":
+            collection_count += 1
+            n = it.item_count or 0
+            extra = f'<span class="gallery-kind" title="scanned document collection · {n} pages">COLLECTION · {n}</span>'
+        extra_class = ""
+        if it.kind == "multipage":
+            extra_class = " gallery-item-multipage"
+        elif it.kind == "collection":
+            extra_class = " gallery-item-collection"
         tiles.append(
-            f'<a class="gallery-item{" gallery-item-multipage" if it.kind == "multipage" else ""}" '
+            f'<a class="gallery-item{extra_class}" '
             f'href="{esc(href)}" data-full="{esc(big)}" '
             f'data-caption="{caption_esc}" data-date="{date_esc}" '
             f'data-tags="{esc(tags_attr)}" data-kind="{it.kind}">'
@@ -587,7 +875,7 @@ def render_index(items: list[GalleryItem]) -> str:
   <header class="article-header" style="text-align: left;">
     <p class="kicker">Visual archive</p>
     <h1>Gallery</h1>
-    <p class="byline">{len(items)} items · {multipage_count} multi-page documents (spined) · {len(top_tags)} tags · regenerated from <code>images/</code></p>
+    <p class="byline">{len(items)} items · {collection_count} collections · {multipage_count} multi-page documents · {len(top_tags)} tags · regenerated from <code>images/</code></p>
   </header>
 
   <div class="tag-filter">
@@ -666,18 +954,20 @@ def main() -> int:
 
     image_items = [it for it in items if it.kind == "image"]
     multipage_items = [it for it in items if it.kind == "multipage"]
+    collection_items = [it for it in items if it.kind == "collection"]
     tagged = sum(1 for it in items if it.tags)
     dated  = sum(1 for it in items if it.date)
     oversize = [it for it in items if it.size_bytes > MAX_UNCOMPRESSED_COMMIT]
 
     print(f"gallery: {len(items)} items")
-    print(f"  images:     {len(image_items)}")
-    print(f"  multipage:  {len(multipage_items)} (spined)")
-    print(f"  tagged:     {tagged}")
-    print(f"  dated:      {dated}")
-    print(f"  > 2MB:      {len(oversize)} (retained in repo; no R2 configured)")
-    print(f"  manifest:   {MANIFEST.relative_to(ROOT)}")
-    print(f"  index:      {INDEX.relative_to(ROOT)}")
+    print(f"  images:      {len(image_items)}")
+    print(f"  multipage:   {len(multipage_items)} (spined)")
+    print(f"  collections: {len(collection_items)} ({sum(it.item_count or 0 for it in collection_items)} images rolled up)")
+    print(f"  tagged:      {tagged}")
+    print(f"  dated:       {dated}")
+    print(f"  > 2MB:       {len(oversize)} (retained in repo; no R2 configured)")
+    print(f"  manifest:    {MANIFEST.relative_to(ROOT)}")
+    print(f"  index:       {INDEX.relative_to(ROOT)}")
     return 0
 
 
