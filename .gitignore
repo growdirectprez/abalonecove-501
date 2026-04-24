@@ -11,3 +11,9 @@
 # Temporary
 *.tmp
 *.bak
+
+# Build artifacts + secrets (dispatch: abalonecove-site-regen)
+/build/
+/.secrets/
+/images/.thumbs-originals-moved-to-r2/
+

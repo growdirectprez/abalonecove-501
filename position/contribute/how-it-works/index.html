@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How the contribute form works — Abalone Cove</title>
+  <meta name="description" content="How anonymous submissions to abalonecove.org are handled — encryption, editor review, and the rebuttal process.">
+  <link rel="canonical" href="https://abalonecove.org/position/contribute/how-it-works/">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/the-story/1-the-land/">The Story</a></li>
+      <li><a href="/position/">Position</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<article class="article">
+
+  <header class="article-header">
+    <p class="kicker">Policy</p>
+    <h1>How this works</h1>
+    <p class="byline">Plain-language policy for the anonymous contribute form</p>
+  </header>
+
+  <section>
+    <h2>What we collect</h2>
+    <p>The form asks for one of four things: an eyewitness observation, a document pointer, a media upload, or historical knowledge. It also has an optional one-way contact field — a Signal handle or a burner email — that you can leave blank.</p>
+    <p>We do not collect your IP address. We do not set cookies. We do not load analytics, trackers, fingerprinters, or third-party scripts on this page or on the form page. The Cloudflare edge may see your IP in transit (it must, in order to route your packet), but the Worker that handles your submission does not log it or store it.</p>
+  </section>
+
+  <section>
+    <h2>How your submission is stored</h2>
+    <p>When the backend is live, your browser will encrypt your submission before it leaves your device, using an <a href="https://age-encryption.org/">age</a> public key published in this site's source. Only the holders of the corresponding private key can decrypt it. The ciphertext is stored in Cloudflare R2 object storage. The metadata we keep alongside it is limited to: kind of submission, server-side timestamp, and a random ticket id.</p>
+    <p>The private key is not held by any single person. It is split into shares using a threshold scheme, and two named editors must cooperate to decrypt any submission. This means that no one person — including a site maintainer working alone, or an attacker who compromises one editor's device — can read your submission.</p>
+  </section>
+
+  <section>
+    <h2>Editor review</h2>
+    <p>Every submission is read by two editors before anything derived from it is published. The editors are named on the <a href="/about/">About</a> page. Their job is to:</p>
+    <ul>
+      <li>Verify the claim, or flag it as unverified</li>
+      <li>Decide whether the claim belongs in the position paper, an era page, or nowhere</li>
+      <li>Check whether the claim names or identifies a living person or a specific property — if it does, the person or owner is offered a chance to respond before publication</li>
+      <li>Preserve the source in the editor archive regardless of publication decision</li>
+    </ul>
+    <p>Unverified submissions are not published. Verified submissions appear in the relevant section of the site with citation back to the source, and — if the contributor left a contact — with a follow-up note to the contributor.</p>
+  </section>
+
+  <section>
+    <h2>Rebuttal</h2>
+    <p>If something on this site names you or your property and you want to correct or rebut it, use the same form. Select <em>historical knowledge</em>, mention which passage you're responding to, and include whatever supporting material you have. Rebuttals from named parties are treated as priority; they are routed to both editors within 48 hours of receipt once the backend is live.</p>
+    <p>Rebuttals that are factually supported are appended to the passage in question with a note. Rebuttals that are not supported by a record are still archived, but do not change the published page. Contributors may always request that their submission be deleted from the editor archive.</p>
+  </section>
+
+  <section>
+    <h2>What we will not do</h2>
+    <ul>
+      <li>We will not publish a submission without editor review.</li>
+      <li>We will not disclose a contributor's identity (real, Signal handle, email) to any third party. The only identity exception is a court order; in that case the editors will challenge the order before complying, and contributors will be notified if legally permitted.</li>
+      <li>We will not use submissions to build a profile of contributors.</li>
+      <li>We will not share metadata (kind, timestamp, ticket id) outside the editor team without a specific research purpose and contributor notification.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Current status</h2>
+    <p>The form is a stub. Submitting from <a href="/position/contribute/">/position/contribute/</a> currently shows a confirmation but does not transmit anything. The Worker code is scaffolded at <code>~/abalonecove/workers/contribute/</code> in the repository and is being finished. When it is deployed, this page will be updated with the exact age public key, the editors' names, and the commit hash of the live Worker. Until then, if you have something time-sensitive, email the address on the About page.</p>
+  </section>
+
+  <p style="margin-top: 3rem;"><a href="/position/contribute/">← Back to the form</a></p>
+
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation</p>
+    <p class="footer-cta">A nonprofit, neutral-documentation project</p>
+    <p class="footer-links">
+      <a href="/">Home</a> ·
+      <a href="/the-story/1-the-land/">The Story</a> ·
+      <a href="/position/">Position</a> ·
+      <a href="/evidence/">Evidence</a> ·
+      <a href="/about/">About</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contribute — Abalone Cove</title>
+  <meta name="description" content="Share an observation, a document pointer, or historical knowledge with the editors of the Abalone Cove position paper. Submissions are anonymous and reviewed by two editors before anything is published.">
+  <link rel="canonical" href="https://abalonecove.org/position/contribute/">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="wordmark"><img src="/images/shell-blended-32.png" alt="" width="28" height="28">Abalone Cove</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <ul class="nav-links">
+      <li><a href="/the-story/1-the-land/">The Story</a></li>
+      <li><a href="/position/">Position</a></li>
+      <li><a href="/evidence/">Evidence</a></li>
+      <li><a href="/map/">Map</a></li>
+      <li><a href="/gallery/">Gallery</a></li>
+      <li><a href="/about/">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<article class="article">
+
+  <header class="article-header">
+    <p class="kicker">Anonymous contribute form</p>
+    <h1>Tell us what you know</h1>
+    <p class="byline">Submissions are anonymous. Reviewed by two editors. Not published unless verified.</p>
+  </header>
+
+  <p><a href="/position/contribute/how-it-works/">How this works</a> — read first if you have not already. Short version: no IP logs, no cookies, no analytics, encrypted at rest, two-editor review, rebuttal offered if anything published names you or your property.</p>
+
+  <div class="callout">
+    <h3>This form is a stub</h3>
+    <p>The backend is not yet deployed. Submitting will show you a confirmation but will <strong>not transmit the submission anywhere</strong>. When the Cloudflare Worker at <code>contribute.abalonecove.org</code> is live, this form will begin encrypting submissions and routing them to the editor queue. Until then, use email at the address on the <a href="/about/">About</a> page for urgent matters.</p>
+  </div>
+
+  <noscript>
+    <div class="callout">
+      <h3>JavaScript required</h3>
+      <p>This form needs JavaScript to run. If you do not want to enable JavaScript, you can email the editors at <code>contribute@abalonecove.org</code> (placeholder address — check the About page for the current route).</p>
+    </div>
+  </noscript>
+
+  <form class="form-block" id="contribute-form"
+        data-action="https://contribute.abalonecove.org"
+        data-age-pubkey=""
+        novalidate>
+
+    <fieldset>
+      <legend>What kind of contribution is this?</legend>
+      <div class="radio-row">
+        <label><input type="radio" name="kind" value="eyewitness" checked> Eyewitness observation — something you saw or heard firsthand</label>
+        <label><input type="radio" name="kind" value="document-pointer"> Document pointer — a link or citation we should pull</label>
+        <label><input type="radio" name="kind" value="media-upload"> Media upload — a photo, video, or scanned document</label>
+        <label><input type="radio" name="kind" value="historical-knowledge"> Historical knowledge — long-form context, family history, institutional memory</label>
+      </div>
+    </fieldset>
+
+    <label for="body">Your contribution</label>
+    <textarea id="body" name="body" required placeholder="Write as much or as little as you like. Plain text. No formatting needed."></textarea>
+
+    <label for="url">Supporting URL or citation (optional)</label>
+    <input type="url" id="url" name="url" placeholder="https://&hellip; or a book / case citation">
+
+    <label for="media">Attachment (optional, stub — not wired)</label>
+    <input type="file" id="media" name="media" accept="image/*,video/*,application/pdf" disabled>
+    <p class="form-note">File upload is disabled until the Worker is live; the handler for media uploads requires R2 pre-signed URLs that don't exist yet.</p>
+
+    <label for="contact_optional">One-way contact (optional)</label>
+    <input type="text" id="contact_optional" name="contact_optional" placeholder="Signal handle or a burner email — only if you want us to follow up">
+    <p class="form-note">Leave blank to stay fully anonymous. If you provide a handle, the editors may reach out once; they will not re-contact after that without your explicit reply.</p>
+
+    <button type="submit">Submit</button>
+
+    <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
+    <p class="form-note"><strong>What happens next:</strong> when the backend is live, your submission will be encrypted in your browser with an <code>age</code> public key before transmission. Only the two named editors can decrypt it. Unverified submissions are not published. If an editor wants to follow up on a claim, and you left a contact, they will reach out once. You may reply, or not.</p>
+  </form>
+
+  <p style="margin-top: 3rem; font-size: 0.85rem; color: var(--shell-sage); font-style: italic;">Questions about what the position paper says, or a rebuttal to something published here, go through the same form — use the <em>historical knowledge</em> category and mention which passage you're responding to.</p>
+
+</article>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-org">Abalone Cove Foundation</p>
+    <p class="footer-cta">A nonprofit, neutral-documentation project</p>
+    <p class="footer-links">
+      <a href="/">Home</a> ·
+      <a href="/the-story/1-the-land/">The Story</a> ·
+      <a href="/position/">Position</a> ·
+      <a href="/evidence/">Evidence</a> ·
+      <a href="/about/">About</a>
+    </p>
+  </div>
+</footer>
+
+<script src="/js/contribute-stub.js" defer></script>
+</body>
+</html>

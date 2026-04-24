@@ -1,0 +1,19 @@
+name = "abalonecove-contribute"
+main = "index.ts"
+compatibility_date = "2026-04-01"
+# Route + KV / R2 bindings populated at deploy time; see DEPLOY.md.
+#
+# route = "contribute.abalonecove.org/*"
+# zone_id = "<set in CF dashboard>"
+#
+# [[kv_namespaces]]
+# binding = "SUBMISSIONS_META"
+# id = "<kv namespace id>"
+#
+# [[r2_buckets]]
+# binding = "SUBMISSIONS"
+# bucket_name = "abalonecove-contribute"
+#
+# [vars]
+# AGE_PUBKEY = "age1..."   # populated from ~/abalonecove/.secrets/contribute-private.key companion pubkey
+# EDITOR_HCAPTCHA_SITEKEY = ""  # leave empty — step 5 says no third-party scripts
