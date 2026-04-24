@@ -545,6 +545,28 @@ figcaption {
 }
 .gallery-item:hover .gallery-caption { opacity: 1; }
 
+.gallery-item-multipage {
+  background: var(--shell-sand);
+}
+.gallery-item-multipage img {
+  object-fit: contain;
+  background: var(--shell-cream);
+}
+.gallery-kind {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  background: rgba(26, 26, 46, 0.85);
+  color: var(--shell-cream);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 2;
+}
+
 /* ── Footer ── */
 .site-footer {
   border-top: 1px solid var(--shell-warm);

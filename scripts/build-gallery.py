@@ -2,10 +2,15 @@
 """
 build-gallery.py — regenerate the abalonecove.org gallery.
 
-Scans ~/abalonecove/images/ recursively for image files, extracts
-EXIF + filename metadata, writes ~/abalonecove/gallery/manifest.json,
-generates ~/abalonecove/gallery/index.html, and produces thumbnails
-at 400px and 1200px (max dimension) into ~/abalonecove/images/.thumbs/.
+Scans ~/abalonecove/images/ recursively for image files AND multi-page
+documents (PDF, ODT), extracts EXIF + filename metadata, writes
+~/abalonecove/gallery/manifest.json, generates
+~/abalonecove/gallery/index.html, and produces PNG thumbnails at 400px
+and 1200px into ~/abalonecove/images/.thumbs/.
+
+For multi-page documents (.pdf, .odt), each page is rasterized via
+pdftoppm and composed into a single "spine" thumbnail showing all
+pages side-by-side (up to a reasonable cap).
 
 Run:
 
@@ -15,8 +20,12 @@ Run:
 Idempotent — re-running just rebuilds. Skips thumb regeneration if the
 source file's mtime is older than the existing thumb.
 
-Dependencies: Pillow (already on system, 12.x). No piexif; Pillow's
-native EXIF handling is sufficient.
+External dependencies (already on the box):
+  - Pillow (12.x)
+  - pdftoppm (from poppler-utils; /opt/homebrew/bin/pdftoppm)
+  - soffice  (from LibreOffice, for ODT→PDF; /opt/homebrew/bin/soffice)
+
+All thumbnails are written as PNG.
 """
 
 from __future__ import annotations
@@ -24,8 +33,11 @@ from __future__ import annotations
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
-from dataclasses import dataclass, asdict, field
+import tempfile
+from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Optional
 
@@ -44,8 +56,19 @@ MANIFEST  = GALLERY / "manifest.json"
 INDEX     = GALLERY / "index.html"
 
 IMAGE_EXT = {".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg"}
-RASTER_EXT = IMAGE_EXT - {".svg"}    # SVG has no EXIF and no useful rasterization at fixed px
-MAX_UNCOMPRESSED_COMMIT = 2 * 1024 * 1024   # 2 MB
+RASTER_EXT = IMAGE_EXT - {".svg"}
+PDF_EXT = {".pdf"}
+DOC_EXT = {".odt", ".doc", ".docx"}        # converted to PDF via soffice
+MULTIPAGE_EXT = PDF_EXT | DOC_EXT
+ALL_EXT = IMAGE_EXT | MULTIPAGE_EXT
+
+MAX_UNCOMPRESSED_COMMIT = 2 * 1024 * 1024   # 2 MB (for log only)
+SPINE_MAX_VISIBLE_PAGES = 6
+SPINE_OVERLAP_RATIO = 0.30                  # each page overlaps the previous by 30%
+SPINE_BG = (245, 240, 232)                  # shell-cream
+
+PDFTOPPM = shutil.which("pdftoppm") or "/opt/homebrew/bin/pdftoppm"
+SOFFICE  = shutil.which("soffice")  or "/opt/homebrew/bin/soffice"
 
 # EXIF tag id -> name
 EXIF_TAGS = {v: k for k, v in ExifTags.TAGS.items()}
@@ -60,13 +83,14 @@ _TAG_SPLIT_RE = re.compile(r"[\s\-_\.]+")
 _STOP_TAGS = {
     "the", "of", "a", "an", "and", "or", "to", "in", "on", "at",
     "by", "for", "with", "from",
-    "jpg", "jpeg", "png", "webp", "gif", "svg",
+    "jpg", "jpeg", "png", "webp", "gif", "svg", "pdf", "odt", "doc", "docx",
     "img", "image", "photo", "photograph", "scan", "copy",
 }
 
 
 @dataclass
 class GalleryItem:
+    kind: str                 # "image" | "multipage"
     path: str                 # relative to ROOT, e.g. "images/foo.jpg"
     filename: str
     caption: str
@@ -75,23 +99,20 @@ class GalleryItem:
     size_bytes: int
     width: Optional[int] = None
     height: Optional[int] = None
-    thumb_400: Optional[str] = None   # relative path or None if SVG
+    thumb_400: Optional[str] = None
     thumb_1200: Optional[str] = None
+    page_count: Optional[int] = None     # multi-page only
 
 
 # ── Helpers ─────────────────────────────────────────────────────────
 
 def clean_caption(stem: str) -> str:
-    """Turn a filename stem into a human-readable caption."""
-    # replace separators with spaces, collapse, title-case softly
     s = re.sub(r"[-_]+", " ", stem)
     s = re.sub(r"\s+", " ", s).strip()
-    # keep intentional punctuation in filenames
     return s
 
 
 def parse_date_from_filename(name: str) -> Optional[str]:
-    """Pull a YYYY or YYYY-MM-DD date out of the filename if one is present."""
     m = _FILENAME_DATE_RE.search(name)
     if not m:
         return None
@@ -118,11 +139,9 @@ def parse_exif_date(img: Image.Image) -> Optional[str]:
         return None
     if not exif:
         return None
-    # 36867 = DateTimeOriginal, 306 = DateTime
     for tid in (36867, 306):
         val = exif.get(tid)
         if val:
-            # EXIF format: "YYYY:MM:DD HH:MM:SS"
             m = re.match(r"(\d{4}):(\d{2}):(\d{2})", val.strip())
             if m:
                 return f"{m.group(1)}-{m.group(2)}-{m.group(3)}"
@@ -130,7 +149,6 @@ def parse_exif_date(img: Image.Image) -> Optional[str]:
 
 
 def read_sidecar_caption(p: Path) -> Optional[str]:
-    """If there's a sibling <stem>.txt next to the image, use its first line as caption."""
     sc = p.with_suffix(".txt")
     if sc.exists() and sc.is_file():
         try:
@@ -142,22 +160,30 @@ def read_sidecar_caption(p: Path) -> Optional[str]:
 
 def derive_tags(p: Path, rel: Path) -> list[str]:
     tags: set[str] = set()
-    # parent folder tokens
     for part in rel.parts[:-1]:
         if part in (".", "images"):
             continue
         for tok in _TAG_SPLIT_RE.split(part.lower()):
             if tok and tok not in _STOP_TAGS and not tok.isdigit():
                 tags.add(tok)
-    # filename tokens (sans extension)
     stem = p.stem.lower()
     for tok in _TAG_SPLIT_RE.split(stem):
         if tok and tok not in _STOP_TAGS and not tok.isdigit():
             tags.add(tok)
+    # Mark multi-page docs as such
+    if p.suffix.lower() in PDF_EXT:
+        tags.add("pdf")
+        tags.add("multipage")
+    elif p.suffix.lower() in DOC_EXT:
+        tags.add(p.suffix.lower().lstrip("."))
+        tags.add("multipage")
     return sorted(tags)
 
 
-def build_thumb(src: Path, dst: Path, max_dim: int) -> None:
+# ── Raster thumb ────────────────────────────────────────────────────
+
+def build_raster_thumb(src: Path, dst: Path, max_dim: int) -> None:
+    """Thumbnail a raster image and save as PNG."""
     dst.parent.mkdir(parents=True, exist_ok=True)
     if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
         return
@@ -174,10 +200,215 @@ def build_thumb(src: Path, dst: Path, max_dim: int) -> None:
         except Exception:
             pass
         im.thumbnail((max_dim, max_dim), Image.LANCZOS)
-        # JPEGs can't have alpha; normalize
-        if dst.suffix.lower() in {".jpg", ".jpeg"} and im.mode in ("RGBA", "P"):
-            im = im.convert("RGB")
-        im.save(dst, quality=82, optimize=True)
+        # Save as PNG: convert palette → RGB, keep RGBA transparency
+        if im.mode == "P":
+            im = im.convert("RGBA")
+        im.save(dst, format="PNG", optimize=True, compress_level=9)
+
+
+# ── Multi-page spine ────────────────────────────────────────────────
+
+def rasterize_pdf(pdf: Path, dpi: int, outdir: Path) -> list[Path]:
+    """Rasterize every page of a PDF to PNG files in outdir, return sorted list."""
+    outdir.mkdir(parents=True, exist_ok=True)
+    prefix = outdir / "page"
+    subprocess.run(
+        [PDFTOPPM, "-r", str(dpi), "-png", str(pdf), str(prefix)],
+        check=True,
+        capture_output=True,
+    )
+    pages = sorted(outdir.glob("page-*.png"))
+    if not pages:
+        pages = sorted(outdir.glob("page*.png"))
+    return pages
+
+
+def convert_doc_to_pdf(doc: Path, outdir: Path) -> Path:
+    """Convert .odt / .doc / .docx to PDF via soffice. Returns Path to PDF."""
+    outdir.mkdir(parents=True, exist_ok=True)
+    result = subprocess.run(
+        [
+            SOFFICE, "--headless",
+            "--convert-to", "pdf",
+            "--outdir", str(outdir),
+            str(doc),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+        timeout=120,
+    )
+    # soffice writes <stem>.pdf into outdir
+    pdf = outdir / f"{doc.stem}.pdf"
+    if not pdf.exists():
+        # Look for any .pdf in outdir as fallback
+        pdfs = list(outdir.glob("*.pdf"))
+        if pdfs:
+            return pdfs[0]
+        raise RuntimeError(f"soffice produced no PDF for {doc}: {result.stderr}")
+    return pdf
+
+
+def count_pages(pdf: Path) -> int:
+    """Use pdfinfo to get page count, fallback to 0."""
+    try:
+        result = subprocess.run(
+            ["/opt/homebrew/bin/pdfinfo", str(pdf)],
+            capture_output=True, text=True, check=True, timeout=15,
+        )
+        for line in result.stdout.splitlines():
+            if line.startswith("Pages:"):
+                return int(line.split(":", 1)[1].strip())
+    except Exception:
+        pass
+    return 0
+
+
+def compose_spine(page_images: list[Image.Image], max_dim: int) -> Image.Image:
+    """Compose a list of PIL images into a horizontal 'spine' thumbnail.
+
+    Pages are laid side-by-side with 30% overlap (fanned-pages effect),
+    normalized to a common height. If there are more than
+    SPINE_MAX_VISIBLE_PAGES, only the first SPINE_MAX_VISIBLE_PAGES are
+    shown — the caller writes a page-count badge separately.
+
+    Returns an RGB image sized to fit within max_dim × (max_dim * 2).
+    The wider aspect gives the gallery tile a document-stack look.
+    """
+    pages = page_images[:SPINE_MAX_VISIBLE_PAGES]
+
+    # Normalize heights
+    target_h = max(im.size[1] for im in pages)
+    norm: list[Image.Image] = []
+    for im in pages:
+        if im.size[1] != target_h:
+            w = int(im.size[0] * target_h / im.size[1])
+            im = im.resize((w, target_h), Image.LANCZOS)
+        if im.mode != "RGBA":
+            im = im.convert("RGBA")
+        norm.append(im)
+
+    if len(norm) == 1:
+        base = norm[0]
+    else:
+        widths = [im.size[0] for im in norm]
+        # Fan: each page after the first shifts right by (1 - overlap_ratio) of its width
+        strides = [int(w * (1.0 - SPINE_OVERLAP_RATIO)) for w in widths[:-1]]
+        total_w = sum(strides) + widths[-1]
+        canvas = Image.new("RGBA", (total_w, target_h), (0, 0, 0, 0))
+        x = 0
+        for i, im in enumerate(norm):
+            # subtle drop shadow so overlapping pages read as separate pages
+            shadow = Image.new("RGBA", im.size, (0, 0, 0, 0))
+            # thin dark border on right edge for depth
+            from PIL import ImageDraw
+            d = ImageDraw.Draw(shadow)
+            d.rectangle(
+                (im.size[0] - 2, 0, im.size[0] - 1, im.size[1]),
+                fill=(26, 26, 46, 90),
+            )
+            canvas.paste(im, (x, 0), im)
+            canvas.paste(shadow, (x, 0), shadow)
+            if i < len(strides):
+                x += strides[i]
+        base = canvas
+
+    # Composite onto shell-cream background (PNG-legal, nice print)
+    bg = Image.new("RGB", base.size, SPINE_BG)
+    bg.paste(base, mask=base.split()[3])
+
+    # Resize to fit max_dim (longest side = 2 * max_dim to allow wide spine)
+    wide_cap = max_dim * 2
+    bg.thumbnail((wide_cap, max_dim), Image.LANCZOS)
+    return bg
+
+
+def draw_page_count_badge(img: Image.Image, total_pages: int, shown_pages: int) -> Image.Image:
+    """If there are more pages than shown, stamp a '+N' badge on the bottom-right."""
+    from PIL import ImageDraw, ImageFont
+    hidden = total_pages - shown_pages
+    label = f"+{hidden} more" if hidden > 0 else f"{total_pages} pp"
+    canvas = img.copy()
+    draw = ImageDraw.Draw(canvas)
+    # Default PIL font — deterministic across machines
+    try:
+        font = ImageFont.truetype("/System/Library/Fonts/Supplemental/Georgia.ttf", size=max(10, img.size[1] // 22))
+    except Exception:
+        font = ImageFont.load_default()
+    tb = draw.textbbox((0, 0), label, font=font)
+    tw, th = tb[2] - tb[0], tb[3] - tb[1]
+    pad = max(6, img.size[1] // 60)
+    margin = max(6, img.size[1] // 40)
+    x1 = canvas.size[0] - margin - tw - pad * 2
+    y1 = canvas.size[1] - margin - th - pad * 2
+    x2 = canvas.size[0] - margin
+    y2 = canvas.size[1] - margin
+    draw.rectangle((x1, y1, x2, y2), fill=(26, 26, 46, 230))
+    draw.text((x1 + pad, y1 + pad - 1), label, fill=(245, 240, 232), font=font)
+    return canvas
+
+
+def build_multipage_thumb(src: Path, dst_400: Path, dst_1200: Path) -> int:
+    """Rasterize a PDF/ODT and build spine thumbs. Returns page count."""
+    with tempfile.TemporaryDirectory() as td:
+        tmpdir = Path(td)
+
+        # Convert DOC/ODT → PDF via soffice
+        if src.suffix.lower() in DOC_EXT:
+            try:
+                pdf = convert_doc_to_pdf(src, tmpdir / "converted")
+            except Exception as exc:
+                sys.stderr.write(f"spine: soffice convert failed for {src.name}: {exc}\n")
+                return 0
+        else:
+            pdf = src
+
+        total = count_pages(pdf)
+        if total == 0:
+            # pdfinfo failed; we'll still try to rasterize
+            total = -1
+
+        # Rasterize at moderate DPI for 1200px thumb
+        pages_dir = tmpdir / "pages"
+        try:
+            page_paths = rasterize_pdf(pdf, dpi=110, outdir=pages_dir)
+        except subprocess.CalledProcessError as exc:
+            sys.stderr.write(f"spine: pdftoppm failed for {src.name}: {exc.stderr.decode(errors='ignore')[:200]}\n")
+            return 0
+
+        if not page_paths:
+            return 0
+
+        total = len(page_paths) if total <= 0 else total
+
+        # Open only SPINE_MAX_VISIBLE_PAGES pages
+        shown = page_paths[:SPINE_MAX_VISIBLE_PAGES]
+        imgs = []
+        for pp in shown:
+            try:
+                im = Image.open(pp)
+                im.load()
+                imgs.append(im)
+            except Exception as exc:
+                sys.stderr.write(f"spine: page open failed {pp}: {exc}\n")
+        if not imgs:
+            return 0
+
+        # 1200 thumb
+        big = compose_spine(imgs, 1200)
+        if total > len(shown):
+            big = draw_page_count_badge(big, total, len(shown))
+        dst_1200.parent.mkdir(parents=True, exist_ok=True)
+        big.save(dst_1200, format="PNG", optimize=True, compress_level=9)
+
+        # 400 thumb
+        small = compose_spine(imgs, 400)
+        if total > len(shown):
+            small = draw_page_count_badge(small, total, len(shown))
+        dst_400.parent.mkdir(parents=True, exist_ok=True)
+        small.save(dst_400, format="PNG", optimize=True, compress_level=9)
+
+        return total
 
 
 # ── Main scan ───────────────────────────────────────────────────────
@@ -185,13 +416,14 @@ def build_thumb(src: Path, dst: Path, max_dim: int) -> None:
 def scan() -> list[GalleryItem]:
     items: list[GalleryItem] = []
     skipped: list[str] = []
+
     for root, dirs, files in os.walk(IMG_ROOT):
-        # skip thumbs dir and dotdirs
         dirs[:] = [d for d in dirs if not d.startswith(".")]
         rp = Path(root)
         for f in files:
             p = rp / f
-            if p.suffix.lower() not in IMAGE_EXT:
+            ext = p.suffix.lower()
+            if ext not in ALL_EXT:
                 continue
             if p.name.startswith("."):
                 continue
@@ -201,10 +433,12 @@ def scan() -> list[GalleryItem]:
                 continue
             rel_img = p.relative_to(IMG_ROOT)
 
+            kind = "multipage" if ext in MULTIPAGE_EXT else "image"
+
             width: Optional[int] = None
             height: Optional[int] = None
             exif_date: Optional[str] = None
-            if p.suffix.lower() in RASTER_EXT:
+            if ext in RASTER_EXT:
                 try:
                     with Image.open(p) as im:
                         width, height = im.size
@@ -217,22 +451,42 @@ def scan() -> list[GalleryItem]:
             tags = derive_tags(p, rel_img)
             size_b = p.stat().st_size
 
-            # Thumbnails: raster only.
             thumb_400 = None
             thumb_1200 = None
-            if p.suffix.lower() in RASTER_EXT:
-                suffix = p.suffix.lower()
-                thumb_400_path  = THUMB_DIR / "400"  / rel_img
-                thumb_1200_path = THUMB_DIR / "1200" / rel_img
+            page_count = None
+
+            # Thumb destinations, always PNG
+            thumb_stem = rel_img.with_suffix("")   # drop the source extension
+            t400 = THUMB_DIR / "400"  / f"{thumb_stem}.png"
+            t1200 = THUMB_DIR / "1200" / f"{thumb_stem}.png"
+
+            if kind == "image" and ext in RASTER_EXT:
                 try:
-                    build_thumb(p, thumb_400_path, 400)
-                    build_thumb(p, thumb_1200_path, 1200)
-                    thumb_400  = str(thumb_400_path.relative_to(ROOT))
-                    thumb_1200 = str(thumb_1200_path.relative_to(ROOT))
+                    build_raster_thumb(p, t400, 400)
+                    build_raster_thumb(p, t1200, 1200)
+                    thumb_400  = str(t400.relative_to(ROOT))
+                    thumb_1200 = str(t1200.relative_to(ROOT))
                 except Exception as exc:
                     skipped.append(f"thumb {rel}: {exc}")
+            elif kind == "multipage":
+                # Regen only if source is newer than either thumb (both checked)
+                def stale(t: Path) -> bool:
+                    return not t.exists() or t.stat().st_mtime < p.stat().st_mtime
+                if stale(t400) or stale(t1200):
+                    try:
+                        page_count = build_multipage_thumb(p, t400, t1200)
+                    except Exception as exc:
+                        skipped.append(f"spine {rel}: {exc}")
+                        page_count = 0
+                else:
+                    page_count = count_pages(p) if ext in PDF_EXT else None
+                if t400.exists():
+                    thumb_400 = str(t400.relative_to(ROOT))
+                if t1200.exists():
+                    thumb_1200 = str(t1200.relative_to(ROOT))
 
             items.append(GalleryItem(
+                kind=kind,
                 path=str(rel),
                 filename=p.name,
                 caption=caption,
@@ -243,12 +497,11 @@ def scan() -> list[GalleryItem]:
                 height=height,
                 thumb_400=thumb_400,
                 thumb_1200=thumb_1200,
+                page_count=page_count,
             ))
 
-    # Sort: known date first (desc), then undated by filename
     def sort_key(it: GalleryItem):
         d = it.date or ""
-        # pad undated to sort last
         return (0 if d else 1, d, it.filename.lower())
     items.sort(key=sort_key)
 
@@ -260,7 +513,6 @@ def scan() -> list[GalleryItem]:
 # ── HTML render ─────────────────────────────────────────────────────
 
 def render_index(items: list[GalleryItem]) -> str:
-    # collect all tags + counts
     tag_counts: dict[str, int] = {}
     for it in items:
         for t in it.tags:
@@ -275,18 +527,26 @@ def render_index(items: list[GalleryItem]) -> str:
                  .replace("'", "&#39;"))
 
     tiles = []
+    multipage_count = 0
     for it in items:
         href = "/" + it.path
-        src = "/" + (it.thumb_400 or it.path)
+        thumb = "/" + (it.thumb_400 or it.path)
         big = "/" + (it.thumb_1200 or it.path)
         caption_esc = esc(it.caption)
         date_esc = esc(it.date or "")
         tags_attr = " ".join(it.tags)
+        extra = ""
+        if it.kind == "multipage":
+            multipage_count += 1
+            pp = f" · {it.page_count} pp" if it.page_count else ""
+            extra = f'<span class="gallery-kind" title="multi-page document{pp}">DOC{pp}</span>'
         tiles.append(
-            f'<a class="gallery-item" href="{esc(href)}" data-full="{esc(big)}" '
+            f'<a class="gallery-item{" gallery-item-multipage" if it.kind == "multipage" else ""}" '
+            f'href="{esc(href)}" data-full="{esc(big)}" '
             f'data-caption="{caption_esc}" data-date="{date_esc}" '
-            f'data-tags="{esc(tags_attr)}">'
-            f'<img src="{esc(src)}" alt="{caption_esc}" loading="lazy">'
+            f'data-tags="{esc(tags_attr)}" data-kind="{it.kind}">'
+            f'<img src="{esc(thumb)}" alt="{caption_esc}" loading="lazy">'
+            f'{extra}'
             f'<span class="gallery-caption">{caption_esc}</span></a>'
         )
 
@@ -301,7 +561,7 @@ def render_index(items: list[GalleryItem]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gallery — Abalone Cove</title>
-  <meta name="description" content="Images of the Abalone Cove area and the Palos Verdes Peninsula — historical photos, scanned documents, maps.">
+  <meta name="description" content="Images and multi-page scans from the Abalone Cove archive — historical photos, scanned documents, maps, and multi-page PDFs rendered as page-spine thumbnails.">
   <link rel="canonical" href="https://abalonecove.org/gallery/">
   <link rel="stylesheet" href="/css/site.css">
 </head>
@@ -327,7 +587,7 @@ def render_index(items: list[GalleryItem]) -> str:
   <header class="article-header" style="text-align: left;">
     <p class="kicker">Visual archive</p>
     <h1>Gallery</h1>
-    <p class="byline">{len(items)} images · {len(top_tags)} tags · regenerated from <code>images/</code></p>
+    <p class="byline">{len(items)} items · {multipage_count} multi-page documents (spined) · {len(top_tags)} tags · regenerated from <code>images/</code></p>
   </header>
 
   <div class="tag-filter">
@@ -340,11 +600,14 @@ def render_index(items: list[GalleryItem]) -> str:
   </div>
 
   <p style="margin-top: 2.5rem; font-size: 0.85rem; color: var(--shell-sage); font-style: italic;">
+    Thumbnails rendered as PNG. For multi-page PDFs and ODT documents, each
+    thumbnail is a <em>spine</em> — the first {SPINE_MAX_VISIBLE_PAGES} pages
+    rasterized and fanned horizontally with an overlap, with a badge showing
+    how many additional pages exist. Click through to view the full document.
     Dates derived from EXIF where available, otherwise parsed from filename.
-    Captions from sibling <code>.txt</code> files where present, otherwise from
-    cleaned filename. Tags from folder and filename tokens. To add context to
-    an image, drop a <code>&lt;stem&gt;.txt</code> beside it in the same folder
-    and re-run <code>scripts/build-gallery.py</code>.
+    Captions from sibling <code>&lt;stem&gt;.txt</code> files where present,
+    otherwise from cleaned filename. Tags from folder and filename tokens.
+    Regenerate with <code>scripts/build-gallery.py</code>.
   </p>
 </article>
 
@@ -401,17 +664,20 @@ def main() -> int:
 
     INDEX.write_text(render_index(items), encoding="utf-8")
 
-    # stats
+    image_items = [it for it in items if it.kind == "image"]
+    multipage_items = [it for it in items if it.kind == "multipage"]
     tagged = sum(1 for it in items if it.tags)
     dated  = sum(1 for it in items if it.date)
     oversize = [it for it in items if it.size_bytes > MAX_UNCOMPRESSED_COMMIT]
 
-    print(f"gallery: {len(items)} images")
-    print(f"  tagged: {tagged}")
-    print(f"  dated:  {dated}")
-    print(f"  > 2MB:  {len(oversize)} (retained in repo; no R2 configured)")
-    print(f"  manifest: {MANIFEST.relative_to(ROOT)}")
-    print(f"  index:    {INDEX.relative_to(ROOT)}")
+    print(f"gallery: {len(items)} items")
+    print(f"  images:     {len(image_items)}")
+    print(f"  multipage:  {len(multipage_items)} (spined)")
+    print(f"  tagged:     {tagged}")
+    print(f"  dated:      {dated}")
+    print(f"  > 2MB:      {len(oversize)} (retained in repo; no R2 configured)")
+    print(f"  manifest:   {MANIFEST.relative_to(ROOT)}")
+    print(f"  index:      {INDEX.relative_to(ROOT)}")
     return 0
 
 
