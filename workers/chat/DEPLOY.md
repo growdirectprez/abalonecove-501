@@ -8,18 +8,23 @@
 
 ## Steps
 
-### 1. Create KV namespace (rate limiting)
+### 1. Create KV namespaces
 
 ```bash
 wrangler kv:namespace create RATE_LIMIT
+wrangler kv:namespace create KB
 ```
 
-Copy the returned `id` into `wrangler.toml`:
+Copy the returned IDs into `wrangler.toml`:
 
 ```toml
 [[kv_namespaces]]
 binding = "RATE_LIMIT"
-id = "<id from above>"
+id = "<RATE_LIMIT id>"
+
+[[kv_namespaces]]
+binding = "KB"
+id = "<KB id>"
 ```
 
 ### 2. Set API key as a secret
@@ -59,6 +64,31 @@ You should see SSE lines streaming back (`data: {"text":"..."}` chunks, ending w
 
 The worker uses a KV-backed counter: SHA-256(ip + date-hour-salt), capped at 30 requests/hour. Raw IPs are never stored. If the RATE_LIMIT binding is absent the cap is unenforced (rely on Cloudflare network-level rate limiting rules instead).
 
-## Updating the knowledge base
+## Building and uploading the knowledge base
 
-The system prompt is in `index.ts` — the `SYSTEM_PROMPT` constant. Edit and redeploy. For a future version, replace the inline prompt with a fetch from an R2 object so the knowledge base can be updated without a full deploy.
+The RAG knowledge base is built from the verbatim document corpus:
+
+```bash
+# From the repo root (abalonecove/)
+cd workers/chat
+node build-kb.mjs
+```
+
+This writes `workers/chat/knowledge-base.json` (~50+ verbatim docs, section-chunked).
+
+Then upload to KV (replace `<KB namespace id>` with the id from wrangler.toml):
+
+```bash
+wrangler kv:key put --binding KB "chunks" --path workers/chat/knowledge-base.json
+```
+
+The worker caches the loaded KB in-memory for the lifetime of the isolate, so the
+first request after a cold start fetches from KV; subsequent requests use the cache.
+
+Re-run `build-kb.mjs` and re-upload whenever verbatim transcriptions are added to
+`abalonecove/docs/` or `GrowDirect/Cove/docs/archive/originals/transcriptions/`.
+
+## Updating the system prompt
+
+The baseline context (24-inch line position, 10 eras, evidence categories, gaps) is
+in `index.ts` — the `SYSTEM_PROMPT` constant. Edit and redeploy.

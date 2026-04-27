@@ -17,3 +17,4 @@
 /.secrets/
 /images/.thumbs-originals-moved-to-r2/
 
+workers/chat/knowledge-base.json

@@ -9,7 +9,11 @@ compatibility_date = "2026-04-01"
 #
 # [[kv_namespaces]]
 # binding = "RATE_LIMIT"
-# id = "<kv namespace id>"
+# id = "<kv namespace id from: wrangler kv:namespace create RATE_LIMIT>"
+#
+# [[kv_namespaces]]
+# binding = "KB"
+# id = "<kv namespace id from: wrangler kv:namespace create KB>"
 #
 # [vars]
 # ANTHROPIC_API_KEY = ""  # set as a secret: wrangler secret put ANTHROPIC_API_KEY

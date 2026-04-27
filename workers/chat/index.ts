@@ -10,6 +10,67 @@
 export interface Env {
   ANTHROPIC_API_KEY: string;
   RATE_LIMIT?: KVNamespace;
+  KB?: KVNamespace;
+}
+
+// ── RAG ──────────────────────────────────────────────────────────────────────
+
+interface Chunk {
+  id: string;
+  source: string;
+  heading: string;
+  text: string;
+}
+
+// Module-level cache — survives for the lifetime of the Worker isolate
+let kbCache: Chunk[] | null = null;
+
+async function loadKB(env: Env): Promise<Chunk[]> {
+  if (kbCache) return kbCache;
+  if (!env.KB) return [];
+  const raw = await env.KB.get("chunks");
+  if (!raw) return [];
+  try {
+    kbCache = JSON.parse(raw) as Chunk[];
+    return kbCache;
+  } catch {
+    return [];
+  }
+}
+
+function tokenize(text: string): Set<string> {
+  return new Set(
+    text.toLowerCase()
+      .replace(/[^a-z0-9\s-]/g, " ")
+      .split(/\s+/)
+      .filter(t => t.length > 2)
+  );
+}
+
+function scoreChunk(queryTokens: Set<string>, chunk: Chunk): number {
+  const bodyTokens = tokenize(chunk.text);
+  const headingTokens = tokenize(chunk.heading);
+  let score = 0;
+  for (const qt of queryTokens) {
+    if (bodyTokens.has(qt)) score += 1;
+    if (headingTokens.has(qt)) score += 2; // heading match worth more
+  }
+  return score;
+}
+
+async function retrieveChunks(env: Env, query: string, topK = 5): Promise<Chunk[]> {
+  const chunks = await loadKB(env);
+  if (!chunks.length) return [];
+  const queryTokens = tokenize(query);
+  if (!queryTokens.size) return [];
+
+  const scored = chunks
+    .map(c => ({ chunk: c, score: scoreChunk(queryTokens, c) }))
+    .filter(x => x.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, topK);
+
+  return scored.map(x => x.chunk);
 }
 
 const ALLOWED_ORIGINS = [
@@ -143,12 +204,25 @@ export default {
       return new Response("missing message", { status: 400, headers: corsHeaders });
     }
 
+    const userMessage = body.message.trim().slice(0, 2000);
+
+    // RAG: retrieve relevant chunks and prepend as context
+    const relevantChunks = await retrieveChunks(env, userMessage);
+    let contextBlock = "";
+    if (relevantChunks.length > 0) {
+      contextBlock = "RETRIEVED DOCUMENT EXCERPTS (use these to answer if relevant):\n\n" +
+        relevantChunks.map(c =>
+          `[Source: ${c.source} — ${c.heading}]\n${c.text}`
+        ).join("\n\n---\n\n") +
+        "\n\n---\n\nUser question: ";
+    }
+
     const messages = [
       ...(body.history ?? []).slice(-6).map(m => ({
         role: m.role as "user" | "assistant",
         content: m.content,
       })),
-      { role: "user" as const, content: body.message.trim().slice(0, 2000) },
+      { role: "user" as const, content: contextBlock + userMessage },
     ];
 
     const anthropicResp = await fetch("https://api.anthropic.com/v1/messages", {

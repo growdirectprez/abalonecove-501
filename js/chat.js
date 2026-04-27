@@ -198,7 +198,7 @@
       <button id="acf-chat-close" aria-label="Close">&times;</button>
     </div>
     <div id="acf-chat-msgs" role="log" aria-live="polite"></div>
-    <div id="acf-chat-disclaimer">Answers draw from the Foundation&rsquo;s documented record only.</div>
+    <div id="acf-chat-disclaimer">AI — may be wrong or draw its own conclusions. Verify against primary sources.</div>
     <form id="acf-chat-form" autocomplete="off">
       <textarea id="acf-chat-input" rows="1" placeholder="Ask about the evidence, the hypothesis, the map…" aria-label="Message"></textarea>
       <button id="acf-chat-send" type="submit" aria-label="Send">
@@ -230,8 +230,9 @@
   function appendWelcome() {
     addMsg('assistant',
       'Ask me about the 24-inch line, the evidence library, the ten historical eras, ' +
-      'documented gaps, or how to contribute a record. I answer from the Foundation\'s ' +
-      'documented sources only.'
+      'documented gaps, or how to contribute a record. I search the Foundation\'s verbatim ' +
+      'corpus to answer. I am AI — I may be wrong, and the way a question is framed can ' +
+      'shape my conclusions. Verify anything important against the primary sources.'
     );
   }
 
