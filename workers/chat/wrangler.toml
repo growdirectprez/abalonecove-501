@@ -1,0 +1,15 @@
+name = "abalonecove-chat"
+main = "index.ts"
+compatibility_date = "2026-04-01"
+# Route + KV binding populated at deploy time; see DEPLOY.md.
+#
+# [[routes]]
+# pattern = "501.abalonecove.org/api/chat"
+# zone_name = "abalonecove.org"
+#
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "<kv namespace id>"
+#
+# [vars]
+# ANTHROPIC_API_KEY = ""  # set as a secret: wrangler secret put ANTHROPIC_API_KEY

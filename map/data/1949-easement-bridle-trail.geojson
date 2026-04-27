@@ -1,0 +1,60 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -118.38407806128066,
+              33.74386047925437
+            ],
+            [
+              -118.38378363327784,
+              33.743046016086076
+            ],
+            [
+              -118.38398274759236,
+              33.74279323898388
+            ],
+            [
+              -118.38392214412544,
+              33.74255114241222
+            ],
+            [
+              -118.38393831897052,
+              33.742548375951365
+            ],
+            [
+              -118.383998832877,
+              33.742796345875846
+            ],
+            [
+              -118.38380010088575,
+              33.74304499638003
+            ],
+            [
+              -118.38409387394185,
+              33.743856520609334
+            ],
+            [
+              -118.38407806128066,
+              33.74386047925437
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "segment": "Ocean access path \u2014 Lot 1 N corner to tract S line",
+        "width_ft": 5,
+        "description": "5-foot bridle trail and walkway, lying 5ft W/NW of easterly tract boundary. Critical ocean access easement per Article X, Declaration No. One.",
+        "bearings": "S 16\u00b044'15\" E \u2192 S 33\u00b014'10\" W \u2192 S 11\u00b045'50\" E",
+        "total_distance_ft": 509.56,
+        "legal_significance": "One of two WPBCA ocean access easements. Runs from Sea Cove Drive to Pacific Ocean along eastern tract boundary.",
+        "recording": "Book 30051, Page 385 (Declaration of Easements, May 10, 1949)"
+      }
+    }
+  ]
+}

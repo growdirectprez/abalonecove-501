@@ -222,6 +222,17 @@
       background: var(--shell-cream) !important;
     }
 
+    /* ── Butterfly mark ── */
+    .nav-butterfly {
+      height: 24px;
+      width: auto;
+      opacity: 0.55;
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .nav-butterfly { display: none; }
+    }
+
     /* ── Mobile ── */
     @media (max-width: 640px) {
       .map-legend { width: 210px; padding: 16px 16px 12px; bottom: 16px; }
@@ -263,6 +274,7 @@
       <li><a href="/sign/">Sign</a></li>
       <li><a href="/about/">About</a></li>
     </ul>
+    <img src="/images/tPDX5.jpg" alt="" class="nav-butterfly" aria-hidden="true">
   </div>
 </header>
 
@@ -270,7 +282,7 @@
 
 <!-- Legend Card (letterhead style) -->
 <div class="map-legend">
-  <img src="/images/map-legend-bg.png" alt="Abalone Cove" style="width:100%;border-radius:8px;margin-bottom:10px;">
+  <img src="/images/shell-blended-128.png" alt="Abalone Cove Foundation" class="legend-logo">
 
   <hr class="legend-rule">
   <div class="legend-heading">Map Legend</div>
@@ -319,6 +331,10 @@
     <li class="legend-item">
       <div class="legend-swatch" style="background: rgba(161,98,7,0.18); border: 2.5px solid #a16207;"></div>
       LRPMP Govt-Use Parcels
+    </li>
+    <li class="legend-item">
+      <div class="legend-swatch" style="background: transparent; border: 2.5px dashed #FF6B35;"></div>
+      Ocean Access Path (Bridle Trail)
     </li>
   </ul>
 </div>
@@ -394,6 +410,11 @@
       style: { color: '#d97706', weight: 2.5, fillColor: '#d97706', fillOpacity: 0.06, dashArray: '8,4' }
     },
     {
+      file: 'data/1949-easement-bridle-trail.geojson',
+      name: 'Ocean Access Path (Bridle Trail)',
+      style: { color: '#FF6B35', weight: 2.5, fillOpacity: 0, dashArray: '5,4' }
+    },
+    {
       file: 'data/lrpmp-governmental-parcels.geojson',
       name: 'LRPMP Govt-Use Parcels',
       style: { color: '#a16207', weight: 2.5, fillColor: '#a16207', fillOpacity: 0.18 },
@@ -463,5 +484,6 @@
 })();
 </script>
 
+<script src="/js/chat.js"></script>
 </body>
 </html>

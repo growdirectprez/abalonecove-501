@@ -668,6 +668,24 @@ figcaption {
   .box-score th, .box-score td { padding: 0.35rem 0.5rem; }
 }
 
+/* ── Butterfly mark ── */
+.nav-butterfly {
+  height: 24px;
+  width: auto;
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+.article-butterfly {
+  text-align: center;
+  margin-top: 3rem;
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .nav-butterfly { display: none; }
+}
+
 /* ── Print ── */
 @media print {
   .site-header, .progress-bar, .era-nav, .tag-filter { display: none; }

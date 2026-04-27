@@ -223,28 +223,6 @@
   },
   {
     "kind": "image",
-    "path": "images/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a 2.jpeg",
-    "filename": "52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a 2.jpeg",
-    "caption": "52D199D7 94C1 482E B600 72BBB1CA04F4 1 201 a 2",
-    "date": "2020-06-04",
-    "tags": [
-      "482e",
-      "52d199d7",
-      "72bbb1ca04f4",
-      "94c1",
-      "b600"
-    ],
-    "size_bytes": 1155739,
-    "width": 1959,
-    "height": 1574,
-    "thumb_400": "images/.thumbs/400/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a 2.png",
-    "thumb_1200": "images/.thumbs/1200/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a 2.png",
-    "page_count": null,
-    "item_count": null,
-    "href": null
-  },
-  {
-    "kind": "image",
     "path": "images/52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a.jpeg",
     "filename": "52D199D7-94C1-482E-B600-72BBB1CA04F4_1_201_a.jpeg",
     "caption": "52D199D7 94C1 482E B600 72BBB1CA04F4 1 201 a",
@@ -1276,82 +1254,6 @@
   },
   {
     "kind": "image",
-    "path": "images/shell-blended-128.png",
-    "filename": "shell-blended-128.png",
-    "caption": "shell blended 128",
-    "date": null,
-    "tags": [
-      "blended",
-      "shell"
-    ],
-    "size_bytes": 21098,
-    "width": 128,
-    "height": 128,
-    "thumb_400": "images/.thumbs/400/shell-blended-128.png",
-    "thumb_1200": "images/.thumbs/1200/shell-blended-128.png",
-    "page_count": null,
-    "item_count": null,
-    "href": null
-  },
-  {
-    "kind": "image",
-    "path": "images/shell-blended-256.png",
-    "filename": "shell-blended-256.png",
-    "caption": "shell blended 256",
-    "date": null,
-    "tags": [
-      "blended",
-      "shell"
-    ],
-    "size_bytes": 72172,
-    "width": 256,
-    "height": 256,
-    "thumb_400": "images/.thumbs/400/shell-blended-256.png",
-    "thumb_1200": "images/.thumbs/1200/shell-blended-256.png",
-    "page_count": null,
-    "item_count": null,
-    "href": null
-  },
-  {
-    "kind": "image",
-    "path": "images/shell-blended-32.png",
-    "filename": "shell-blended-32.png",
-    "caption": "shell blended 32",
-    "date": null,
-    "tags": [
-      "blended",
-      "shell"
-    ],
-    "size_bytes": 2113,
-    "width": 32,
-    "height": 32,
-    "thumb_400": "images/.thumbs/400/shell-blended-32.png",
-    "thumb_1200": "images/.thumbs/1200/shell-blended-32.png",
-    "page_count": null,
-    "item_count": null,
-    "href": null
-  },
-  {
-    "kind": "image",
-    "path": "images/shell-blended-64.png",
-    "filename": "shell-blended-64.png",
-    "caption": "shell blended 64",
-    "date": null,
-    "tags": [
-      "blended",
-      "shell"
-    ],
-    "size_bytes": 6497,
-    "width": 64,
-    "height": 64,
-    "thumb_400": "images/.thumbs/400/shell-blended-64.png",
-    "thumb_1200": "images/.thumbs/1200/shell-blended-64.png",
-    "page_count": null,
-    "item_count": null,
-    "href": null
-  },
-  {
-    "kind": "image",
     "path": "images/Stewart 1.png",
     "filename": "Stewart 1.png",
     "caption": "Stewart 1",
@@ -1508,24 +1410,6 @@
     "height": 1140,
     "thumb_400": "images/.thumbs/400/Surveys.png",
     "thumb_1200": "images/.thumbs/1200/Surveys.png",
-    "page_count": null,
-    "item_count": null,
-    "href": null
-  },
-  {
-    "kind": "image",
-    "path": "images/tPDX5.jpg",
-    "filename": "tPDX5.jpg",
-    "caption": "tPDX5",
-    "date": null,
-    "tags": [
-      "tpdx5"
-    ],
-    "size_bytes": 207055,
-    "width": 864,
-    "height": 1184,
-    "thumb_400": "images/.thumbs/400/tPDX5.png",
-    "thumb_1200": "images/.thumbs/1200/tPDX5.png",
     "page_count": null,
     "item_count": null,
     "href": null
